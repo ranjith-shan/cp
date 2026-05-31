@@ -449,66 +449,70 @@
     /* ── COLOR VISUALIZER ── */
     #visualizer { background: var(--bg2); }
 
-    .viz-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 3rem;
-      align-items: center;
-      margin-top: 3rem;
+    /* Room tabs */
+    .room-tabs { display:flex; gap:0.6rem; flex-wrap:wrap; margin: 1.75rem 0 1.5rem; }
+    .room-tab {
+      padding: 0.55rem 1.1rem; background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 50px; font-size: 0.875rem; font-weight: 600; color: var(--muted);
+      cursor: pointer; transition: all 0.25s;
+    }
+    .room-tab.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .room-tab:hover:not(.active) { border-color: var(--accent); color: var(--accent); background: rgba(26,111,212,0.08); }
+
+    /* Viz grid */
+    .viz-grid2 { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2rem; align-items: start; }
+
+    /* Room preview container */
+    .room-preview2 {
+      border-radius: var(--radius-lg); border: 1px solid var(--border);
+      overflow: hidden; position: relative; background: #1a2030;
+      aspect-ratio: 3/2;
     }
 
-    .room-preview {
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
-      overflow: hidden;
-      position: relative;
-      aspect-ratio: 4/3;
-      background: #1a1a2e;
+    /* Room SVGs */
+    .room-scene { display: none; width: 100%; height: 100%; }
+    .room-scene.active-scene { display: block; animation: roomFadeIn 0.5s cubic-bezier(0.16,1,0.3,1); }
+    @keyframes roomFadeIn { from{opacity:0;transform:scale(0.97)} to{opacity:1;transform:scale(1)} }
+
+    /* Wall color transitions */
+    .wall-main, .wall-side { transition: fill 0.5s cubic-bezier(0.16,1,0.3,1); }
+
+    /* Color picker panel */
+    .viz-picker {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 1.5rem; max-height: 75vh; overflow-y: auto;
     }
+    .viz-picker::-webkit-scrollbar { width: 4px; }
+    .viz-picker::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
 
-    .room-svg { width: 100%; height: 100%; }
+    .viz-picker-head h3 { font-family:'Syne',sans-serif; font-size:1.1rem; font-weight:800; margin-bottom:0.25rem; }
+    .viz-picker-head p { color:var(--muted); font-size:0.8rem; margin-bottom:1rem; }
 
-    .color-picker-panel {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 2rem;
+    /* Wall selector */
+    .wall-selector { display:flex; gap:0.4rem; margin-bottom:1rem; flex-wrap:wrap; }
+    .wall-btn {
+      padding: 0.35rem 0.85rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600;
+      background: var(--card-bg); border: 1px solid var(--border); color: var(--muted); cursor: pointer; transition: all 0.2s;
     }
+    .wall-btn.active { background: rgba(26,111,212,0.15); border-color: var(--accent); color: var(--accent); }
 
-    .color-picker-panel h3 { font-family:'Syne',sans-serif; font-size:1.3rem; font-weight:800; margin-bottom:0.5rem; }
-    .color-picker-panel p { color:var(--muted); font-size:0.875rem; margin-bottom:1.5rem; }
-
-    .palette-section { margin-bottom: 1.5rem; }
-    .palette-label { font-size:0.75rem; color:var(--muted); font-weight:600; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:0.75rem; }
-
-    .palette-row { display:flex; gap:0.5rem; flex-wrap:wrap; }
-
-    .palette-swatch {
-      width: 40px;
-      height: 40px;
-      border-radius: 8px;
-      cursor: pointer;
-      border: 2px solid transparent;
-      transition: all 0.2s;
-      position: relative;
+    /* Color families */
+    .viz-family { margin-bottom: 1rem; }
+    .viz-family-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
+    .viz-swatches { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .vsw {
+      width: 34px; height: 34px; border-radius: 7px; cursor: pointer;
+      border: 2px solid transparent; transition: all 0.2s; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
+    .vsw:hover { transform: scale(1.2) translateY(-2px); border-color: rgba(255,255,255,0.6); }
+    .vsw.active-vsw { border-color: #fff; transform: scale(1.15); box-shadow: 0 0 0 3px var(--accent); }
 
-    .palette-swatch:hover, .palette-swatch.selected { border-color: #fff; transform: scale(1.15); }
-
-    .selected-info {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1rem;
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-      margin-top: 1.5rem;
+    /* Custom & selected */
+    .viz-custom { margin-bottom: 1rem; padding: 0.75rem; background: rgba(255,255,255,0.04); border-radius: 10px; border: 1px solid var(--border); }
+    .viz-selected {
+      display: flex; gap: 0.85rem; align-items: center; padding: 0.85rem;
+      background: rgba(26,111,212,0.08); border: 1px solid rgba(26,111,212,0.2); border-radius: 12px; margin-top: 0.5rem;
     }
-
-    .selected-swatch-lg { width: 56px; height: 56px; border-radius: 10px; flex-shrink: 0; }
-    .selected-name { font-weight: 700; font-size: 1rem; margin-bottom: 0.2rem; }
-    .selected-code { font-size: 0.8rem; color: var(--muted); }
 
     /* ── WHY CP MATRIX ── */
     .features-grid {
@@ -970,6 +974,9 @@
       }
       .nav-links.open .close-btn { position: absolute; top: 1.5rem; right: 2rem; cursor: pointer; color: var(--muted); }
       .viz-grid { grid-template-columns: 1fr; }
+      .viz-grid2 { grid-template-columns: 1fr; }
+      .room-tabs { gap: 0.4rem; }
+      .room-tab { font-size: 0.78rem; padding: 0.45rem 0.85rem; }
       .contact-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
       .footer-inner { grid-template-columns: 1fr 1fr; }
@@ -1648,80 +1655,554 @@
       <div class="reveal">
         <div class="section-label">Interactive Tool</div>
         <h2 class="section-title">Room <span class="gradient-text">Colour Visualizer</span></h2>
-        <p class="section-desc">Click any colour to preview how it looks on a wall before you buy.</p>
+        <p class="section-desc">Choose a room, pick a colour — watch it transform in real time.</p>
       </div>
-      <div class="viz-grid">
-        <div class="room-preview">
-          <svg class="room-svg" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-            <!-- floor -->
-            <rect x="0" y="220" width="400" height="80" fill="#2a1f1a"/>
-            <!-- back wall -->
-            <rect id="backWall" x="60" y="30" width="280" height="190" fill="#1a3a5c"/>
-            <!-- left wall -->
-            <polygon points="0,0 60,30 60,220 0,300" fill="#0d2d4f" opacity="0.8"/>
-            <!-- right wall -->
-            <polygon points="400,0 340,30 340,220 400,300" fill="#0d2d4f" opacity="0.7"/>
-            <!-- ceiling -->
-            <polygon points="0,0 400,0 340,30 60,30" fill="#e8dcc8" opacity="0.6"/>
-            <!-- window -->
-            <rect x="160" y="60" width="80" height="80" fill="#87ceeb" opacity="0.7" rx="3"/>
-            <rect x="197" y="60" width="3" height="80" fill="rgba(255,255,255,0.5)"/>
-            <rect x="160" y="97" width="80" height="3" fill="rgba(255,255,255,0.5)"/>
-            <rect x="155" y="55" width="90" height="90" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="4" rx="3"/>
-            <!-- sofa -->
-            <rect x="100" y="195" width="200" height="30" fill="#3d2b1f" rx="5"/>
-            <rect x="95" y="175" width="210" height="30" fill="#4a3525" rx="5"/>
-            <rect x="95" y="175" width="20" height="55" fill="#3d2b1f" rx="3"/>
-            <rect x="285" y="175" width="20" height="55" fill="#3d2b1f" rx="3"/>
-            <!-- floor lamp -->
-            <rect x="320" y="120" width="4" height="100" fill="#5a4a3a"/>
-            <ellipse cx="322" cy="120" rx="20" ry="10" fill="#f0e0c0" opacity="0.8"/>
-            <!-- rug -->
-            <ellipse cx="200" cy="235" rx="90" ry="15" fill="#1a4a7a" opacity="0.5"/>
+
+      <!-- Room selector tabs -->
+      <div class="room-tabs reveal">
+        <button class="room-tab active" onclick="switchRoom('living',this)">🛋️ Living Room</button>
+        <button class="room-tab" onclick="switchRoom('bedroom',this)">🛏️ Bedroom</button>
+        <button class="room-tab" onclick="switchRoom('kitchen',this)">🍳 Kitchen</button>
+        <button class="room-tab" onclick="switchRoom('bathroom',this)">🚿 Bathroom</button>
+        <button class="room-tab" onclick="switchRoom('exterior',this)">🏠 Exterior</button>
+      </div>
+
+      <div class="viz-grid2">
+        <!-- Room Preview (left) -->
+        <div class="room-preview2">
+
+          <!-- 1. LIVING ROOM -->
+          <svg id="room-living" class="room-scene active-scene" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="floorGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c8a97e"/><stop offset="100%" stop-color="#8B6340"/></linearGradient>
+              <linearGradient id="ceilGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f0e8d8"/><stop offset="100%" stop-color="#e0d4c0"/></linearGradient>
+              <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#87CEEB"/><stop offset="100%" stop-color="#c8e8f8"/></linearGradient>
+            </defs>
+            <!-- Ceiling -->
+            <polygon points="0,0 600,0 470,55 130,55" fill="url(#ceilGrad)"/>
+            <!-- Back wall (PAINTABLE) -->
+            <rect class="wall-main" x="130" y="55" width="340" height="270" fill="#e8d5c4"/>
+            <!-- Left wall -->
+            <polygon class="wall-side" points="0,0 130,55 130,325 0,400" fill="#d4b896" opacity="0.85"/>
+            <!-- Right wall -->
+            <polygon class="wall-side" points="600,0 470,55 470,325 600,400" fill="#d4b896" opacity="0.75"/>
+            <!-- Floor (wood planks) -->
+            <polygon points="0,400 130,325 470,325 600,400" fill="url(#floorGrad)"/>
+            <line x1="65" y1="362" x2="300" y2="332" stroke="#b8934e" stroke-width="0.7" opacity="0.5"/>
+            <line x1="200" y1="369" x2="450" y2="334" stroke="#b8934e" stroke-width="0.7" opacity="0.5"/>
+            <line x1="350" y1="375" x2="580" y2="345" stroke="#b8934e" stroke-width="0.7" opacity="0.5"/>
+            <!-- Skirting board -->
+            <rect x="130" y="318" width="340" height="7" fill="#c8a97e" opacity="0.8"/>
+            <!-- Window -->
+            <rect x="215" y="80" width="170" height="130" fill="url(#skyGrad)" rx="4"/>
+            <rect x="215" y="80" width="170" height="130" fill="none" stroke="#c8a060" stroke-width="5" rx="4"/>
+            <rect x="295" y="80" width="4" height="130" fill="#c8a060"/>
+            <rect x="215" y="141" width="170" height="4" fill="#c8a060"/>
+            <!-- Window light effect on floor -->
+            <polygon points="220,210 380,210 420,325 180,325" fill="rgba(255,230,150,0.12)"/>
+            <!-- Curtains -->
+            <path d="M215,75 Q195,120 205,210" stroke="#8B6B3D" stroke-width="18" fill="none" stroke-linecap="round" opacity="0.8"/>
+            <path d="M385,75 Q405,120 395,210" stroke="#8B6B3D" stroke-width="18" fill="none" stroke-linecap="round" opacity="0.8"/>
+            <!-- TV unit on back wall -->
+            <rect x="155" y="248" width="130" height="12" fill="#2d2d2d" rx="2"/>
+            <rect x="160" y="185" width="120" height="63" fill="#1a1a1a" rx="3"/>
+            <rect x="162" y="187" width="116" height="59" fill="#0a1520" rx="2"/>
+            <rect x="214" y="258" width="22" height="5" fill="#222" rx="1"/>
+            <!-- Picture on right side of back wall -->
+            <rect x="378" y="100" width="70" height="55" fill="#2a4a6a" stroke="#c8a060" stroke-width="3" rx="2"/>
+            <ellipse cx="413" cy="127" rx="22" ry="16" fill="#1a6fd4" opacity="0.7"/>
+            <!-- Ceiling light -->
+            <ellipse cx="300" cy="55" rx="30" ry="8" fill="rgba(255,240,200,0.8)"/>
+            <ellipse cx="300" cy="55" rx="12" ry="4" fill="#ffe8a0"/>
+            <line x1="300" y1="0" x2="300" y2="47" stroke="#aaa" stroke-width="2"/>
+            <!-- Sofa (3-seater) -->
+            <rect x="145" y="275" width="250" height="50" fill="#4a5568" rx="6"/>
+            <rect x="140" y="255" width="260" height="28" fill="#5a6878" rx="5"/>
+            <rect x="140" y="255" width="18" height="70" fill="#3d4d5d" rx="4"/>
+            <rect x="382" y="255" width="18" height="70" fill="#3d4d5d" rx="4"/>
+            <!-- Sofa cushions -->
+            <rect x="155" y="257" width="70" height="22" fill="#6a7888" rx="4"/>
+            <rect x="232" y="257" width="70" height="22" fill="#6a7888" rx="4"/>
+            <rect x="309" y="257" width="70" height="22" fill="#6a7888" rx="4"/>
+            <!-- Throw pillow -->
+            <rect x="355" y="252" width="36" height="28" fill="#1a6fd4" rx="5"/>
+            <!-- Coffee table -->
+            <rect x="185" y="310" width="170" height="15" fill="#7B5E3A" rx="3"/>
+            <rect x="195" y="320" width="6" height="10" fill="#6B4E2A"/>
+            <rect x="344" y="320" width="6" height="10" fill="#6B4E2A"/>
+            <!-- Book on table -->
+            <rect x="210" y="305" width="35" height="8" fill="#1a6fd4" rx="1"/>
+            <rect x="250" y="303" width="28" height="10" fill="#c0392b" rx="1" transform="rotate(-8 250 310)"/>
+            <!-- Floor lamp -->
+            <line x1="470" y1="270" x2="462" y2="100" stroke="#8B6340" stroke-width="4"/>
+            <ellipse cx="455" cy="98" rx="25" ry="12" fill="#f5e6c8" opacity="0.9"/>
+            <ellipse cx="455" cy="98" rx="14" ry="7" fill="#ffe8a0" opacity="0.8"/>
+            <!-- Plant left corner -->
+            <rect x="148" y="290" width="16" height="28" fill="#8B6340" rx="2"/>
+            <ellipse cx="156" cy="285" rx="22" ry="18" fill="#2d7a3a"/>
+            <ellipse cx="145" cy="275" rx="14" ry="12" fill="#3a8a45"/>
+            <ellipse cx="168" cy="278" rx="13" ry="11" fill="#258530"/>
+            <!-- Rug -->
+            <ellipse cx="300" cy="338" rx="120" ry="18" fill="#1a6fd4" opacity="0.25"/>
+            <ellipse cx="300" cy="338" rx="108" ry="14" fill="none" stroke="#1a6fd4" stroke-width="2" opacity="0.3"/>
           </svg>
-        </div>
-        <div class="color-picker-panel reveal reveal-delay-2">
-          <h3>Pick a Wall Colour</h3>
-          <p>Choose from our CP Matrix palette collections</p>
-          <div class="palette-section">
-            <div class="palette-label">CP Matrix Blues</div>
-            <div class="palette-row">
-              <div class="palette-swatch selected" style="background:#1a6fd4" data-name="CP Matrix Blue" data-code="CP-COL-001" onclick="pickColor('#1a6fd4','CP Matrix Blue','CP-COL-001',this)"></div>
-              <div class="palette-swatch" style="background:#0d4fa0" data-name="Deep Navy" data-code="CP-COL-002" onclick="pickColor('#0d4fa0','Deep Navy','CP-COL-002',this)"></div>
-              <div class="palette-swatch" style="background:#1a3a5c" data-name="Midnight Blue" data-code="CP-COL-003" onclick="pickColor('#1a3a5c','Midnight Blue','CP-COL-003',this)"></div>
-              <div class="palette-swatch" style="background:#457b9d" data-name="Steel Blue" data-code="CP-COL-004" onclick="pickColor('#457b9d','Steel Blue','CP-COL-004',this)"></div>
-              <div class="palette-swatch" style="background:#1e88e5" data-name="Sky Blue" data-code="CP-COL-005" onclick="pickColor('#1e88e5','Sky Blue','CP-COL-005',this)"></div>
+
+          <!-- 2. BEDROOM -->
+          <svg id="room-bedroom" class="room-scene" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="bedFloorG" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#d4b896"/><stop offset="100%" stop-color="#9B7A5A"/></linearGradient>
+              <linearGradient id="bedWallG" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e8e0f0"/><stop offset="100%" stop-color="#d8d0e8"/></linearGradient>
+            </defs>
+            <!-- Ceiling -->
+            <polygon points="0,0 600,0 470,55 130,55" fill="#f0eaf8"/>
+            <!-- Back wall (PAINTABLE) -->
+            <rect class="wall-main" x="130" y="55" width="340" height="270" fill="#e2d8f0"/>
+            <!-- Side walls -->
+            <polygon class="wall-side" points="0,0 130,55 130,325 0,400" fill="#c8c0d8" opacity="0.9"/>
+            <polygon class="wall-side" points="600,0 470,55 470,325 600,400" fill="#c8c0d8" opacity="0.8"/>
+            <!-- Floor carpet/wood -->
+            <polygon points="0,400 130,325 470,325 600,400" fill="url(#bedFloorG)"/>
+            <!-- Skirting -->
+            <rect x="130" y="318" width="340" height="7" fill="#c8b896"/>
+            <!-- Window with curtains center back wall -->
+            <rect x="225" y="75" width="150" height="110" fill="url(#skyGrad)" rx="4"/>
+            <rect x="225" y="75" width="150" height="110" fill="none" stroke="#b8a0d0" stroke-width="5" rx="4"/>
+            <rect x="295" y="75" width="4" height="110" fill="#b8a0d0"/>
+            <rect x="225" y="127" width="150" height="4" fill="#b8a0d0"/>
+            <!-- Curtains -->
+            <path d="M225,70 Q200,115 218,185" stroke="#9b70c0" stroke-width="22" fill="none" stroke-linecap="round" opacity="0.75"/>
+            <path d="M375,70 Q400,115 382,185" stroke="#9b70c0" stroke-width="22" fill="none" stroke-linecap="round" opacity="0.75"/>
+            <!-- Ceiling light -->
+            <ellipse cx="300" cy="55" rx="28" ry="7" fill="rgba(255,240,220,0.9)"/>
+            <ellipse cx="300" cy="55" rx="11" ry="4" fill="#ffe8a0"/>
+            <line x1="300" y1="0" x2="300" y2="48" stroke="#aaa" stroke-width="2"/>
+            <!-- Headboard -->
+            <rect x="165" y="195" width="270" height="65" fill="#6B4E2A" rx="8"/>
+            <rect x="172" y="200" width="256" height="55" fill="#7B5E3A" rx="6"/>
+            <!-- Bed frame -->
+            <rect x="155" y="258" width="290" height="70" fill="#5a4030" rx="5"/>
+            <!-- Mattress -->
+            <rect x="160" y="250" width="280" height="78" fill="#f5f0e8" rx="4"/>
+            <!-- Duvet/Blanket -->
+            <rect x="162" y="280" width="276" height="48" fill="#8b9dc3" rx="4"/>
+            <line x1="162" y1="295" x2="438" y2="295" stroke="#7a8cb2" stroke-width="1.5" opacity="0.6"/>
+            <line x1="162" y1="310" x2="438" y2="310" stroke="#7a8cb2" stroke-width="1.5" opacity="0.6"/>
+            <!-- Pillows -->
+            <rect x="170" y="251" width="100" height="32" fill="#f0ece0" rx="8"/>
+            <rect x="330" y="251" width="100" height="32" fill="#f0ece0" rx="8"/>
+            <rect x="255" y="249" width="90" height="34" fill="#d0d8e8" rx="8"/>
+            <!-- Bedside tables -->
+            <rect x="140" y="265" width="55" height="60" fill="#7B5E3A" rx="4"/>
+            <rect x="145" y="260" width="45" height="8" fill="#8B6840" rx="2"/>
+            <rect x="405" y="265" width="55" height="60" fill="#7B5E3A" rx="4"/>
+            <rect x="410" y="260" width="45" height="8" fill="#8B6840" rx="2"/>
+            <!-- Bedside lamps -->
+            <rect x="155" y="232" width="4" height="28" fill="#9B7850"/>
+            <ellipse cx="157" cy="230" rx="18" ry="9" fill="#ffe8c0" opacity="0.9"/>
+            <rect x="418" y="232" width="4" height="28" fill="#9B7850"/>
+            <ellipse cx="420" cy="230" rx="18" ry="9" fill="#ffe8c0" opacity="0.9"/>
+            <!-- Drawer handle -->
+            <rect x="161" y="290" width="23" height="3" fill="#c8a060" rx="2"/>
+            <rect x="416" y="290" width="23" height="3" fill="#c8a060" rx="2"/>
+            <!-- Wardrobe (right wall area) -->
+            <rect x="148" y="135" width="8" height="190" fill="#6B4E2A"/>
+            <!-- Small artwork above bed -->
+            <rect x="248" y="115" width="104" height="70" fill="#9b70c0" stroke="#b8a0d0" stroke-width="3" rx="3"/>
+            <ellipse cx="300" cy="150" rx="30" ry="22" fill="#7a50a0" opacity="0.7"/>
+            <ellipse cx="300" cy="150" rx="16" ry="11" fill="#c4a0e0" opacity="0.6"/>
+          </svg>
+
+          <!-- 3. KITCHEN -->
+          <svg id="room-kitchen" class="room-scene" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="kitFloor" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c8c0b8"/><stop offset="100%" stop-color="#a8a0a0"/></linearGradient>
+              <linearGradient id="counterG" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2a2a2a"/><stop offset="50%" stop-color="#444"/><stop offset="100%" stop-color="#333"/></linearGradient>
+            </defs>
+            <!-- Ceiling -->
+            <polygon points="0,0 600,0 470,55 130,55" fill="#f5f5f0"/>
+            <!-- Back wall (PAINTABLE - tiles area between cabinets) -->
+            <rect class="wall-main" x="130" y="55" width="340" height="270" fill="#f0ede8"/>
+            <!-- Side walls -->
+            <polygon class="wall-side" points="0,0 130,55 130,325 0,400" fill="#e0ddd8" opacity="0.9"/>
+            <polygon class="wall-side" points="600,0 470,55 470,325 600,400" fill="#e0ddd8" opacity="0.8"/>
+            <!-- Floor (tiles) -->
+            <polygon points="0,400 130,325 470,325 600,400" fill="url(#kitFloor)"/>
+            <!-- Floor tile lines perspective -->
+            <line x1="300" y1="325" x2="300" y2="400" stroke="#b0a8a0" stroke-width="1" opacity="0.5"/>
+            <line x1="215" y1="325" x2="100" y2="400" stroke="#b0a8a0" stroke-width="1" opacity="0.4"/>
+            <line x1="385" y1="325" x2="500" y2="400" stroke="#b0a8a0" stroke-width="1" opacity="0.4"/>
+            <!-- Upper cabinets -->
+            <rect x="135" y="65" width="155" height="90" fill="#f8f4f0" stroke="#ddd" stroke-width="2" rx="3"/>
+            <rect x="297" y="65" width="155" height="90" fill="#f8f4f0" stroke="#ddd" stroke-width="2" rx="3"/>
+            <!-- Cabinet doors detail -->
+            <rect x="140" y="70" width="70" height="82" fill="#fff" stroke="#ddd" stroke-width="1" rx="2"/>
+            <rect x="215" y="70" width="70" height="82" fill="#fff" stroke="#ddd" stroke-width="1" rx="2"/>
+            <rect x="302" y="70" width="70" height="82" fill="#fff" stroke="#ddd" stroke-width="1" rx="2"/>
+            <rect x="377" y="70" width="70" height="82" fill="#fff" stroke="#ddd" stroke-width="1" rx="2"/>
+            <!-- Cabinet handles -->
+            <rect x="168" y="112" width="14" height="3" fill="#aaa" rx="2"/>
+            <rect x="243" y="112" width="14" height="3" fill="#aaa" rx="2"/>
+            <rect x="325" y="112" width="14" height="3" fill="#aaa" rx="2"/>
+            <rect x="400" y="112" width="14" height="3" fill="#aaa" rx="2"/>
+            <!-- Backsplash tiles on back wall -->
+            <rect x="135" y="158" width="330" height="40" fill="#e8e0d8"/>
+            <!-- Tile grout lines -->
+            <line x1="165" y1="158" x2="165" y2="198" stroke="#d0c8c0" stroke-width="1.5"/>
+            <line x1="195" y1="158" x2="195" y2="198" stroke="#d0c8c0" stroke-width="1.5"/>
+            <line x1="225" y1="158" x2="225" y2="198" stroke="#d0c8c0" stroke-width="1.5"/>
+            <line x1="255" y1="158" x2="255" y2="198" stroke="#d0c8c0" stroke-width="1.5"/>
+            <line x1="285" y1="158" x2="285" y2="198" stroke="#d0c8c0" stroke-width="1.5"/>
+            <line x1="315" y1="158" x2="315" y2="198" stroke="#d0c8c0" stroke-width="1.5"/>
+            <line x1="345" y1="158" x2="345" y2="198" stroke="#d0c8c0" stroke-width="1.5"/>
+            <line x1="375" y1="158" x2="375" y2="198" stroke="#d0c8c0" stroke-width="1.5"/>
+            <line x1="405" y1="158" x2="405" y2="198" stroke="#d0c8c0" stroke-width="1.5"/>
+            <line x1="135" y1="178" x2="465" y2="178" stroke="#d0c8c0" stroke-width="1.5"/>
+            <!-- Window above sink area -->
+            <rect x="250" y="72" width="100" height="78" fill="url(#skyGrad)" rx="3"/>
+            <rect x="250" y="72" width="100" height="78" fill="none" stroke="#d0c8b0" stroke-width="4" rx="3"/>
+            <rect x="296" y="72" width="3" height="78" fill="#d0c8b0"/>
+            <rect x="250" y="109" width="100" height="3" fill="#d0c8b0"/>
+            <!-- Lower cabinets -->
+            <rect x="135" y="198" width="330" height="115" fill="#f8f4f0" stroke="#ddd" stroke-width="2" rx="2"/>
+            <!-- Lower cabinet doors -->
+            <rect x="140" y="203" width="80" height="107" fill="#fff" stroke="#ddd" stroke-width="1" rx="2"/>
+            <rect x="225" y="203" width="80" height="107" fill="#fff" stroke="#ddd" stroke-width="1" rx="2"/>
+            <rect x="310" y="203" width="80" height="107" fill="#fff" stroke="#ddd" stroke-width="1" rx="2"/>
+            <rect x="395" y="203" width="65" height="107" fill="#fff" stroke="#ddd" stroke-width="1" rx="2"/>
+            <!-- Lower handles -->
+            <rect x="167" y="254" width="3" height="16" fill="#aaa" rx="2"/>
+            <rect x="252" y="254" width="3" height="16" fill="#aaa" rx="2"/>
+            <rect x="337" y="254" width="3" height="16" fill="#aaa" rx="2"/>
+            <rect x="415" y="254" width="3" height="16" fill="#aaa" rx="2"/>
+            <!-- Countertop (dark marble) -->
+            <rect x="135" y="193" width="330" height="12" fill="url(#counterG)" rx="2"/>
+            <line x1="160" y1="194" x2="220" y2="204" stroke="#555" stroke-width="0.5" opacity="0.4"/>
+            <line x1="300" y1="193" x2="380" y2="203" stroke="#555" stroke-width="0.5" opacity="0.3"/>
+            <!-- Sink -->
+            <rect x="252" y="195" width="96" height="10" fill="#b0b0b0" rx="1"/>
+            <rect x="255" y="196" width="42" height="8" fill="#888" rx="1"/>
+            <rect x="302" y="196" width="42" height="8" fill="#888" rx="1"/>
+            <!-- Tap -->
+            <rect x="295" y="182" width="10" height="14" fill="#aaa" rx="3"/>
+            <rect x="283" y="182" width="22" height="4" fill="#aaa" rx="2"/>
+            <!-- Stove burners -->
+            <rect x="345" y="194" width="80" height="11" fill="#444" rx="1"/>
+            <circle cx="360" cy="199" r="6" fill="#333" stroke="#555" stroke-width="1"/>
+            <circle cx="376" cy="199" r="6" fill="#333" stroke="#555" stroke-width="1"/>
+            <circle cx="392" cy="199" r="6" fill="#333" stroke="#555" stroke-width="1"/>
+            <circle cx="408" cy="199" r="6" fill="#333" stroke="#555" stroke-width="1"/>
+            <!-- Kitchen items on counter -->
+            <rect x="148" y="185" width="18" height="10" fill="#c0392b" rx="2"/>
+            <rect x="152" y="180" width="3" height="8" fill="#a02820"/>
+            <!-- Fruit bowl -->
+            <ellipse cx="195" cy="195" rx="22" ry="6" fill="#d4af37" opacity="0.8"/>
+            <ellipse cx="188" cy="190" rx="7" ry="7" fill="#ff6b6b" opacity="0.9"/>
+            <ellipse cx="198" cy="188" rx="6" ry="6" fill="#f9a825" opacity="0.9"/>
+            <ellipse cx="207" cy="191" rx="6" ry="6" fill="#4caf50" opacity="0.9"/>
+            <!-- Ceiling light (bar) -->
+            <rect x="200" y="50" width="200" height="8" fill="#e8e0d8" rx="4"/>
+            <rect x="210" y="52" width="180" height="4" fill="rgba(255,245,200,0.9)" rx="3"/>
+          </svg>
+
+          <!-- 4. BATHROOM -->
+          <svg id="room-bathroom" class="room-scene" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="bathFloor" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#d0d0d0"/><stop offset="100%" stop-color="#a8a8a8"/></linearGradient>
+              <linearGradient id="tubGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f5f5f5"/><stop offset="100%" stop-color="#e0e0e0"/></linearGradient>
+            </defs>
+            <!-- Ceiling -->
+            <polygon points="0,0 600,0 470,55 130,55" fill="#f0f0f0"/>
+            <!-- Back wall with TILES (PAINTABLE) -->
+            <rect class="wall-main" x="130" y="55" width="340" height="270" fill="#e8f0f0"/>
+            <!-- Tile grid on back wall -->
+            <g class="tile-grid" opacity="0.25">
+              <line x1="130" y1="95" x2="470" y2="95" stroke="#888" stroke-width="1"/>
+              <line x1="130" y1="135" x2="470" y2="135" stroke="#888" stroke-width="1"/>
+              <line x1="130" y1="175" x2="470" y2="175" stroke="#888" stroke-width="1"/>
+              <line x1="130" y1="215" x2="470" y2="215" stroke="#888" stroke-width="1"/>
+              <line x1="130" y1="255" x2="470" y2="255" stroke="#888" stroke-width="1"/>
+              <line x1="130" y1="295" x2="470" y2="295" stroke="#888" stroke-width="1"/>
+              <line x1="170" y1="55" x2="170" y2="325" stroke="#888" stroke-width="1"/>
+              <line x1="210" y1="55" x2="210" y2="325" stroke="#888" stroke-width="1"/>
+              <line x1="250" y1="55" x2="250" y2="325" stroke="#888" stroke-width="1"/>
+              <line x1="290" y1="55" x2="290" y2="325" stroke="#888" stroke-width="1"/>
+              <line x1="330" y1="55" x2="330" y2="325" stroke="#888" stroke-width="1"/>
+              <line x1="370" y1="55" x2="370" y2="325" stroke="#888" stroke-width="1"/>
+              <line x1="410" y1="55" x2="410" y2="325" stroke="#888" stroke-width="1"/>
+              <line x1="450" y1="55" x2="450" y2="325" stroke="#888" stroke-width="1"/>
+            </g>
+            <!-- Side walls -->
+            <polygon class="wall-side" points="0,0 130,55 130,325 0,400" fill="#d8e8e8" opacity="0.9"/>
+            <polygon class="wall-side" points="600,0 470,55 470,325 600,400" fill="#d8e8e8" opacity="0.8"/>
+            <!-- Floor (hex tiles) -->
+            <polygon points="0,400 130,325 470,325 600,400" fill="url(#bathFloor)"/>
+            <!-- Floor tile pattern -->
+            <line x1="300" y1="325" x2="300" y2="400" stroke="#c0c0c0" stroke-width="1.5" opacity="0.5"/>
+            <line x1="215" y1="325" x2="100" y2="400" stroke="#c0c0c0" stroke-width="1.5" opacity="0.4"/>
+            <line x1="385" y1="325" x2="500" y2="400" stroke="#c0c0c0" stroke-width="1.5" opacity="0.4"/>
+            <!-- Skylight/window small -->
+            <rect x="270" y="62" width="60" height="50" fill="url(#skyGrad)" rx="3"/>
+            <rect x="270" y="62" width="60" height="50" fill="none" stroke="#c0d0d0" stroke-width="4" rx="3"/>
+            <rect x="297" y="62" width="3" height="50" fill="#c0d0d0"/>
+            <!-- Mirror large -->
+            <rect x="215" y="68" width="130" height="100" fill="#b8d8d8" stroke="#c0c8c8" stroke-width="4" rx="4"/>
+            <rect x="218" y="71" width="124" height="94" fill="#a8cece" opacity="0.7" rx="3"/>
+            <rect x="232" y="85" width="40" height="60" fill="rgba(255,255,255,0.15)" rx="2"/>
+            <!-- Vanity/sink unit -->
+            <rect x="190" y="238" width="180" height="87" fill="#e0e0e0" rx="4"/>
+            <rect x="195" y="233" width="170" height="12" fill="url(#counterG)" rx="2"/>
+            <!-- Basin -->
+            <ellipse cx="280" cy="240" rx="55" ry="14" fill="#f5f5f5" stroke="#ccc" stroke-width="2"/>
+            <ellipse cx="280" cy="243" rx="42" ry="10" fill="#e8e8e8"/>
+            <!-- Tap -->
+            <rect x="275" y="215" width="10" height="22" fill="#c0c0c0" rx="3"/>
+            <rect x="263" y="215" width="34" height="4" fill="#c0c0c0" rx="2"/>
+            <!-- Drawer handles -->
+            <rect x="225" y="270" width="20" height="3" fill="#aaa" rx="2"/>
+            <rect x="315" y="270" width="20" height="3" fill="#aaa" rx="2"/>
+            <rect x="225" y="300" width="20" height="3" fill="#aaa" rx="2"/>
+            <rect x="315" y="300" width="20" height="3" fill="#aaa" rx="2"/>
+            <!-- Bathtub (freestanding, left) -->
+            <ellipse cx="175" cy="310" rx="55" ry="22" fill="url(#tubGrad)" stroke="#d0d0d0" stroke-width="2"/>
+            <ellipse cx="175" cy="305" rx="48" ry="17" fill="#f8f8f8"/>
+            <ellipse cx="175" cy="303" rx="38" ry="12" fill="#e8f4f8" opacity="0.7"/>
+            <rect x="152" y="296" width="6" height="12" fill="#c0c0c0" rx="3"/>
+            <rect x="192" y="296" width="6" height="12" fill="#c0c0c0" rx="3"/>
+            <!-- Shower area right -->
+            <rect x="390" y="175" width="75" height="150" fill="rgba(200,230,240,0.3)"/>
+            <rect x="390" y="175" width="3" height="150" fill="rgba(180,210,220,0.8)"/>
+            <rect x="390" y="172" width="75" height="6" fill="#b0c0c8" rx="2"/>
+            <!-- Shower head -->
+            <circle cx="445" cy="195" r="14" fill="#b0b8c0" stroke="#a0a8b0" stroke-width="2"/>
+            <circle cx="445" cy="195" r="8" fill="#8090a0"/>
+            <!-- Towel rail on right wall -->
+            <rect x="456" y="200" width="5" height="55" fill="#c8c8c8" rx="2"/>
+            <rect x="451" y="200" width="15" height="4" fill="#b8b8b8" rx="2"/>
+            <rect x="451" y="251" width="15" height="4" fill="#b8b8b8" rx="2"/>
+            <rect x="452" y="210" width="12" height="35" fill="#e8f0f8" opacity="0.8" rx="2"/>
+            <!-- Soap/bottle on vanity -->
+            <rect x="340" y="220" width="12" height="22" fill="#87ceeb" rx="3"/>
+            <rect x="342" y="218" width="8" height="5" fill="#87ceeb" rx="1"/>
+            <!-- Plant -->
+            <rect x="455" y="305" width="14" height="20" fill="#8B6340" rx="2"/>
+            <ellipse cx="462" cy="300" rx="16" ry="14" fill="#2d7a3a"/>
+            <!-- Ceiling light -->
+            <ellipse cx="300" cy="55" rx="22" ry="6" fill="rgba(255,240,220,0.9)"/>
+            <line x1="300" y1="0" x2="300" y2="49" stroke="#aaa" stroke-width="2"/>
+          </svg>
+
+          <!-- 5. EXTERIOR -->
+          <svg id="room-exterior" class="room-scene" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="extSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4fc3f7"/><stop offset="60%" stop-color="#87ceeb"/><stop offset="100%" stop-color="#b0d4e8"/></linearGradient>
+              <linearGradient id="extGrass" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#66bb6a"/><stop offset="100%" stop-color="#388e3c"/></linearGradient>
+              <linearGradient id="roofG" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#5a4a3a"/><stop offset="100%" stop-color="#3a2a1a"/></linearGradient>
+              <linearGradient id="pathG" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c8b898"/><stop offset="100%" stop-color="#a89878"/></linearGradient>
+            </defs>
+            <!-- Sky -->
+            <rect x="0" y="0" width="600" height="270" fill="url(#extSky)"/>
+            <!-- Clouds -->
+            <ellipse cx="120" cy="50" rx="55" ry="20" fill="rgba(255,255,255,0.75)"/>
+            <ellipse cx="90" cy="55" rx="35" ry="18" fill="rgba(255,255,255,0.75)"/>
+            <ellipse cx="155" cy="55" rx="35" ry="16" fill="rgba(255,255,255,0.75)"/>
+            <ellipse cx="480" cy="35" rx="45" ry="16" fill="rgba(255,255,255,0.65)"/>
+            <ellipse cx="455" cy="40" rx="30" ry="14" fill="rgba(255,255,255,0.65)"/>
+            <ellipse cx="510" cy="40" rx="28" ry="13" fill="rgba(255,255,255,0.65)"/>
+            <!-- Ground / lawn -->
+            <rect x="0" y="265" width="600" height="135" fill="url(#extGrass)"/>
+            <!-- Lawn detail -->
+            <ellipse cx="300" cy="268" rx="300" ry="10" fill="rgba(0,0,0,0.1)"/>
+            <!-- HOUSE MAIN WALL (PAINTABLE) -->
+            <rect class="wall-main" x="90" y="110" width="420" height="160" fill="#e8dcc8"/>
+            <!-- House side left (perspective) -->
+            <polygon class="wall-side" points="60,95 90,110 90,270 60,265" fill="#d4c8b4" opacity="0.9"/>
+            <!-- House side right (perspective) -->
+            <polygon class="wall-side" points="510,110 540,95 540,265 510,270" fill="#d4c8b4" opacity="0.8"/>
+            <!-- Roof main -->
+            <polygon points="60,95 300,30 540,95" fill="url(#roofG)"/>
+            <!-- Roof edge (fascia) -->
+            <polygon points="55,98 300,33 545,98 540,95 300,30 60,95" fill="#4a3a2a" opacity="0.8"/>
+            <!-- Roof ridge line -->
+            <line x1="300" y1="30" x2="300" y2="36" stroke="#2a1a0a" stroke-width="2"/>
+            <!-- Roof tiles texture -->
+            <line x1="100" y1="75" x2="300" y2="32" stroke="rgba(0,0,0,0.08)" stroke-width="3"/>
+            <line x1="150" y1="63" x2="300" y2="31" stroke="rgba(0,0,0,0.06)" stroke-width="2.5"/>
+            <line x1="200" y1="53" x2="300" y2="31" stroke="rgba(0,0,0,0.05)" stroke-width="2"/>
+            <line x1="500" y1="75" x2="300" y2="32" stroke="rgba(0,0,0,0.08)" stroke-width="3"/>
+            <line x1="450" y1="63" x2="300" y2="31" stroke="rgba(0,0,0,0.06)" stroke-width="2.5"/>
+            <!-- Windows (2 on each side of door) -->
+            <!-- Window left -->
+            <rect x="120" y="135" width="90" height="75" fill="#b8d8e8" stroke="#8a7a60" stroke-width="5" rx="3"/>
+            <rect x="162" y="135" width="4" height="75" fill="#8a7a60"/>
+            <rect x="120" y="169" width="90" height="4" fill="#8a7a60"/>
+            <!-- Window left shutters -->
+            <rect x="107" y="132" width="17" height="81" fill="#8B5E3A" rx="2"/>
+            <rect x="207" y="132" width="17" height="81" fill="#8B5E3A" rx="2"/>
+            <!-- Window right -->
+            <rect x="390" y="135" width="90" height="75" fill="#b8d8e8" stroke="#8a7a60" stroke-width="5" rx="3"/>
+            <rect x="432" y="135" width="4" height="75" fill="#8a7a60"/>
+            <rect x="390" y="169" width="90" height="4" fill="#8a7a60"/>
+            <!-- Window right shutters -->
+            <rect x="377" y="132" width="17" height="81" fill="#8B5E3A" rx="2"/>
+            <rect x="477" y="132" width="17" height="81" fill="#8B5E3A" rx="2"/>
+            <!-- Front door -->
+            <rect x="255" y="165" width="90" height="105" fill="#5a3a1a" rx="4"/>
+            <rect x="260" y="170" width="37" height="95" fill="#6B4E2A" rx="3"/>
+            <rect x="303" y="170" width="37" height="95" fill="#6B4E2A" rx="3"/>
+            <rect x="261" y="172" width="35" height="42" fill="rgba(180,160,120,0.3)" rx="2"/>
+            <rect x="303" y="172" width="35" height="42" fill="rgba(180,160,120,0.3)" rx="2"/>
+            <circle cx="295" cy="218" r="4" fill="#c8a050"/>
+            <!-- Portico / overhang above door -->
+            <rect x="240" y="158" width="120" height="12" fill="#c8b898" rx="3"/>
+            <rect x="250" y="158" width="5" height="20" fill="#c8b898" rx="2"/>
+            <rect x="345" y="158" width="5" height="20" fill="#c8b898" rx="2"/>
+            <!-- Foundation/plinth -->
+            <rect x="80" y="268" width="440" height="12" fill="#b8a888" rx="2"/>
+            <!-- Pathway to door -->
+            <polygon points="250,270 350,270 380,400 220,400" fill="url(#pathG)"/>
+            <line x1="285" y1="270" x2="265" y2="400" stroke="#b8a888" stroke-width="1.5" opacity="0.5"/>
+            <line x1="315" y1="270" x2="335" y2="400" stroke="#b8a888" stroke-width="1.5" opacity="0.5"/>
+            <!-- Garden / flower bed -->
+            <ellipse cx="155" cy="275" rx="65" ry="18" fill="#2d6e30"/>
+            <circle cx="130" cy="268" r="10" fill="#ff6b6b"/>
+            <circle cx="155" cy="264" r="12" fill="#ffb703"/>
+            <circle cx="178" cy="268" r="9" fill="#ff6b6b"/>
+            <ellipse cx="445" cy="275" rx="65" ry="18" fill="#2d6e30"/>
+            <circle cx="420" cy="268" r="10" fill="#ff6b6b"/>
+            <circle cx="445" cy="264" r="12" fill="#ffb703"/>
+            <circle cx="468" cy="268" r="9" fill="#ff6b6b"/>
+            <!-- Trees -->
+            <rect x="40" y="175" width="10" height="95" fill="#6B4E2A"/>
+            <ellipse cx="45" cy="165" rx="35" ry="45" fill="#2d7a3a"/>
+            <ellipse cx="30" cy="180" rx="22" ry="30" fill="#3a8a45"/>
+            <rect x="548" y="175" width="10" height="95" fill="#6B4E2A"/>
+            <ellipse cx="553" cy="165" rx="35" ry="45" fill="#2d7a3a"/>
+            <ellipse cx="568" cy="180" rx="22" ry="30" fill="#3a8a45"/>
+            <!-- Sun -->
+            <circle cx="520" cy="45" r="28" fill="#ffd700" opacity="0.9"/>
+            <circle cx="520" cy="45" r="22" fill="#ffeb60" opacity="0.8"/>
+            <!-- Boundary wall -->
+            <rect x="0" y="265" width="70" height="12" fill="#c8b898"/>
+            <rect x="530" y="265" width="70" height="12" fill="#c8b898"/>
+            <!-- Name plate -->
+            <rect x="340" y="220" width="58" height="22" fill="#c8a050" rx="3"/>
+            <rect x="343" y="223" width="52" height="16" fill="#d4af50" rx="2"/>
+          </svg>
+
+        </div><!-- /room-preview2 -->
+
+        <!-- Color Picker Panel (right) -->
+        <div class="viz-picker reveal reveal-delay-2">
+          <div class="viz-picker-head">
+            <h3>🎨 Pick a Colour</h3>
+            <p>Click any shade to paint the room walls instantly</p>
+          </div>
+
+          <!-- Wall selector -->
+          <div class="wall-selector">
+            <button class="wall-btn active" onclick="setWallTarget('main',this)">Main Wall</button>
+            <button class="wall-btn" onclick="setWallTarget('side',this)">Side Walls</button>
+            <button class="wall-btn" onclick="setWallTarget('all',this)">All Walls</button>
+          </div>
+
+          <!-- Color families -->
+          <div class="viz-family">
+            <div class="viz-family-label">Whites &amp; Creams</div>
+            <div class="viz-swatches">
+              <div class="vsw" style="background:#fafafa" data-name="Pure White" onclick="applyVizColor('#fafafa',this)"></div>
+              <div class="vsw" style="background:#f5f0e8" data-name="Ivory Mist" onclick="applyVizColor('#f5f0e8',this)"></div>
+              <div class="vsw" style="background:#e8dcc8" data-name="Cream Linen" onclick="applyVizColor('#e8dcc8',this)"></div>
+              <div class="vsw" style="background:#f0e6d0" data-name="Warm Sand" onclick="applyVizColor('#f0e6d0',this)"></div>
+              <div class="vsw" style="background:#e4d8be" data-name="Biscuit" onclick="applyVizColor('#e4d8be',this)"></div>
+              <div class="vsw" style="background:#d8ceb0" data-name="Latte" onclick="applyVizColor('#d8ceb0',this)"></div>
             </div>
           </div>
-          <div class="palette-section">
-            <div class="palette-label">Teals &amp; Aquas</div>
-            <div class="palette-row">
-              <div class="palette-swatch" style="background:#00c4cc" data-name="CP Teal" data-code="CP-COL-010" onclick="pickColor('#00c4cc','CP Teal','CP-COL-010',this)"></div>
-              <div class="palette-swatch" style="background:#00838f" data-name="Deep Teal" data-code="CP-COL-011" onclick="pickColor('#00838f','Deep Teal','CP-COL-011',this)"></div>
-              <div class="palette-swatch" style="background:#a8dadc" data-name="Aqua Mist" data-code="CP-COL-012" onclick="pickColor('#a8dadc','Aqua Mist','CP-COL-012',this)"></div>
-              <div class="palette-swatch" style="background:#80cbc4" data-name="Mint Wave" data-code="CP-COL-013" onclick="pickColor('#80cbc4','Mint Wave','CP-COL-013',this)"></div>
-              <div class="palette-swatch" style="background:#b2dfdb" data-name="Sea Glass" data-code="CP-COL-014" onclick="pickColor('#b2dfdb','Sea Glass','CP-COL-014',this)"></div>
+
+          <div class="viz-family">
+            <div class="viz-family-label">Blues &amp; Navys</div>
+            <div class="viz-swatches">
+              <div class="vsw" style="background:#e3f2fd" data-name="Ice Blue" onclick="applyVizColor('#e3f2fd',this)"></div>
+              <div class="vsw" style="background:#90caf9" data-name="Sky Serenity" onclick="applyVizColor('#90caf9',this)"></div>
+              <div class="vsw" style="background:#42a5f5" data-name="Ocean Blue" onclick="applyVizColor('#42a5f5',this)"></div>
+              <div class="vsw" style="background:#1a6fd4" data-name="CP Matrix Blue" onclick="applyVizColor('#1a6fd4',this)"></div>
+              <div class="vsw" style="background:#0d4fa0" data-name="Deep Navy" onclick="applyVizColor('#0d4fa0',this)"></div>
+              <div class="vsw" style="background:#1a2c4e" data-name="Midnight" onclick="applyVizColor('#1a2c4e',this)"></div>
             </div>
           </div>
-          <div class="palette-section">
-            <div class="palette-label">Neutrals &amp; Whites</div>
-            <div class="palette-row">
-              <div class="palette-swatch" style="background:#f1faee" data-name="Pearl White" data-code="CP-COL-020" onclick="pickColor('#f1faee','Pearl White','CP-COL-020',this)"></div>
-              <div class="palette-swatch" style="background:#e8d5c4" data-name="Cream Linen" data-code="CP-COL-021" onclick="pickColor('#e8d5c4','Cream Linen','CP-COL-021',this)"></div>
-              <div class="palette-swatch" style="background:#37474f" data-name="Slate Storm" data-code="CP-COL-022" onclick="pickColor('#37474f','Slate Storm','CP-COL-022',this)"></div>
-              <div class="palette-swatch" style="background:#546e7a" data-name="Blue Grey" data-code="CP-COL-023" onclick="pickColor('#546e7a','Blue Grey','CP-COL-023',this)"></div>
-              <div class="palette-swatch" style="background:#263238" data-name="Deep Slate" data-code="CP-COL-024" onclick="pickColor('#263238','Deep Slate','CP-COL-024',this)"></div>
+
+          <div class="viz-family">
+            <div class="viz-family-label">Greens &amp; Teals</div>
+            <div class="viz-swatches">
+              <div class="vsw" style="background:#e8f5e9" data-name="Mint Breeze" onclick="applyVizColor('#e8f5e9',this)"></div>
+              <div class="vsw" style="background:#a5d6a7" data-name="Sage Garden" onclick="applyVizColor('#a5d6a7',this)"></div>
+              <div class="vsw" style="background:#52b788" data-name="Forest Calm" onclick="applyVizColor('#52b788',this)"></div>
+              <div class="vsw" style="background:#00c4cc" data-name="CP Teal" onclick="applyVizColor('#00c4cc',this)"></div>
+              <div class="vsw" style="background:#00838f" data-name="Deep Teal" onclick="applyVizColor('#00838f',this)"></div>
+              <div class="vsw" style="background:#1b5e20" data-name="Jungle" onclick="applyVizColor('#1b5e20',this)"></div>
             </div>
           </div>
-          <div class="selected-info" id="selectedInfo">
-            <div class="selected-swatch-lg" id="selectedSwatch" style="background:#1a6fd4"></div>
+
+          <div class="viz-family">
+            <div class="viz-family-label">Earthy &amp; Warm</div>
+            <div class="viz-swatches">
+              <div class="vsw" style="background:#fff3e0" data-name="Sunrise" onclick="applyVizColor('#fff3e0',this)"></div>
+              <div class="vsw" style="background:#ffb703" data-name="Gold Rush" onclick="applyVizColor('#ffb703',this)"></div>
+              <div class="vsw" style="background:#f59e0b" data-name="Amber" onclick="applyVizColor('#f59e0b',this)"></div>
+              <div class="vsw" style="background:#d4a574" data-name="Terracotta" onclick="applyVizColor('#d4a574',this)"></div>
+              <div class="vsw" style="background:#a0785a" data-name="Warm Chestnut" onclick="applyVizColor('#a0785a',this)"></div>
+              <div class="vsw" style="background:#6B4E2A" data-name="Dark Mocha" onclick="applyVizColor('#6B4E2A',this)"></div>
+            </div>
+          </div>
+
+          <div class="viz-family">
+            <div class="viz-family-label">Pinks &amp; Purples</div>
+            <div class="viz-swatches">
+              <div class="vsw" style="background:#fce4ec" data-name="Rose Blush" onclick="applyVizColor('#fce4ec',this)"></div>
+              <div class="vsw" style="background:#f48fb1" data-name="Dusty Rose" onclick="applyVizColor('#f48fb1',this)"></div>
+              <div class="vsw" style="background:#e91e63" data-name="Hibiscus" onclick="applyVizColor('#e91e63',this)"></div>
+              <div class="vsw" style="background:#e1bee7" data-name="Lavender" onclick="applyVizColor('#e1bee7',this)"></div>
+              <div class="vsw" style="background:#9c27b0" data-name="Royal Plum" onclick="applyVizColor('#9c27b0',this)"></div>
+              <div class="vsw" style="background:#4a148c" data-name="Deep Violet" onclick="applyVizColor('#4a148c',this)"></div>
+            </div>
+          </div>
+
+          <div class="viz-family">
+            <div class="viz-family-label">Greys &amp; Darks</div>
+            <div class="viz-swatches">
+              <div class="vsw" style="background:#f5f5f5" data-name="Cloud" onclick="applyVizColor('#f5f5f5',this)"></div>
+              <div class="vsw" style="background:#b0bec5" data-name="Silver" onclick="applyVizColor('#b0bec5',this)"></div>
+              <div class="vsw" style="background:#78909c" data-name="Slate" onclick="applyVizColor('#78909c',this)"></div>
+              <div class="vsw" style="background:#546e7a" data-name="Steel" onclick="applyVizColor('#546e7a',this)"></div>
+              <div class="vsw" style="background:#37474f" data-name="Charcoal" onclick="applyVizColor('#37474f',this)"></div>
+              <div class="vsw" style="background:#212121" data-name="Onyx" onclick="applyVizColor('#212121',this)"></div>
+            </div>
+          </div>
+
+          <!-- Custom colour picker -->
+          <div class="viz-custom">
+            <div class="viz-family-label">Custom Colour</div>
+            <div style="display:flex;align-items:center;gap:0.75rem">
+              <input type="color" id="vizCustomColor" value="#e8dcc8" oninput="applyVizColor(this.value,null)" style="width:44px;height:44px;border:none;border-radius:8px;cursor:pointer;background:none;padding:0">
+              <span style="font-size:0.82rem;color:var(--muted)">Click to pick any custom shade</span>
+            </div>
+          </div>
+
+          <!-- Selected colour info -->
+          <div class="viz-selected" id="vizSelected">
+            <div id="vizSelSwatch" style="width:52px;height:52px;border-radius:10px;background:#e8dcc8;flex-shrink:0;border:2px solid rgba(255,255,255,0.2);transition:background 0.4s"></div>
             <div>
-              <div class="selected-name" id="selectedName">CP Matrix Blue</div>
-              <div class="selected-code" id="selectedCode">CP-COL-001 · Interior Emulsion</div>
+              <div id="vizSelName" style="font-weight:700;font-size:0.95rem">Cream Linen</div>
+              <div id="vizSelHex" style="font-size:0.8rem;color:var(--muted);margin-top:0.2rem">#e8dcc8</div>
+              <div style="font-size:0.75rem;color:var(--accent2);margin-top:0.2rem">Recommended: Alpha Interior Emulsion</div>
             </div>
           </div>
+
+          <!-- Enquire button -->
+          <button onclick="vizEnquire()" style="width:100%;padding:0.8rem;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border:none;border-radius:12px;font-size:0.9rem;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;margin-top:0.75rem;transition:all 0.2s">
+            💬 Order This Colour via WhatsApp
+          </button>
         </div>
-      </div>
+      </div><!-- /viz-grid2 -->
     </div>
   </section>
 
@@ -2103,15 +2584,66 @@
       });
     }
 
-    // Colour visualizer
-    function pickColor(hex, name, code, el) {
-      document.getElementById('backWall').setAttribute('fill', hex);
-      document.getElementById('selectedSwatch').style.background = hex;
-      document.getElementById('selectedName').textContent = name;
-      document.getElementById('selectedCode').textContent = code + ' · CP Matrix Colour';
-      document.querySelectorAll('.palette-swatch').forEach(s => s.classList.remove('selected'));
-      el.classList.add('selected');
+    /* ══════════════════════════════════════
+       MULTI-ROOM COLOUR VISUALIZER
+    ══════════════════════════════════════ */
+    let activeRoom = 'living';
+    let wallTarget = 'main';
+    let activeVizColor = '#e8dcc8';
+
+    function switchRoom(room, btn) {
+      activeRoom = room;
+      document.querySelectorAll('.room-scene').forEach(s => s.classList.remove('active-scene'));
+      const scene = document.getElementById('room-' + room);
+      if (scene) scene.classList.add('active-scene');
+      document.querySelectorAll('.room-tab').forEach(t => t.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      setTimeout(() => applyVizColor(activeVizColor, null), 50);
     }
+
+    function setWallTarget(target, btn) {
+      wallTarget = target;
+      document.querySelectorAll('.wall-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      applyVizColor(activeVizColor, null);
+    }
+
+    function applyVizColor(hex, swatchEl) {
+      activeVizColor = hex;
+      const scene = document.getElementById('room-' + activeRoom);
+      if (!scene) return;
+      if (wallTarget === 'main' || wallTarget === 'all')
+        scene.querySelectorAll('.wall-main').forEach(el => el.setAttribute('fill', hex));
+      if (wallTarget === 'side' || wallTarget === 'all')
+        scene.querySelectorAll('.wall-side').forEach(el => el.setAttribute('fill', darkenHex(hex, 20)));
+
+      const colorName = swatchEl?.dataset?.name || hex.toUpperCase();
+      document.getElementById('vizSelSwatch').style.background = hex;
+      document.getElementById('vizSelName').textContent = colorName;
+      document.getElementById('vizSelHex').textContent = hex.toUpperCase();
+      if (document.getElementById('vizCustomColor')) document.getElementById('vizCustomColor').value = hex;
+      document.querySelectorAll('.vsw').forEach(s => s.classList.remove('active-vsw'));
+      if (swatchEl) swatchEl.classList.add('active-vsw');
+    }
+
+    function darkenHex(hex, amount) {
+      if (hex.length < 7) return hex;
+      let r = Math.max(0, parseInt(hex.slice(1,3),16) - amount);
+      let g = Math.max(0, parseInt(hex.slice(3,5),16) - amount);
+      let b = Math.max(0, parseInt(hex.slice(5,7),16) - amount);
+      return '#' + [r,g,b].map(v => v.toString(16).padStart(2,'0')).join('');
+    }
+
+    function vizEnquire() {
+      const name = document.getElementById('vizSelName').textContent;
+      const hex  = document.getElementById('vizSelHex').textContent;
+      const room = activeRoom.charAt(0).toUpperCase() + activeRoom.slice(1);
+      const msg  = encodeURIComponent(`🎨 *CP Matrix — Colour Enquiry*\n\nRoom: ${room} Room\nColour: ${name} (${hex})\n\nPlease advise on the best CP Matrix product for this colour. Thank you!`);
+      window.open(`https://wa.me/918525001700?text=${msg}`, '_blank');
+    }
+
+    // Keep old pickColor stub for safety (not used by new visualizer)
+    function pickColor(hex, name, code, el) { applyVizColor(hex, el); }
 
     // Form submission — forwards to WhatsApp
     function handleSubmit(e) {
@@ -2159,6 +2691,8 @@
       document.body.classList.add('loaded');
       animateHeroWords();
       staggerSwatches();
+      // Init visualizer with default cream color
+      setTimeout(() => applyVizColor('#e8dcc8', null), 700);
     });
 
     // 2. Scroll progress bar
