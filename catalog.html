@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ranjith Paints — Product Catalog 2025</title>
-  <meta name="description" content="Ranjith Paints official product catalog 2025. Interior, Exterior, Wood & Metal, Texture, and Primer paints. 2000+ shades. Chennai, Tamil Nadu." />
+  <title>CP Matrix — Product Catalog 2025</title>
+  <meta name="description" content="CP Matrix official product catalog 2025. Interior, Exterior, Primers, Adhesives and more. Harur, Dharmapuri, Tamil Nadu." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
@@ -13,8 +13,8 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --orange: #e85d04;
-      --gold: #ffb703;
+      --orange: #1a6fd4;
+      --gold: #00c4cc;
       --dark: #1a1a1a;
       --mid: #4a4a4a;
       --muted: #777;
@@ -103,8 +103,8 @@
       opacity: 0.04;
       background-image: repeating-linear-gradient(
         45deg,
-        #e85d04 0px,
-        #e85d04 2px,
+        #1a6fd4 0px,
+        #1a6fd4 2px,
         transparent 2px,
         transparent 20px
       );
@@ -112,19 +112,8 @@
     }
 
     .cover-logo {
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      font-weight: 900;
-      color: var(--dark);
-      letter-spacing: -0.03em;
-      line-height: 1.1;
       margin-bottom: 0.5rem;
       position: relative;
-    }
-
-    .cover-logo span {
-      background: linear-gradient(135deg, var(--orange), var(--gold));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
     }
 
     .cover-tagline {
@@ -288,8 +277,8 @@
     }
 
     .mission-box {
-      background: linear-gradient(135deg, #fff8f3, #fff3e0);
-      border: 2px solid rgba(232, 93, 4, 0.15);
+      background: linear-gradient(135deg, #f0f6ff, #e8f4ff);
+      border: 2px solid rgba(26, 111, 212, 0.15);
       border-radius: var(--radius-lg);
       padding: 2rem;
       margin-top: 2rem;
@@ -417,18 +406,14 @@
       justify-content: space-between;
       padding-top: 0.75rem;
       border-top: 1px solid var(--border);
+      gap: 0.5rem;
+      flex-wrap: wrap;
     }
 
-    .product-price {
-      font-size: 1.2rem;
-      font-weight: 900;
-      color: var(--orange);
-    }
-
-    .product-price span {
+    .product-category-label {
       font-size: 0.75rem;
-      font-weight: 400;
-      color: var(--muted);
+      font-weight: 700;
+      color: var(--orange);
     }
 
     .enquire-btn {
@@ -445,7 +430,23 @@
       transition: background 0.2s;
     }
 
-    .enquire-btn:hover { background: #c24d00; }
+    .enquire-btn:hover { background: #0d4fa0; }
+
+    .pdf-btn {
+      padding: 0.45rem 1rem;
+      background: transparent;
+      color: var(--orange);
+      border: 2px solid var(--orange);
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .pdf-btn:hover { background: var(--orange); color: #fff; }
 
     /* ── WHY SECTION ── */
     .why-grid {
@@ -538,7 +539,7 @@
     }
 
     .back-cover-header {
-      background: linear-gradient(135deg, var(--orange), #c24d00);
+      background: linear-gradient(135deg, #1a6fd4, #0d4fa0);
       padding: 3rem 2rem;
       text-align: center;
       color: #fff;
@@ -612,6 +613,7 @@
       display: flex;
       gap: 0.5rem;
       margin-top: 0.75rem;
+      flex-wrap: wrap;
     }
 
     .social-chip {
@@ -660,7 +662,7 @@
       font-size: 0.9rem;
       font-weight: 700;
       cursor: pointer;
-      box-shadow: 0 8px 24px rgba(232, 93, 4, 0.5);
+      box-shadow: 0 8px 24px rgba(26, 111, 212, 0.5);
       display: flex;
       align-items: center;
       gap: 0.5rem;
@@ -669,14 +671,14 @@
     }
 
     .print-btn:hover {
-      background: #c24d00;
+      background: #0d4fa0;
       transform: translateY(-2px);
-      box-shadow: 0 12px 32px rgba(232, 93, 4, 0.6);
+      box-shadow: 0 12px 32px rgba(26, 111, 212, 0.6);
     }
 
     /* ── CATEGORY BANNER ── */
     .cat-banner {
-      background: linear-gradient(135deg, #fff8f3, #fff3e0);
+      background: linear-gradient(135deg, #f0f6ff, #e8f4ff);
       border-left: 5px solid var(--orange);
       padding: 1.25rem 1.5rem;
       border-radius: 0 var(--radius) var(--radius) 0;
@@ -880,8 +882,8 @@
       /* Print button pulse */
       .print-btn { animation: printPulse 2.5s ease-in-out infinite; }
       @keyframes printPulse {
-        0%,100%{box-shadow:0 8px 24px rgba(232,93,4,0.5)}
-        50%{box-shadow:0 8px 40px rgba(232,93,4,0.8), 0 0 0 8px rgba(232,93,4,0.1)}
+        0%,100%{box-shadow:0 8px 24px rgba(26,111,212,0.5)}
+        50%{box-shadow:0 8px 40px rgba(26,111,212,0.8), 0 0 0 8px rgba(26,111,212,0.1)}
       }
       .print-btn:hover { animation: none; }
 
@@ -908,7 +910,7 @@
       }
       .cat-banner::after {
         content: ''; position: absolute; inset: 0;
-        background: linear-gradient(90deg, rgba(232,93,4,0.05), transparent);
+        background: linear-gradient(90deg, rgba(26,111,212,0.05), transparent);
         transform: translateX(-100%);
         animation: bannerSlide 2s ease forwards;
       }
@@ -977,7 +979,7 @@
   <div class="screen-topbar">
     <a href="index.html">← Back to Website</a>
     <div class="topbar-right">
-      <span class="topbar-title">Ranjith Paints — Product Catalog 2025</span>
+      <span class="topbar-title">CP Matrix — Product Catalog 2025</span>
     </div>
   </div>
 
@@ -997,43 +999,43 @@
       <div class="cover-bg-pattern"></div>
 
       <div class="cover-logo">
-        🎨 <span>Ranjith Paints</span>
+        <img src="logo.png" alt="CP Matrix" style="max-width:300px;height:auto">
       </div>
-      <p class="cover-tagline">Premium Paints. Lasting Protection. 2000+ Shades.</p>
-      <p class="cover-year">Product Catalog · 2025</p>
+      <p class="cover-tagline">Premium Architectural Coatings</p>
+      <p class="cover-year">Strength • Style • Protection · 2025</p>
 
       <div class="cover-divider"></div>
 
-      <!-- Full-width color stripe banner -->
+      <!-- Full-width color stripe banner — blues/teals/navy -->
       <div class="color-stripe">
-        <div class="color-stripe-item" style="background:#f1f1f1;"></div>
-        <div class="color-stripe-item" style="background:#e8d5c4;"></div>
-        <div class="color-stripe-item" style="background:#d4a96a;"></div>
-        <div class="color-stripe-item" style="background:#a5d6a7;"></div>
-        <div class="color-stripe-item" style="background:#81b29a;"></div>
+        <div class="color-stripe-item" style="background:#e8f4ff;"></div>
+        <div class="color-stripe-item" style="background:#bbdefb;"></div>
         <div class="color-stripe-item" style="background:#90caf9;"></div>
+        <div class="color-stripe-item" style="background:#64b5f6;"></div>
         <div class="color-stripe-item" style="background:#42a5f5;"></div>
-        <div class="color-stripe-item" style="background:#1565c0;"></div>
-        <div class="color-stripe-item" style="background:#6a1b9a;"></div>
-        <div class="color-stripe-item" style="background:#b71c1c;"></div>
-        <div class="color-stripe-item" style="background:#e85d04;"></div>
-        <div class="color-stripe-item" style="background:#ffb703;"></div>
-        <div class="color-stripe-item" style="background:#ffd700;"></div>
-        <div class="color-stripe-item" style="background:#8d6e63;"></div>
+        <div class="color-stripe-item" style="background:#1e88e5;"></div>
+        <div class="color-stripe-item" style="background:#1a6fd4;"></div>
+        <div class="color-stripe-item" style="background:#0d4fa0;"></div>
+        <div class="color-stripe-item" style="background:#0a3a7a;"></div>
+        <div class="color-stripe-item" style="background:#0d2d6e;"></div>
+        <div class="color-stripe-item" style="background:#00c4cc;"></div>
+        <div class="color-stripe-item" style="background:#00838f;"></div>
+        <div class="color-stripe-item" style="background:#80cbc4;"></div>
+        <div class="color-stripe-item" style="background:#a8dadc;"></div>
+        <div class="color-stripe-item" style="background:#e0f7fa;"></div>
+        <div class="color-stripe-item" style="background:#546e7a;"></div>
         <div class="color-stripe-item" style="background:#37474f;"></div>
         <div class="color-stripe-item" style="background:#263238;"></div>
-        <div class="color-stripe-item" style="background:#4e342e;"></div>
-        <div class="color-stripe-item" style="background:#2e7d32;"></div>
-        <div class="color-stripe-item" style="background:#004d40;"></div>
+        <div class="color-stripe-item" style="background:#f1faee;"></div>
         <div class="color-stripe-item" style="background:#1a1a2e;"></div>
       </div>
 
       <div class="cover-contact">
-        <strong>Chennai, Tamil Nadu</strong> &nbsp;|&nbsp;
-        +91 99999 XXXXX &nbsp;|&nbsp;
-        sales@ranjithpaints.in<br />
-        Anna Nagar Showroom · Mon–Sat 9 AM–8 PM<br />
-        <strong>www.ranjithpaints.in</strong>
+        <strong>HD Origin Private Limited</strong><br />
+        3/87/A, KRS Building, Gopinathampatti koot road, Harur, Dharmapuri — 636 903 &nbsp;|&nbsp;
+        +91 85250 01700 &nbsp;|&nbsp;
+        hdoriginltd@gmail.com<br />
+        Instagram: <strong>@cpmatrixpaints</strong>
       </div>
     </div>
 
@@ -1044,181 +1046,123 @@
     <div class="catalog-section page-break">
       <div class="section-header">
         <div class="section-label">Our Story</div>
-        <h2 class="section-title">About <span>Ranjith Paints</span></h2>
+        <h2 class="section-title">About <span>CP Matrix</span></h2>
       </div>
 
       <div class="about-grid">
         <div class="about-text">
-          <p>Founded in 2005, Ranjith Paints has been Chennai's most trusted paint specialist for over two decades. What began as a single showroom in Anna Nagar has grown into Tamil Nadu's premier destination for premium interior, exterior, and specialty paints.</p>
-          <p>We believe that colour transforms spaces and that every home, office, and building deserves paints of the highest quality — paints that protect, endure, and inspire. Our technical team constantly innovates, ensuring our formulations meet global standards while being perfectly suited for India's climate.</p>
+          <p>CP Matrix is a complete range of premium architectural coatings crafted with advanced technology to deliver superior performance, long-lasting beauty and ultimate protection.</p>
+          <p>By HD Origin Private Limited, CP Matrix was built on the belief that every home, office, and building deserves the highest quality paint — one that protects, endures, and inspires. Our technical team constantly innovates, ensuring our formulations are suited for India's demanding climate.</p>
         </div>
         <div class="about-text">
-          <p>With over 2,000 shades available across our ranges, our tinting technology ensures you get the precise colour you envision. Our certified colour consultants offer free in-home advice, and our network of trained applicators guarantees flawless results on every project.</p>
-          <p>From the smallest apartment repaint to large commercial developments, Ranjith Paints delivers the same commitment to quality, service, and lasting value that has made us the painter's first choice across South India.</p>
+          <p>From entry-level interior emulsions to flagship premium ranges, from exterior weather shields to damp-proof primers, the CP Matrix portfolio is designed to offer a complete solution for every surface and every budget.</p>
+          <p>Backed by 200+ dealers, trusted by 500+ projects, and built on 12 years of excellence, CP Matrix continues to deliver strength, style, and protection to homes and buildings across Tamil Nadu and beyond.</p>
         </div>
       </div>
 
       <div class="stats-row">
         <div class="stat-box">
-          <div class="num">2000<span class="unit">+</span></div>
-          <div class="lbl">Colour Shades Available</div>
+          <div class="num">500<span class="unit">+</span></div>
+          <div class="lbl">Projects Completed</div>
         </div>
         <div class="stat-box">
-          <div class="num">5000<span class="unit">+</span></div>
-          <div class="lbl">Happy Customers Served</div>
+          <div class="num">200<span class="unit">+</span></div>
+          <div class="lbl">Authorised Dealers</div>
         </div>
         <div class="stat-box">
-          <div class="num">50K<span class="unit">+</span></div>
-          <div class="lbl">Sq Ft Painted This Year</div>
+          <div class="num">6<span class="unit"></span></div>
+          <div class="lbl">Product Ranges</div>
         </div>
         <div class="stat-box">
-          <div class="num">20<span class="unit">yr</span></div>
-          <div class="lbl">Weather Protection Guarantee</div>
+          <div class="num">12<span class="unit">yr</span></div>
+          <div class="lbl">Exterior Guarantee</div>
         </div>
       </div>
 
       <div class="mission-box">
         <h4>Our Mission</h4>
-        <p>"To bring lasting colour and quality to every surface we touch — delivering paints that protect homes, inspire people, and honour the environment. We combine 20 years of expertise with relentless innovation to ensure Ranjith Paints remains the most trusted name in the industry."</p>
+        <p>"To bring lasting colour and quality to every surface we touch — delivering premium architectural coatings that protect homes, inspire people, and stand the test of time. CP Matrix combines advanced technology with the finest raw materials to ensure every project achieves beautiful, long-lasting results."</p>
       </div>
     </div>
 
 
     <!-- ═══════════════════════════════════════
-         INTERIOR PAINTS
+         SECTION 1: INTERIOR EMULSION PAINTS
     ═══════════════════════════════════════ -->
     <div class="catalog-section page-break">
       <div class="section-header">
         <div class="section-label">Product Category 01</div>
         <h2 class="section-title">Interior <span>Emulsion Paints</span></h2>
-        <p class="section-desc">Smooth, washable, low-VOC formulas for living rooms, bedrooms, and kitchens. Available in 2000+ shades with on-demand tinting.</p>
+        <p class="section-desc">Smooth, washable, low-odour formulas for living rooms, bedrooms, and kitchens. Advanced technology for a superior indoor finish.</p>
       </div>
 
       <div class="cat-banner">
         <div class="cat-banner-icon">🏠</div>
         <div class="cat-banner-text">
           <h3>Interior Emulsion Range</h3>
-          <p>All interior paints are tested for scrub resistance, stain repellency, and indoor air quality. Low-VOC and zero-odour options available.</p>
+          <p>All CP Matrix interior paints are tested for scrub resistance, stain repellency, and indoor safety. From economical coverage to premium anti-bacterial formulas.</p>
         </div>
       </div>
 
       <div class="products-grid">
 
         <div class="product-card">
-          <div class="product-swatch" style="background: linear-gradient(160deg, #e8d5c4, #d4b896);">
-            <span class="product-code-badge">RP-INT-001</span>
-            <span class="product-finish-badge">Silk Finish</span>
+          <div class="product-swatch" style="background: linear-gradient(160deg, #a8d96c, #e0e840);">
+            <span class="product-code-badge">CP-INT-001</span>
+            <span class="product-finish-badge">4-Year Durability</span>
           </div>
           <div class="product-body">
-            <div class="product-name">Sandstone Bliss</div>
-            <div class="product-desc">Warm sandy tones with superior coverage. Washable and stain-resistant for busy family spaces. Applies smoothly with a velvety sheen that catches light beautifully.</div>
+            <div class="product-name">Arsha</div>
+            <div class="product-desc">Entry-level interior emulsion. Smooth, economical coverage for all interior walls and ceilings. Reliable performance at exceptional value.</div>
             <div class="product-tags">
-              <span class="product-tag green">Low VOC</span>
-              <span class="product-tag green">Washable</span>
-              <span class="product-tag blue">2-Coat Coverage</span>
+              <span class="product-tag green">Smooth Finish</span>
+              <span class="product-tag green">Economical</span>
+              <span class="product-tag blue">4-Year Performance</span>
             </div>
             <div class="product-footer">
-              <div class="product-price">₹520 <span>/ litre</span></div>
+              <div class="product-category-label">Interior Emulsion</div>
               <a href="index.html#contact" class="enquire-btn">Enquire</a>
             </div>
           </div>
         </div>
 
         <div class="product-card">
-          <div class="product-swatch" style="background: linear-gradient(160deg, #c8e6c9, #a5d6a7);">
-            <span class="product-code-badge">RP-INT-002</span>
-            <span class="product-finish-badge">Matt Finish</span>
+          <div class="product-swatch" style="background: linear-gradient(160deg, #43e97b, #00c4cc);">
+            <span class="product-code-badge">CP-INT-002</span>
+            <span class="product-finish-badge">Ultra Smooth</span>
           </div>
           <div class="product-body">
-            <div class="product-name">Sage Garden</div>
-            <div class="product-desc">Calming sage green that brings nature indoors. Our zero-odour formula is specially developed and independently certified safe for children's rooms and nurseries.</div>
+            <div class="product-name">Alpha</div>
+            <div class="product-desc">Smooth Walls. Strong Impression. Our signature interior emulsion. Low odour formula delivers an ultra-smooth finish with excellent stain resistance and washability.</div>
             <div class="product-tags">
-              <span class="product-tag green">Zero Odour</span>
-              <span class="product-tag green">Kid Safe</span>
-              <span class="product-tag blue">Anti-Fungal</span>
+              <span class="product-tag green">Low Odor</span>
+              <span class="product-tag green">Stain Resistant</span>
+              <span class="product-tag blue">Ultra Smooth</span>
             </div>
             <div class="product-footer">
-              <div class="product-price">₹490 <span>/ litre</span></div>
+              <div class="product-category-label">Interior Emulsion</div>
+              <a href="Alpha.pdf" target="_blank" class="pdf-btn">📄 View PDF</a>
               <a href="index.html#contact" class="enquire-btn">Enquire</a>
             </div>
           </div>
         </div>
 
         <div class="product-card">
-          <div class="product-swatch" style="background: linear-gradient(160deg, #bbdefb, #90caf9);">
-            <span class="product-code-badge">RP-INT-003</span>
-            <span class="product-finish-badge">Satin Finish</span>
+          <div class="product-swatch" style="background: linear-gradient(160deg, #6a4fc4, #1a6fd4);">
+            <span class="product-code-badge">CP-INT-003</span>
+            <span class="product-finish-badge">Premium Flagship</span>
           </div>
           <div class="product-body">
-            <div class="product-name">Sky Serenity</div>
-            <div class="product-desc">Soft sky blue that visually opens up any space, creating an airy and peaceful atmosphere. Breathable micro-pore technology prevents moisture build-up.</div>
+            <div class="product-name">Sigma</div>
+            <div class="product-desc">Flagship interior range with anti-bacterial technology, premium opacity, and the widest colour selection in the CP Matrix portfolio. Ultimate wall protection.</div>
             <div class="product-tags">
-              <span class="product-tag green">Anti-Fungal</span>
-              <span class="product-tag green">Breathable</span>
-              <span class="product-tag blue">Moisture Resistant</span>
+              <span class="product-tag green">Anti-Bacterial</span>
+              <span class="product-tag green">Premium Coverage</span>
+              <span class="product-tag blue">Washable</span>
             </div>
             <div class="product-footer">
-              <div class="product-price">₹540 <span>/ litre</span></div>
-              <a href="index.html#contact" class="enquire-btn">Enquire</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-swatch" style="background: linear-gradient(160deg, #f5e6d3, #eedfc9);">
-            <span class="product-code-badge">RP-INT-013</span>
-            <span class="product-finish-badge">Matt Finish</span>
-          </div>
-          <div class="product-body">
-            <div class="product-name">Ivory Mist</div>
-            <div class="product-desc">Our bestselling warm off-white — a timeless neutral that flatters any room and pairs beautifully with any decor. Premium opacity in just 2 coats.</div>
-            <div class="product-tags">
-              <span class="product-tag green">Low VOC</span>
-              <span class="product-tag">Premium Coverage</span>
-              <span class="product-tag blue">2-Coat System</span>
-            </div>
-            <div class="product-footer">
-              <div class="product-price">₹480 <span>/ litre</span></div>
-              <a href="index.html#contact" class="enquire-btn">Enquire</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-swatch" style="background: linear-gradient(160deg, #9c27b0, #6a1b9a);">
-            <span class="product-code-badge">RP-INT-032</span>
-            <span class="product-finish-badge">Satin Finish</span>
-          </div>
-          <div class="product-body">
-            <div class="product-name">Royal Plum</div>
-            <div class="product-desc">Deep, jewel-toned purple for dramatic feature walls and accent spaces. Anti-mould formula keeps bold colours looking rich for years. Wipes clean easily.</div>
-            <div class="product-tags">
-              <span class="product-tag green">Anti-Mould</span>
-              <span class="product-tag green">Washable</span>
-              <span class="product-tag">Feature Wall</span>
-            </div>
-            <div class="product-footer">
-              <div class="product-price">₹560 <span>/ litre</span></div>
-              <a href="index.html#contact" class="enquire-btn">Enquire</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-swatch" style="background: linear-gradient(160deg, #1e88e5, #1565c0);">
-            <span class="product-code-badge">RP-INT-033</span>
-            <span class="product-finish-badge">Silk Finish</span>
-          </div>
-          <div class="product-body">
-            <div class="product-name">Deep Navy</div>
-            <div class="product-desc">Bold, sophisticated navy blue purpose-formulated for statement feature walls. Silk finish delivers a luxurious, reflective sheen and is fully washable.</div>
-            <div class="product-tags">
-              <span class="product-tag green">Washable</span>
-              <span class="product-tag blue">Feature Wall Specialist</span>
-              <span class="product-tag">Anti-Fungal</span>
-            </div>
-            <div class="product-footer">
-              <div class="product-price">₹550 <span>/ litre</span></div>
+              <div class="product-category-label">Premium Interior</div>
+              <a href="Sigma.pdf" target="_blank" class="pdf-btn">📄 View PDF</a>
               <a href="index.html#contact" class="enquire-btn">Enquire</a>
             </div>
           </div>
@@ -1229,100 +1173,83 @@
 
 
     <!-- ═══════════════════════════════════════
-         EXTERIOR PAINTS
+         SECTION 2: EXTERIOR EMULSION & PRIMERS
     ═══════════════════════════════════════ -->
     <div class="catalog-section page-break">
       <div class="section-header">
         <div class="section-label">Product Category 02</div>
-        <h2 class="section-title">Exterior <span>Weather Coat Paints</span></h2>
-        <p class="section-desc">Alkali-resistant, UV-stable paints engineered to protect your walls against rain, heat, and humidity for 10–15 years.</p>
+        <h2 class="section-title">Exterior Emulsion <span>&amp; Primers</span></h2>
+        <p class="section-desc">Advanced exterior paints and primers engineered for India's harsh climate — UV stable, weather resistant, long-lasting protection.</p>
       </div>
 
       <div class="cat-banner">
         <div class="cat-banner-icon">🏗️</div>
         <div class="cat-banner-text">
-          <h3>Weather Shield Technology</h3>
-          <p>Elastomeric formula bridges hairline cracks, blocks water ingress, and resists Chennai's intense UV exposure and heavy monsoon rains.</p>
+          <h3>Exterior Protection Range</h3>
+          <p>CP Matrix exterior products offer up to 12-year performance with UV stability, weather resistance, fire retardancy, and vibrant colour retention.</p>
         </div>
       </div>
 
       <div class="products-grid">
 
         <div class="product-card">
-          <div class="product-swatch" style="background: linear-gradient(160deg, #f5f5f5, #e8e8e8);">
-            <span class="product-code-badge">RP-EXT-001</span>
-            <span class="product-finish-badge">Weather Shield</span>
+          <div class="product-swatch" style="background: linear-gradient(160deg, #0d2d6e, #1a6fd4);">
+            <span class="product-code-badge">CP-EXT-001</span>
+            <span class="product-finish-badge">12-Year Warranty</span>
           </div>
           <div class="product-body">
-            <div class="product-name">Arctic White Pro</div>
-            <div class="product-desc">Ultra-brilliant white exterior coat with built-in algae resistance. Our highest-opacity formula delivers lasting brightness through all weather conditions.</div>
+            <div class="product-name">Delta</div>
+            <div class="product-desc">High performance exterior emulsion engineered for 12-year protection. Weather resistant, UV stable, and fire retardant with vibrant colour retention.</div>
             <div class="product-tags">
-              <span class="product-tag green">UV Resistant</span>
-              <span class="product-tag green">Anti-Algae</span>
-              <span class="product-tag blue">15-Year Guarantee</span>
+              <span class="product-tag blue">12-Year Warranty</span>
+              <span class="product-tag green">UV Stable</span>
+              <span class="product-tag green">Fire Resistant</span>
             </div>
             <div class="product-footer">
-              <div class="product-price">₹680 <span>/ litre</span></div>
+              <div class="product-category-label">Exterior Emulsion</div>
+              <a href="Delta.pdf" target="_blank" class="pdf-btn">📄 View PDF</a>
               <a href="index.html#contact" class="enquire-btn">Enquire</a>
             </div>
           </div>
         </div>
 
         <div class="product-card">
-          <div class="product-swatch" style="background: linear-gradient(160deg, #ff8a65, #e64a19);">
-            <span class="product-code-badge">RP-EXT-002</span>
-            <span class="product-finish-badge">Weather Shield</span>
+          <div class="product-swatch" style="background: linear-gradient(160deg, #1e88e5, #00c4cc);">
+            <span class="product-code-badge">CP-EXT-002</span>
+            <span class="product-finish-badge">6-Year Performance</span>
           </div>
           <div class="product-body">
-            <div class="product-name">Terracotta Dusk</div>
-            <div class="product-desc">Rich terracotta tone with advanced elastomeric technology that bridges hairline cracks and forms a seamless waterproof membrane. Truly monsoon-proof.</div>
+            <div class="product-name">Infinity</div>
+            <div class="product-desc">Advanced exterior primer that maximises adhesion, durability and topcoat performance. Protects against UV, moisture and harsh weather conditions.</div>
             <div class="product-tags">
-              <span class="product-tag green">Elastomeric</span>
-              <span class="product-tag blue">Crack Bridge</span>
-              <span class="product-tag blue">Waterproof</span>
+              <span class="product-tag blue">Strong Adhesion</span>
+              <span class="product-tag green">Weather Proof</span>
+              <span class="product-tag blue">High Coverage</span>
             </div>
             <div class="product-footer">
-              <div class="product-price">₹720 <span>/ litre</span></div>
+              <div class="product-category-label">Exterior Primer</div>
+              <a href="Infinity.pdf" target="_blank" class="pdf-btn">📄 View PDF</a>
               <a href="index.html#contact" class="enquire-btn">Enquire</a>
             </div>
           </div>
         </div>
 
         <div class="product-card">
-          <div class="product-swatch" style="background: linear-gradient(160deg, #388e3c, #1b5e20);">
-            <span class="product-code-badge">RP-EXT-003</span>
-            <span class="product-finish-badge">Weather Shield</span>
+          <div class="product-swatch" style="background: linear-gradient(160deg, #546e7a, #263238);">
+            <span class="product-code-badge">CP-EXT-003</span>
+            <span class="product-finish-badge">10-Year Performance</span>
           </div>
           <div class="product-body">
-            <div class="product-name">Forest Shadow</div>
-            <div class="product-desc">Deep forest green with heat-reflective pigments that reduce surface temperature by up to 5°C. Anti-fungal properties prevent greening in humid climates.</div>
+            <div class="product-name">Quantum</div>
+            <div class="product-desc">Specially formulated damp-proof primer that creates a crystalline barrier against moisture, efflorescence and alkali attack. Long lasting durability.</div>
             <div class="product-tags">
-              <span class="product-tag green">Heat Reflective</span>
-              <span class="product-tag green">Anti-Fungal</span>
-              <span class="product-tag blue">UV Stable</span>
+              <span class="product-tag blue">Damp Proof</span>
+              <span class="product-tag green">Efflorescence Resistant</span>
+              <span class="product-tag blue">Alkali Resistant</span>
             </div>
             <div class="product-footer">
-              <div class="product-price">₹700 <span>/ litre</span></div>
-              <a href="index.html#contact" class="enquire-btn">Enquire</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-swatch" style="background: linear-gradient(160deg, #fdd835, #f9a825);">
-            <span class="product-code-badge">RP-EXT-004</span>
-            <span class="product-finish-badge">Weather Shield</span>
-          </div>
-          <div class="product-body">
-            <div class="product-name">Colonial Yellow</div>
-            <div class="product-desc">Warm, luminous yellow with high opacity that remains vibrant through years of sun and rain. Specially formulated for monsoon-proof performance on Indian exteriors.</div>
-            <div class="product-tags">
-              <span class="product-tag">High Opacity</span>
-              <span class="product-tag blue">Monsoon-Proof</span>
-              <span class="product-tag green">UV Resistant</span>
-            </div>
-            <div class="product-footer">
-              <div class="product-price">₹690 <span>/ litre</span></div>
+              <div class="product-category-label">Primer Damp Proof</div>
+              <a href="Quantum.pdf" target="_blank" class="pdf-btn">📄 View PDF</a>
               <a href="index.html#contact" class="enquire-btn">Enquire</a>
             </div>
           </div>
@@ -1333,220 +1260,12 @@
 
 
     <!-- ═══════════════════════════════════════
-         WOOD & METAL FINISHES
+         SECTION 3: PRIMERS & SEALERS
     ═══════════════════════════════════════ -->
     <div class="catalog-section page-break">
       <div class="section-header">
         <div class="section-label">Product Category 03</div>
-        <h2 class="section-title">Wood &amp; <span>Metal Finishes</span></h2>
-        <p class="section-desc">Premium stains, lacquers, and enamels that enhance and protect wood, metal, and furniture surfaces inside and outside.</p>
-      </div>
-
-      <div class="cat-banner">
-        <div class="cat-banner-icon">🪵</div>
-        <div class="cat-banner-text">
-          <h3>Wood &amp; Metal Protection Range</h3>
-          <p>Formulated for the Indian climate — resists humidity warping, termite damage, rust, and heat. Suitable for doors, windows, grills, gates, and furniture.</p>
-        </div>
-      </div>
-
-      <div class="products-grid">
-
-        <div class="product-card">
-          <div class="product-swatch" style="background: linear-gradient(160deg, #d4a96a, #8b5e3c);">
-            <span class="product-code-badge">RP-WD-001</span>
-            <span class="product-finish-badge">Wood Stain</span>
-          </div>
-          <div class="product-body">
-            <div class="product-name">Teak Gold Stain</div>
-            <div class="product-desc">Penetrating oil-based stain that enhances the natural grain of teak and hardwoods. Water-resistant and UV-stable. Available in 3 tones: Light, Medium, and Dark.</div>
-            <div class="product-tags">
-              <span class="product-tag green">Water Resistant</span>
-              <span class="product-tag blue">Grain Enhancing</span>
-              <span class="product-tag">3 Shades</span>
-            </div>
-            <div class="product-footer">
-              <div class="product-price">₹380 <span>/ litre</span></div>
-              <a href="index.html#contact" class="enquire-btn">Enquire</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-swatch" style="background: linear-gradient(160deg, #4e342e, #1a0d09);">
-            <span class="product-code-badge">RP-WD-002</span>
-            <span class="product-finish-badge">Polyurethane</span>
-          </div>
-          <div class="product-body">
-            <div class="product-name">Ebony Dark Varnish</div>
-            <div class="product-desc">Two-component polyurethane varnish delivering a high-gloss mirror finish with exceptional scratch and abrasion resistance. Furniture-grade durability and clarity.</div>
-            <div class="product-tags">
-              <span class="product-tag">High Gloss</span>
-              <span class="product-tag blue">Scratch Resistant</span>
-              <span class="product-tag">Furniture Grade</span>
-            </div>
-            <div class="product-footer">
-              <div class="product-price">₹420 <span>/ litre</span></div>
-              <a href="index.html#contact" class="enquire-btn">Enquire</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-swatch" style="background: linear-gradient(160deg, #eeeeee, #bdbdbd);">
-            <span class="product-code-badge">RP-MT-001</span>
-            <span class="product-finish-badge">Enamel</span>
-          </div>
-          <div class="product-body">
-            <div class="product-name">Metal Enamel White</div>
-            <div class="product-desc">Rust-inhibitive enamel for grills, gates, railings, and structural steel. Forms a rock-hard film that resists chipping and corrosion in coastal and humid environments.</div>
-            <div class="product-tags">
-              <span class="product-tag green">Anti-Rust</span>
-              <span class="product-tag blue">Hard Film</span>
-              <span class="product-tag">Grills &amp; Gates</span>
-            </div>
-            <div class="product-footer">
-              <div class="product-price">₹350 <span>/ litre</span></div>
-              <a href="index.html#contact" class="enquire-btn">Enquire</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-swatch" style="background: linear-gradient(160deg, #e0e0e0, #9e9e9e, #757575);">
-            <span class="product-code-badge">RP-MT-002</span>
-            <span class="product-finish-badge">Lacquer</span>
-          </div>
-          <div class="product-body">
-            <div class="product-name">Silver Chrome Lacquer</div>
-            <div class="product-desc">Decorative chrome-effect lacquer that creates a mirror-like metallic finish on metal surfaces. Heat-resistant up to 150°C. Ideal for ornamental metalwork.</div>
-            <div class="product-tags">
-              <span class="product-tag">Mirror Finish</span>
-              <span class="product-tag blue">Heat Resistant</span>
-              <span class="product-tag">Decorative</span>
-            </div>
-            <div class="product-footer">
-              <div class="product-price">₹460 <span>/ litre</span></div>
-              <a href="index.html#contact" class="enquire-btn">Enquire</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-
-    <!-- ═══════════════════════════════════════
-         TEXTURE & DESIGNER PAINTS
-    ═══════════════════════════════════════ -->
-    <div class="catalog-section page-break">
-      <div class="section-header">
-        <div class="section-label">Product Category 04</div>
-        <h2 class="section-title">Texture &amp; <span>Designer Paints</span></h2>
-        <p class="section-desc">Sand, stone, suede, and metallic textures that turn ordinary walls into stunning architectural features.</p>
-      </div>
-
-      <div class="cat-banner">
-        <div class="cat-banner-icon">✨</div>
-        <div class="cat-banner-text">
-          <h3>Texture &amp; Designer Finishes</h3>
-          <p>Our specialty range requires no primer and delivers maximum visual impact. Professional application available through our certified applicator network.</p>
-        </div>
-      </div>
-
-      <div class="products-grid">
-
-        <div class="product-card">
-          <div class="product-swatch" style="background: radial-gradient(ellipse at 30% 40%, #d7ccc8 0%, #bcaaa4 50%, #a1887f 100%);">
-            <span class="product-code-badge">RP-TEX-001</span>
-            <span class="product-finish-badge">Sand Texture</span>
-          </div>
-          <div class="product-body">
-            <div class="product-name">Desert Stone</div>
-            <div class="product-desc">Natural crushed-stone aggregate texture that authentically replicates sandstone. Conceals surface imperfections and cracks while adding a warm, earthy aesthetic.</div>
-            <div class="product-tags">
-              <span class="product-tag">Natural Stone Look</span>
-              <span class="product-tag blue">Crack Concealing</span>
-              <span class="product-tag green">Indoor &amp; Outdoor</span>
-            </div>
-            <div class="product-footer">
-              <div class="product-price">₹850 <span>/ litre</span></div>
-              <a href="index.html#contact" class="enquire-btn">Enquire</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-swatch" style="background: linear-gradient(135deg, #ffd700 0%, #b8860b 40%, #ffd700 60%, #daa520 80%, #b8860b 100%);">
-            <span class="product-code-badge">RP-TEX-002</span>
-            <span class="product-finish-badge">Metallic</span>
-          </div>
-          <div class="product-body">
-            <div class="product-name">Golden Shimmer</div>
-            <div class="product-desc">Luxury metallic gold finish loaded with high-reflectance mica platelets that shift luminously with changing light. The ultimate choice for prestigious feature walls.</div>
-            <div class="product-tags">
-              <span class="product-tag">Luxury Metallic</span>
-              <span class="product-tag blue">High Reflectance</span>
-              <span class="product-tag">Feature Walls</span>
-            </div>
-            <div class="product-footer">
-              <div class="product-price">₹1,100 <span>/ litre</span></div>
-              <a href="index.html#contact" class="enquire-btn">Enquire</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-swatch" style="background: radial-gradient(ellipse at 60% 30%, #e0c9b8 0%, #c9a98e 40%, #b89070 70%, #a07050 100%);">
-            <span class="product-code-badge">RP-TEX-003</span>
-            <span class="product-finish-badge">Suede Finish</span>
-          </div>
-          <div class="product-body">
-            <div class="product-name">Suede Velvet</div>
-            <div class="product-desc">Silky soft suede texture with a depth of colour and tactile quality that elevates any interior. Self-priming formula — no undercoat needed. Truly premium.</div>
-            <div class="product-tags">
-              <span class="product-tag">Soft Tactile</span>
-              <span class="product-tag blue">No Primer Needed</span>
-              <span class="product-tag green">Premium Interior</span>
-            </div>
-            <div class="product-footer">
-              <div class="product-price">₹920 <span>/ litre</span></div>
-              <a href="index.html#contact" class="enquire-btn">Enquire</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-swatch" style="background: repeating-linear-gradient(0deg, #8d6e63 0px, #8d6e63 14px, #6d4c41 14px, #6d4c41 18px, #a1887f 18px, #a1887f 32px, #6d4c41 32px, #6d4c41 36px);">
-            <span class="product-code-badge">RP-TEX-004</span>
-            <span class="product-finish-badge">3D Texture</span>
-          </div>
-          <div class="product-body">
-            <div class="product-name">Brick Rustic</div>
-            <div class="product-desc">Three-dimensional textured finish that precisely replicates the look of exposed brick without any masonry work. Perfect for industrial-style accent walls and restaurants.</div>
-            <div class="product-tags">
-              <span class="product-tag">Exposed Brick Effect</span>
-              <span class="product-tag blue">Accent Walls</span>
-              <span class="product-tag">Interior Only</span>
-            </div>
-            <div class="product-footer">
-              <div class="product-price">₹780 <span>/ litre</span></div>
-              <a href="index.html#contact" class="enquire-btn">Enquire</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-
-    <!-- ═══════════════════════════════════════
-         PRIMERS & SEALERS
-    ═══════════════════════════════════════ -->
-    <div class="catalog-section page-break">
-      <div class="section-header">
-        <div class="section-label">Product Category 05</div>
-        <h2 class="section-title">Primers &amp; <span>Sealers</span></h2>
+        <h2 class="section-title">Primers <span>&amp; Sealers</span></h2>
         <p class="section-desc">High-build primers and sealers that form the perfect foundation for any topcoat — on new, repainted, or damp surfaces.</p>
       </div>
 
@@ -1554,67 +1273,67 @@
         <div class="cat-banner-icon">🔬</div>
         <div class="cat-banner-text">
           <h3>Foundation Preparation Range</h3>
-          <p>A good primer doubles the life of your topcoat. Our primers are engineered for specific surface types and conditions to ensure maximum adhesion and coverage.</p>
+          <p>A good primer doubles the life of your topcoat. CP Matrix primers are formulated for specific surface types to ensure maximum adhesion and coverage.</p>
         </div>
       </div>
 
       <div class="products-grid">
 
         <div class="product-card">
-          <div class="product-swatch" style="background: linear-gradient(160deg, #fafafa, #f0f0f0);">
-            <span class="product-code-badge">RP-PRM-001</span>
-            <span class="product-finish-badge">Alkali Resistant</span>
+          <div class="product-swatch" style="background: linear-gradient(160deg, #fafafa, #e0e0e0);">
+            <span class="product-code-badge">CP-PRM-001</span>
+            <span class="product-finish-badge">Interior Primer</span>
           </div>
           <div class="product-body">
-            <div class="product-name">White Primer Pro</div>
-            <div class="product-desc">Alkali-resistant primer for new plastered walls and ceilings. Creates an even, absorbency-controlled surface for optimum topcoat performance in just 2 coats.</div>
+            <div class="product-name">Int Primer</div>
+            <div class="product-desc">Interior wall primer for new plastered surfaces. Creates an even, absorbency-controlled base for optimum topcoat performance and colour accuracy.</div>
             <div class="product-tags">
               <span class="product-tag green">Alkali Resistant</span>
               <span class="product-tag blue">New Walls</span>
-              <span class="product-tag">2-Coat System</span>
+              <span class="product-tag">Interior Ready</span>
             </div>
             <div class="product-footer">
-              <div class="product-price">₹280 <span>/ litre</span></div>
+              <div class="product-category-label">Interior Primer</div>
               <a href="index.html#contact" class="enquire-btn">Enquire</a>
             </div>
           </div>
         </div>
 
         <div class="product-card">
-          <div class="product-swatch" style="background: linear-gradient(160deg, #90a4ae, #546e7a);">
-            <span class="product-code-badge">RP-PRM-002</span>
-            <span class="product-finish-badge">Damp Proof</span>
+          <div class="product-swatch" style="background: linear-gradient(160deg, #e0e0e0, #bdbdbd);">
+            <span class="product-code-badge">CP-PRM-002</span>
+            <span class="product-finish-badge">Exterior Primer</span>
           </div>
           <div class="product-body">
-            <div class="product-name">Damp Shield Sealer</div>
-            <div class="product-desc">Advanced penetrating damp-proof sealer that forms a crystalline moisture barrier within the wall substrate. Ideal for basements, bathrooms, and exterior walls prone to water seepage.</div>
+            <div class="product-name">Ext Primer</div>
+            <div class="product-desc">Exterior surface primer designed for weather-exposed walls. Excellent adhesion and alkali resistance ensures topcoat longevity outdoors.</div>
             <div class="product-tags">
-              <span class="product-tag green">Moisture Barrier</span>
-              <span class="product-tag blue">Basement Walls</span>
+              <span class="product-tag green">Weather Resistant</span>
+              <span class="product-tag blue">Strong Adhesion</span>
               <span class="product-tag">Exterior Ready</span>
             </div>
             <div class="product-footer">
-              <div class="product-price">₹340 <span>/ litre</span></div>
+              <div class="product-category-label">Exterior Primer</div>
               <a href="index.html#contact" class="enquire-btn">Enquire</a>
             </div>
           </div>
         </div>
 
-        <div class="product-card">
-          <div class="product-swatch" style="background: linear-gradient(160deg, #ffe0b2, #ffb74d);">
-            <span class="product-code-badge">RP-PRM-003</span>
-            <span class="product-finish-badge">Bonding Primer</span>
+        <div class="product-card" style="grid-column: 1 / -1; max-width: 50%; margin: 0 auto;">
+          <div class="product-swatch" style="background: linear-gradient(160deg, #c62828, #7f0000);">
+            <span class="product-code-badge">CP-PRM-003</span>
+            <span class="product-finish-badge">Metal / Wood Primer</span>
           </div>
           <div class="product-body">
-            <div class="product-name">Bonding Primer Plus</div>
-            <div class="product-desc">Specialist high-adhesion primer for challenging surfaces: ceramic tiles, glazed finishes, polished plaster, glass, and old paint. Eliminates the need for mechanical surface prep.</div>
+            <div class="product-name">Red Oxide Primer</div>
+            <div class="product-desc">Rust-inhibitive red oxide primer for metal and wood surfaces. Forms a protective film that resists corrosion, humidity, and surface degradation. Ideal for grills, gates, and structural steel.</div>
             <div class="product-tags">
-              <span class="product-tag blue">Tiles &amp; Smooth Surfaces</span>
-              <span class="product-tag green">High Adhesion</span>
-              <span class="product-tag">Old Paint Ready</span>
+              <span class="product-tag green">Anti-Rust</span>
+              <span class="product-tag blue">Metal &amp; Wood</span>
+              <span class="product-tag">Corrosion Resistant</span>
             </div>
             <div class="product-footer">
-              <div class="product-price">₹310 <span>/ litre</span></div>
+              <div class="product-category-label">Red Oxide Primer</div>
               <a href="index.html#contact" class="enquire-btn">Enquire</a>
             </div>
           </div>
@@ -1625,45 +1344,273 @@
 
 
     <!-- ═══════════════════════════════════════
-         WHY RANJITH PAINTS
+         SECTION 4: ADHESIVES & PUTTY
+    ═══════════════════════════════════════ -->
+    <div class="catalog-section page-break">
+      <div class="section-header">
+        <div class="section-label">Product Category 04</div>
+        <h2 class="section-title">Adhesives <span>&amp; Putty</span></h2>
+        <p class="section-desc">Complete range of bonding adhesives, putty pastes, tile solutions, and fillers for every surface preparation need.</p>
+      </div>
+
+      <div class="cat-banner">
+        <div class="cat-banner-icon">🪣</div>
+        <div class="cat-banner-text">
+          <h3>Adhesive &amp; Surface Preparation Range</h3>
+          <p>From waterproofing to crack repair, from tile fixing to smooth putty finish — CP Matrix has the right product for every application.</p>
+        </div>
+      </div>
+
+      <div class="products-grid">
+
+        <div class="product-card">
+          <div class="product-swatch" style="background: linear-gradient(160deg, #cfd8dc, #90a4ae);">
+            <span class="product-code-badge">CP-ADH-001</span>
+            <span class="product-finish-badge">Adhesive</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">Waterproof Adhesive</div>
+            <div class="product-desc">Strong waterproof bonding adhesive for all construction and repair surfaces. Excellent grip and moisture resistance for permanent bonds.</div>
+            <div class="product-tags">
+              <span class="product-tag blue">Waterproof</span>
+              <span class="product-tag green">High Grip</span>
+              <span class="product-tag">All Surfaces</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-category-label">Waterproof Adhesive</div>
+              <a href="index.html#contact" class="enquire-btn">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-swatch" style="background: linear-gradient(160deg, #e0e0e0, #bdbdbd);">
+            <span class="product-code-badge">CP-ADH-002</span>
+            <span class="product-finish-badge">Tile Fix</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">Tile Adhesive</div>
+            <div class="product-desc">Premium polymer-modified tile adhesive for fixing ceramic, porcelain, and stone tiles on walls and floors. Superior bond strength.</div>
+            <div class="product-tags">
+              <span class="product-tag blue">Tiles &amp; Stone</span>
+              <span class="product-tag green">Wall &amp; Floor</span>
+              <span class="product-tag">Non-Slip</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-category-label">Tile Adhesive</div>
+              <a href="index.html#contact" class="enquire-btn">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-swatch" style="background: linear-gradient(160deg, #f5f5f5, #eeeeee);">
+            <span class="product-code-badge">CP-ADH-003</span>
+            <span class="product-finish-badge">Grout</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">Tile Grout</div>
+            <div class="product-desc">Smooth, colour-stable tile grout for filling joints between tiles. Stain resistant and easy to clean. Available in multiple shades.</div>
+            <div class="product-tags">
+              <span class="product-tag blue">Joint Filler</span>
+              <span class="product-tag green">Stain Resistant</span>
+              <span class="product-tag">Multi-Shade</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-category-label">Tile Grout</div>
+              <a href="index.html#contact" class="enquire-btn">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-swatch" style="background: linear-gradient(160deg, #fafafa, #f0f0f0);">
+            <span class="product-code-badge">CP-ADH-004</span>
+            <span class="product-finish-badge">Crack Repair</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">Crack Paste</div>
+            <div class="product-desc">Ready-to-use crack filler paste for hairline and structural cracks on walls and ceilings. Paintable after drying. Superior adhesion.</div>
+            <div class="product-tags">
+              <span class="product-tag blue">Crack Repair</span>
+              <span class="product-tag green">Paintable</span>
+              <span class="product-tag">Interior &amp; Exterior</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-category-label">Crack Paste</div>
+              <a href="index.html#contact" class="enquire-btn">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-swatch" style="background: linear-gradient(160deg, #f5f5f5, #e8e8e8);">
+            <span class="product-code-badge">CP-ADH-005</span>
+            <span class="product-finish-badge">Wall Putty</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">Putty Paste</div>
+            <div class="product-desc">Smooth white cement-based putty for filling pores and levelling walls before painting. Provides a perfect base for all topcoats.</div>
+            <div class="product-tags">
+              <span class="product-tag blue">Wall Levelling</span>
+              <span class="product-tag green">Paint-Ready</span>
+              <span class="product-tag">White Finish</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-category-label">Putty Paste</div>
+              <a href="index.html#contact" class="enquire-btn">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-swatch" style="background: linear-gradient(160deg, #fff9c4, #fff3e0);">
+            <span class="product-code-badge">CP-ADH-006</span>
+            <span class="product-finish-badge">Plaster</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">P.O.P — Plaster of Paris</div>
+            <div class="product-desc">High-quality Plaster of Paris for wall smoothening, false ceilings, mouldings, and decorative applications. Fast setting with smooth finish.</div>
+            <div class="product-tags">
+              <span class="product-tag blue">False Ceiling</span>
+              <span class="product-tag green">Fast Setting</span>
+              <span class="product-tag">Decorative</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-category-label">P.O.P</div>
+              <a href="index.html#contact" class="enquire-btn">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" style="grid-column: 1 / -1; max-width: 50%; margin: 0 auto;">
+          <div class="product-swatch" style="background: linear-gradient(160deg, #fafafa, #eeeeee);">
+            <span class="product-code-badge">CP-ADH-007</span>
+            <span class="product-finish-badge">Powder</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">Chalk Powder</div>
+            <div class="product-desc">Fine white chalk powder for wall preparation and whitewashing applications. Economical coverage for utility spaces and compound walls.</div>
+            <div class="product-tags">
+              <span class="product-tag">Whitewash</span>
+              <span class="product-tag green">Economical</span>
+              <span class="product-tag blue">Wall Prep</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-category-label">Chalk Powder</div>
+              <a href="index.html#contact" class="enquire-btn">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════
+         SECTION 5: THINNERS
+    ═══════════════════════════════════════ -->
+    <div class="catalog-section page-break">
+      <div class="section-header">
+        <div class="section-label">Product Category 05</div>
+        <h2 class="section-title">Thinners <span>&amp; Solvents</span></h2>
+        <p class="section-desc">Precision-formulated thinners for smooth application of enamel and NC-based coatings.</p>
+      </div>
+
+      <div class="cat-banner">
+        <div class="cat-banner-icon">🧪</div>
+        <div class="cat-banner-text">
+          <h3>Thinner Range</h3>
+          <p>CP Matrix thinners are formulated to perfectly balance viscosity, evaporation rate, and compatibility with our paint systems for flawless application.</p>
+        </div>
+      </div>
+
+      <div class="products-grid">
+
+        <div class="product-card">
+          <div class="product-swatch" style="background: linear-gradient(160deg, rgba(255,255,255,0.8), rgba(220,235,255,0.9));">
+            <span class="product-code-badge">CP-THN-001</span>
+            <span class="product-finish-badge">Enamel Grade</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">Enamel Thinner</div>
+            <div class="product-desc">Specially formulated for thinning enamel paints and cleaning brushes and rollers. Balanced evaporation rate ensures smooth brush marks and even coverage.</div>
+            <div class="product-tags">
+              <span class="product-tag blue">Enamel Compatible</span>
+              <span class="product-tag green">Brush Cleaning</span>
+              <span class="product-tag">Fast Dry</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-category-label">Enamel Thinner</div>
+              <a href="index.html#contact" class="enquire-btn">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-swatch" style="background: linear-gradient(160deg, #e3f2fd, #bbdefb);">
+            <span class="product-code-badge">CP-THN-002</span>
+            <span class="product-finish-badge">NC Grade</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">NC Thinner</div>
+            <div class="product-desc">Nitrocellulose-grade thinner for NC lacquers, sealers, and wood finishes. Fast evaporation for quick recoating. Excellent compatibility with NC-based systems.</div>
+            <div class="product-tags">
+              <span class="product-tag blue">NC Compatible</span>
+              <span class="product-tag green">Fast Evaporation</span>
+              <span class="product-tag">Wood Finishes</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-category-label">NC Thinner</div>
+              <a href="index.html#contact" class="enquire-btn">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════
+         WHY CP MATRIX
     ═══════════════════════════════════════ -->
     <div class="catalog-section page-break">
       <div class="section-header">
         <div class="section-label">Our Promise</div>
-        <h2 class="section-title">Why Choose <span>Ranjith Paints</span></h2>
-        <p class="section-desc">Six reasons thousands of homeowners and painters choose us every time.</p>
+        <h2 class="section-title">Why Choose <span>CP Matrix</span></h2>
+        <p class="section-desc">Six reasons homeowners, builders, and contractors choose CP Matrix for every project.</p>
       </div>
 
       <div class="why-grid">
         <div class="why-card">
+          <div class="why-icon">⚗️</div>
+          <div class="why-title">Premium Quality</div>
+          <div class="why-desc">Crafted with the finest raw materials and advanced technology to deliver superior performance and long-lasting beauty.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🌦️</div>
+          <div class="why-title">Weather Resistance</div>
+          <div class="why-desc">Built for India's harsh climates — rain, heat, humidity, and UV exposure. Delta offers 12 years of exterior protection.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">✨</div>
+          <div class="why-title">Beautiful Finish</div>
+          <div class="why-desc">Rich, elegant, long-lasting colours that stay vibrant through the years. Every surface looks its best with CP Matrix.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🧱</div>
+          <div class="why-title">Complete Solution</div>
+          <div class="why-desc">From interior emulsions to exterior coats, primers, adhesives, putty, and thinners — everything for perfect walls in one range.</div>
+        </div>
+        <div class="why-card">
           <div class="why-icon">🛡️</div>
-          <div class="why-title">20-Year Warranty</div>
-          <div class="why-desc">Written guarantee against peeling, fading, and weather damage on all exterior products.</div>
+          <div class="why-title">12-Year Warranty</div>
+          <div class="why-desc">Our Delta exterior emulsion is backed by a 12-year performance guarantee. Confidence in every bucket.</div>
         </div>
         <div class="why-card">
-          <div class="why-icon">🌿</div>
-          <div class="why-title">Eco-Friendly Low-VOC</div>
-          <div class="why-desc">Low-VOC and zero-odour formulas across our entire interior range. Safe for children and pets.</div>
-        </div>
-        <div class="why-card">
-          <div class="why-icon">🎨</div>
-          <div class="why-title">2000+ Shades</div>
-          <div class="why-desc">India's widest colour palette with on-demand tinting — the exact shade you visualise, every time.</div>
-        </div>
-        <div class="why-card">
-          <div class="why-icon">🚀</div>
-          <div class="why-title">Same-Day Delivery</div>
-          <div class="why-desc">Order before 12 PM and receive your paint the same day across Chennai and surrounding areas.</div>
-        </div>
-        <div class="why-card">
-          <div class="why-icon">👨‍🎨</div>
-          <div class="why-title">Free Colour Consultation</div>
-          <div class="why-desc">Free in-home consultation with our trained colour experts. No obligation, pure inspiration.</div>
-        </div>
-        <div class="why-card">
-          <div class="why-icon">🔧</div>
-          <div class="why-title">Certified Painter Network</div>
-          <div class="why-desc">Connect with our vetted, certified applicators who know our products and deliver perfect results.</div>
+          <div class="why-icon">🏪</div>
+          <div class="why-title">500+ Dealer Network</div>
+          <div class="why-desc">CP Matrix products are available through 500+ authorised dealers and retailers across Tamil Nadu and beyond.</div>
         </div>
       </div>
     </div>
@@ -1676,15 +1623,96 @@
       <div class="section-header">
         <div class="section-label">Colour Range</div>
         <h2 class="section-title">Colour Chart <span>Preview</span></h2>
-        <p class="section-desc">A curated selection from our 2000+ shade library. Visit our showroom or website for the complete tinting chart and custom matching.</p>
+        <p class="section-desc">A curated selection from the CP Matrix navy and blue palette. Visit our showroom for the complete tinting chart and custom colour matching.</p>
       </div>
 
-      <!-- Whites & Creams -->
+      <!-- CP Matrix Blues -->
       <div class="color-family">
-        <div class="color-family-title">Whites &amp; Creams</div>
+        <div class="color-family-title">CP Matrix Blues</div>
         <div class="swatches-row">
           <div class="swatch-item">
-            <div class="swatch-circle" style="background:#fafafa;"></div>
+            <div class="swatch-circle" style="background:#1a6fd4;"></div>
+            <div class="swatch-name">CP Matrix Blue</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#0d4fa0;"></div>
+            <div class="swatch-name">Deep Navy</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#0a3a7a;"></div>
+            <div class="swatch-name">Royal Navy</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#0d2d6e;"></div>
+            <div class="swatch-name">Midnight Blue</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#1a1a4e;"></div>
+            <div class="swatch-name">Eclipse Navy</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sky & Ocean Blues -->
+      <div class="color-family">
+        <div class="color-family-title">Sky &amp; Ocean Blues</div>
+        <div class="swatches-row">
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#bbdefb;"></div>
+            <div class="swatch-name">Sky Bliss</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#90caf9;"></div>
+            <div class="swatch-name">Cloud Blue</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#42a5f5;"></div>
+            <div class="swatch-name">Aqua Splash</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#1e88e5;"></div>
+            <div class="swatch-name">Ocean Vivid</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#457b9d;"></div>
+            <div class="swatch-name">Steel Blue</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teals & Aquas -->
+      <div class="color-family">
+        <div class="color-family-title">Teals &amp; Aquas</div>
+        <div class="swatches-row">
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#00c4cc;"></div>
+            <div class="swatch-name">CP Teal</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#00838f;"></div>
+            <div class="swatch-name">Deep Teal</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#80cbc4;"></div>
+            <div class="swatch-name">Mint Wave</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#a8dadc;"></div>
+            <div class="swatch-name">Aqua Mist</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#b2dfdb;"></div>
+            <div class="swatch-name">Sea Glass</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Neutrals & Whites -->
+      <div class="color-family">
+        <div class="color-family-title">Whites, Creams &amp; Neutrals</div>
+        <div class="swatches-row">
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#f1faee;"></div>
             <div class="swatch-name">Pearl White</div>
           </div>
           <div class="swatch-item">
@@ -1692,151 +1720,70 @@
             <div class="swatch-name">Ivory Mist</div>
           </div>
           <div class="swatch-item">
-            <div class="swatch-circle" style="background:#f5e6d3;"></div>
-            <div class="swatch-name">Cream Linen</div>
-          </div>
-          <div class="swatch-item">
             <div class="swatch-circle" style="background:#e8d5c4;"></div>
-            <div class="swatch-name">Sandstone Bliss</div>
+            <div class="swatch-name">Cream Linen</div>
           </div>
           <div class="swatch-item">
             <div class="swatch-circle" style="background:#e0d5c0;"></div>
             <div class="swatch-name">Warm Beige</div>
           </div>
-        </div>
-      </div>
-
-      <!-- Blues & Greens -->
-      <div class="color-family">
-        <div class="color-family-title">Blues &amp; Greens</div>
-        <div class="swatches-row">
-          <div class="swatch-item">
-            <div class="swatch-circle" style="background:#bbdefb;"></div>
-            <div class="swatch-name">Sky Serenity</div>
-          </div>
-          <div class="swatch-item">
-            <div class="swatch-circle" style="background:#90caf9;"></div>
-            <div class="swatch-name">Ocean Mist</div>
-          </div>
-          <div class="swatch-item">
-            <div class="swatch-circle" style="background:#42a5f5;"></div>
-            <div class="swatch-name">Aqua Splash</div>
-          </div>
-          <div class="swatch-item">
-            <div class="swatch-circle" style="background:#c8e6c9;"></div>
-            <div class="swatch-name">Sage Garden</div>
-          </div>
-          <div class="swatch-item">
-            <div class="swatch-circle" style="background:#81b29a;"></div>
-            <div class="swatch-name">Forest Shadow</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Reds & Oranges -->
-      <div class="color-family">
-        <div class="color-family-title">Reds &amp; Oranges</div>
-        <div class="swatches-row">
-          <div class="swatch-item">
-            <div class="swatch-circle" style="background:#ef9a9a;"></div>
-            <div class="swatch-name">Blush Rose</div>
-          </div>
-          <div class="swatch-item">
-            <div class="swatch-circle" style="background:#e53935;"></div>
-            <div class="swatch-name">Crimson Blaze</div>
-          </div>
-          <div class="swatch-item">
-            <div class="swatch-circle" style="background:#b71c1c;"></div>
-            <div class="swatch-name">Deep Crimson</div>
-          </div>
-          <div class="swatch-item">
-            <div class="swatch-circle" style="background:#ff8a65;"></div>
-            <div class="swatch-name">Terracotta Dusk</div>
-          </div>
-          <div class="swatch-item">
-            <div class="swatch-circle" style="background:#e85d04;"></div>
-            <div class="swatch-name">Ranjith Orange</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Yellows & Neutrals -->
-      <div class="color-family">
-        <div class="color-family-title">Yellows &amp; Neutrals</div>
-        <div class="swatches-row">
-          <div class="swatch-item">
-            <div class="swatch-circle" style="background:#fff9c4;"></div>
-            <div class="swatch-name">Lemon Zest</div>
-          </div>
-          <div class="swatch-item">
-            <div class="swatch-circle" style="background:#fdd835;"></div>
-            <div class="swatch-name">Colonial Yellow</div>
-          </div>
-          <div class="swatch-item">
-            <div class="swatch-circle" style="background:#ffb703;"></div>
-            <div class="swatch-name">Gold Rush</div>
-          </div>
           <div class="swatch-item">
             <div class="swatch-circle" style="background:#d4a96a;"></div>
             <div class="swatch-name">Sandy Dune</div>
           </div>
-          <div class="swatch-item">
-            <div class="swatch-circle" style="background:#a0785a;"></div>
-            <div class="swatch-name">Warm Chestnut</div>
-          </div>
         </div>
       </div>
 
-      <!-- Dark & Bold -->
+      <!-- Dark & Slate Blues -->
       <div class="color-family">
-        <div class="color-family-title">Dark &amp; Bold</div>
+        <div class="color-family-title">Slate &amp; Dark Blues</div>
         <div class="swatches-row">
           <div class="swatch-item">
-            <div class="swatch-circle" style="background:#6a1b9a;"></div>
-            <div class="swatch-name">Royal Plum</div>
-          </div>
-          <div class="swatch-item">
-            <div class="swatch-circle" style="background:#1565c0;"></div>
-            <div class="swatch-name">Deep Navy</div>
+            <div class="swatch-circle" style="background:#546e7a;"></div>
+            <div class="swatch-name">Blue Slate</div>
           </div>
           <div class="swatch-item">
             <div class="swatch-circle" style="background:#37474f;"></div>
             <div class="swatch-name">Slate Storm</div>
           </div>
           <div class="swatch-item">
-            <div class="swatch-circle" style="background:#5d4037;"></div>
-            <div class="swatch-name">Dark Mocha</div>
+            <div class="swatch-circle" style="background:#263238;"></div>
+            <div class="swatch-name">Deep Slate</div>
           </div>
           <div class="swatch-item">
             <div class="swatch-circle" style="background:#212121;"></div>
             <div class="swatch-name">Onyx Black</div>
           </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#5c6bc0;"></div>
+            <div class="swatch-name">Indigo Calm</div>
+          </div>
         </div>
       </div>
 
-      <!-- Textures -->
+      <!-- Special Finishes -->
       <div class="color-family">
-        <div class="color-family-title">Texture &amp; Metallic Finishes</div>
+        <div class="color-family-title">Special &amp; Accent Finishes</div>
         <div class="swatches-row">
           <div class="swatch-item">
-            <div class="swatch-circle" style="background: radial-gradient(ellipse at 30% 30%, #d7ccc8, #a1887f);"></div>
-            <div class="swatch-name">Desert Stone</div>
+            <div class="swatch-circle" style="background: linear-gradient(135deg, #1a6fd4, #00c4cc);"></div>
+            <div class="swatch-name">CP Matrix Gradient</div>
           </div>
           <div class="swatch-item">
-            <div class="swatch-circle" style="background: linear-gradient(135deg, #ffd700, #b8860b, #ffd700);"></div>
-            <div class="swatch-name">Golden Shimmer</div>
+            <div class="swatch-circle" style="background: linear-gradient(135deg, #0d4fa0, #1a6fd4);"></div>
+            <div class="swatch-name">Navy Fade</div>
           </div>
           <div class="swatch-item">
-            <div class="swatch-circle" style="background: radial-gradient(ellipse, #e0c9b8, #a07050);"></div>
-            <div class="swatch-name">Suede Velvet</div>
+            <div class="swatch-circle" style="background: linear-gradient(135deg, #6a4fc4, #1a6fd4);"></div>
+            <div class="swatch-name">Sigma Purple-Blue</div>
           </div>
           <div class="swatch-item">
-            <div class="swatch-circle" style="background: repeating-linear-gradient(0deg, #8d6e63 0px, #8d6e63 6px, #6d4c41 6px, #6d4c41 8px);"></div>
-            <div class="swatch-name">Brick Rustic</div>
+            <div class="swatch-circle" style="background: linear-gradient(135deg, #43e97b, #00c4cc);"></div>
+            <div class="swatch-name">Alpha Fresh</div>
           </div>
           <div class="swatch-item">
-            <div class="swatch-circle" style="background: linear-gradient(135deg, #e0e0e0, #9e9e9e, #bdbdbd);"></div>
-            <div class="swatch-name">Silver Chrome</div>
+            <div class="swatch-circle" style="background: linear-gradient(135deg, #a8d96c, #e0e840);"></div>
+            <div class="swatch-name">Arsha Green</div>
           </div>
         </div>
       </div>
@@ -1848,8 +1795,8 @@
     ═══════════════════════════════════════ -->
     <div class="back-cover">
       <div class="back-cover-header">
-        <h2>🎨 Visit Our Showroom</h2>
-        <p>Free colour consultation · Expert advice · 2000+ shades on display</p>
+        <h2>🏠 Visit Our Showroom</h2>
+        <p>Free colour consultation · Expert advice · Complete product range on display</p>
       </div>
 
       <div class="back-cover-body">
@@ -1857,16 +1804,18 @@
         <div class="contact-block">
           <h4>Contact Us</h4>
           <p>
-            <strong>Ranjith Paints</strong><br />
-            Anna Nagar, Chennai 600 040<br />
+            <strong>CP Matrix</strong><br />
+            by HD Origin Private Limited<br />
+            3/87/A, KRS Building,<br />
+            Gopinathampatti koot road,<br />
+            Harur, Dharmapuri — 636 903<br />
             Tamil Nadu, India
           </p>
           <br />
           <p>
-            📞 +91 99999 XXXXX<br />
-            📱 WhatsApp: +91 99999 XXXXX<br />
-            ✉️ <a href="mailto:sales@ranjithpaints.in">sales@ranjithpaints.in</a><br />
-            🌐 <a href="http://www.ranjithpaints.in">www.ranjithpaints.in</a>
+            📞 +91 85250 01700<br />
+            📱 WhatsApp: +91 85250 01700<br />
+            ✉️ <a href="mailto:hdoriginltd@gmail.com">hdoriginltd@gmail.com</a>
           </p>
           <br />
           <p>
@@ -1875,9 +1824,8 @@
             Sunday: 10 AM – 5 PM
           </p>
           <div class="social-row">
-            <a href="#" class="social-chip">Instagram</a>
-            <a href="#" class="social-chip">Facebook</a>
-            <a href="#" class="social-chip">YouTube</a>
+            <a href="https://www.instagram.com/cpmatrixpaints" target="_blank" class="social-chip">@cpmatrixpaints</a>
+            <a href="https://wa.me/918525001700" target="_blank" class="social-chip">WhatsApp</a>
           </div>
         </div>
 
@@ -1887,44 +1835,44 @@
             <span>📱</span>
             <p>Scan for<br />WhatsApp<br />Chat</p>
           </div>
-          <p style="font-size:0.75rem; color:var(--muted); margin-top:0.75rem;">Scan with your camera<br />to start a WhatsApp chat</p>
+          <p style="font-size:0.75rem; color:var(--muted); margin-top:0.75rem;">+91 85250 01700</p>
           <br />
-          <h4>Quick Order</h4>
+          <h4>Our Instagram</h4>
           <div class="qr-placeholder">
-            <span>🌐</span>
-            <p>Scan for<br />Online<br />Catalog</p>
+            <span>📸</span>
+            <p>@cpmatrix<br />paints</p>
           </div>
-          <p style="font-size:0.75rem; color:var(--muted); margin-top:0.75rem;">ranjithpaints.in/catalog</p>
+          <p style="font-size:0.75rem; color:var(--muted); margin-top:0.75rem;">Follow us for colour inspiration</p>
         </div>
 
         <div class="contact-block">
-          <h4>Delivery Areas</h4>
+          <h4>Product Range</h4>
           <p>
-            Chennai (All Zones)<br />
-            Kanchipuram<br />
-            Chengalpet<br />
-            Tiruvallur<br />
-            Tambaram<br />
-            Avadi<br />
-            Poonamallee
+            ✓ Arsha — Interior Emulsion (4yr)<br />
+            ✓ Alpha — Interior Emulsion<br />
+            ✓ Sigma — Premium Interior<br />
+            ✓ Delta — Exterior Emulsion (12yr)<br />
+            ✓ Infinity — Exterior Primer (6yr)<br />
+            ✓ Quantum — Damp Proof (10yr)<br />
+            ✓ Int / Ext / Red Oxide Primer<br />
+            ✓ Adhesives, Putty &amp; Thinners
           </p>
           <br />
           <h4>Our Services</h4>
           <p>
             ✓ Free Colour Consultation<br />
-            ✓ Same-Day Delivery<br />
-            ✓ Certified Painter Network<br />
-            ✓ Custom Colour Tinting<br />
+            ✓ Technical Support<br />
+            ✓ Dealer Partnerships<br />
             ✓ Bulk &amp; Contractor Orders<br />
-            ✓ 20-Year Written Warranty
+            ✓ 12-Year Written Warranty<br />
+            ✓ Delivery across Dharmapuri
           </p>
         </div>
 
       </div>
 
       <div class="back-cover-footer">
-        <strong>© 2025 Ranjith Paints</strong> · Anna Nagar, Chennai 600 040 · All rights reserved ·
-        Prices inclusive of GST · Subject to change without notice · E&amp;OE
+        <strong>© 2025 CP Matrix (HD Origin Private Limited)</strong> · 3/87/A, KRS Building, Harur, Dharmapuri — 636 903 · All rights reserved · E&amp;OE
       </div>
     </div>
 
@@ -2052,7 +2000,6 @@
     const headerObs = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
-          const line = e.target.querySelector('.section-header::after');
           e.target.classList.add('header-visible');
         }
       });
