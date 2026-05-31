@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>CP Matrix — Product Catalog 2025</title>
   <meta name="description" content="CP Matrix official product catalog 2025. Interior, Exterior, Primers, Adhesives and more. Harur, Dharmapuri, Tamil Nadu." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -962,14 +962,86 @@
       @keyframes backCoverShimmer { 0%{left:-100%} 100%{left:200%} }
     }
 
-    /* ── RESPONSIVE (SCREEN) ── */
+    /* ════════════════════════════════════════════
+       RESPONSIVE — ALL DEVICES
+    ════════════════════════════════════════════ */
+
+    /* Tablet landscape */
+    @media (max-width: 900px) {
+      .catalog-wrapper { padding: 1.5rem 1.5rem 4rem; }
+      .products-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+      .why-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+      .back-cover-body { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+      .swatches-row { grid-template-columns: repeat(5, 1fr); gap: 0.6rem; }
+      .section-title { font-size: clamp(1.4rem, 3.5vw, 2rem); }
+      .cover-logo { font-size: clamp(2rem, 5vw, 3.5rem); }
+    }
+
+    /* Tablet portrait */
     @media (max-width: 640px) {
-      .products-grid { grid-template-columns: 1fr; }
-      .stats-row { grid-template-columns: repeat(2, 1fr); }
-      .why-grid { grid-template-columns: repeat(2, 1fr); }
-      .back-cover-body { grid-template-columns: 1fr; }
-      .about-grid { grid-template-columns: 1fr; }
-      .swatches-row { grid-template-columns: repeat(4, 1fr); }
+      .catalog-wrapper { padding: 1rem 1rem 3rem; }
+      .products-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+      .why-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+      .back-cover-body { grid-template-columns: 1fr; gap: 1.5rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+      .swatches-row { grid-template-columns: repeat(4, 1fr); gap: 0.5rem; }
+      .cover-page { padding: 2.5rem 1.25rem; min-height: 60vh; }
+      .color-stripe { height: 44px; }
+      .cat-banner { padding: 1rem 1.25rem; }
+      .cat-banner-icon { font-size: 1.5rem; }
+      .product-swatch { height: 160px; }
+      .why-card { padding: 1.25rem 1rem; }
+      .stat-box { padding: 1.25rem 0.75rem; }
+      .stat-box .num { font-size: 1.75rem; }
+      .section-title { font-size: clamp(1.3rem, 5vw, 1.8rem); }
+      .cover-logo { font-size: clamp(1.75rem, 7vw, 2.8rem); }
+      .cover-tagline { font-size: 1rem; }
+      .back-cover-header { padding: 2rem 1.5rem; }
+      .back-cover-header h2 { font-size: 1.5rem; }
+      .back-cover-body { padding: 1.5rem 1.25rem; }
+      .screen-topbar { padding: 0.6rem 1rem; flex-wrap: wrap; gap: 0.5rem; }
+      .topbar-title { font-size: 0.75rem; }
+      .print-fab { display: none; }
+    }
+
+    /* Mobile portrait */
+    @media (max-width: 480px) {
+      .catalog-wrapper { padding: 0.75rem 0.75rem 2.5rem; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+      .stat-box .num { font-size: 1.5rem; }
+      .stat-box .lbl { font-size: 0.68rem; }
+      .why-grid { grid-template-columns: 1fr; gap: 0.6rem; }
+      .swatches-row { grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+      .product-swatch { height: 140px; }
+      .product-code-badge, .product-finish-badge { font-size: 0.6rem; padding: 0.25rem 0.55rem; }
+      .product-name { font-size: 0.95rem; }
+      .product-desc { font-size: 0.78rem; }
+      .product-price { font-size: 1.05rem; }
+      .cover-page { padding: 2rem 1rem; }
+      .cover-divider { margin: 1.25rem auto; }
+      .color-stripe { height: 36px; border-radius: 6px; }
+      .cover-contact { font-size: 0.78rem; }
+      .section-header { margin-bottom: 1.25rem; }
+      .section-title { font-size: 1.3rem; }
+      .cat-banner-text h3 { font-size: 0.95rem; }
+      .cat-banner-text p { font-size: 0.75rem; }
+      .mission-box { padding: 1.25rem; }
+      .mission-box p { font-size: 0.9rem; }
+      .back-cover-body { padding: 1.25rem 1rem; }
+      .contact-block h4 { font-size: 0.68rem; }
+      .contact-block p, .contact-block a { font-size: 0.8rem; line-height: 1.8; }
+      .social-chip { padding: 0.3rem 0.6rem; font-size: 0.7rem; }
+      .back-cover-footer { font-size: 0.72rem; padding: 1rem; }
+    }
+
+    /* Small phones */
+    @media (max-width: 360px) {
+      .stats-row { grid-template-columns: 1fr 1fr; }
+      .swatches-row { grid-template-columns: repeat(3, 1fr); }
+      .cover-logo { font-size: 1.5rem; }
+      .products-grid { gap: 1rem; }
     }
   </style>
 </head>
