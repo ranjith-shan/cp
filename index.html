@@ -1008,47 +1008,113 @@
     /* ════════════════════════════════════
        SIDEBAR
     ════════════════════════════════════ */
+    /* ─ Sidebar overlay ─ */
     .sidebar-overlay {
-      position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 300;
-      opacity: 0; pointer-events: none; transition: opacity 0.3s; backdrop-filter: blur(4px);
+      position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+      z-index: 9988; opacity: 0; pointer-events: none;
+      transition: opacity 0.3s ease; backdrop-filter: blur(4px);
     }
     .sidebar-overlay.open { opacity: 1; pointer-events: all; }
+
+    /* ─ Sidebar panel (left drawer) ─ */
     .sidebar {
-      position: fixed; top: 0; left: -320px; width: 300px; height: 100vh;
-      background: var(--bg2); border-right: 1px solid var(--border); z-index: 400;
-      transition: left 0.35s cubic-bezier(0.16,1,0.3,1); display: flex; flex-direction: column;
-      overflow-y: auto;
+      position: fixed; top: 0; left: 0; width: 300px; height: 100vh;
+      background: var(--bg2); border-right: 1px solid rgba(255,255,255,0.1);
+      z-index: 9990; overflow-y: auto; overflow-x: hidden;
+      /* Use transform so nav CSS (left/right/flex) can't interfere */
+      transform: translateX(-100%);
+      transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+      /* Critical: override any inherited flex/grid from <nav> CSS */
+      display: block !important;
+      flex-direction: unset !important;
+      justify-content: unset !important;
+      align-items: unset !important;
     }
-    .sidebar.open { left: 0; box-shadow: 8px 0 40px rgba(0,0,0,0.3); }
+    .sidebar.open {
+      transform: translateX(0);
+      box-shadow: 12px 0 50px rgba(0,0,0,0.5);
+    }
+
+    /* ─ Sidebar header ─ */
     .sidebar-head {
-      padding: 1.5rem; border-bottom: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: space-between;
+      display: flex !important; flex-direction: row !important;
+      align-items: center !important; justify-content: space-between !important;
+      padding: 1.25rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.07);
+      min-height: 70px;
     }
-    .sidebar-head img { height: 40px; object-fit: contain; filter: drop-shadow(0 0 6px rgba(26,111,212,0.4)); }
-    .sb-close { cursor: pointer; font-size: 1.4rem; color: var(--muted); transition: color 0.2s, transform 0.2s; }
-    .sb-close:hover { color: var(--text); transform: rotate(90deg); }
-    .sidebar-nav { padding: 1.5rem; flex: 1; }
-    .sb-nav-title { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.75rem; }
-    .sidebar-nav ul { list-style: none; display: flex; flex-direction: column; gap: 0.15rem; }
-    .sidebar-nav li a {
-      display: flex; align-items: center; gap: 0.9rem; padding: 0.8rem 1rem;
-      color: var(--muted); text-decoration: none; font-size: 0.95rem; font-weight: 500;
-      border-radius: 10px; transition: all 0.2s;
+    .sidebar-head img { height: 38px; width: auto; object-fit: contain; filter: drop-shadow(0 0 8px rgba(26,111,212,0.5)); }
+    .sb-close {
+      width: 36px; height: 36px; border-radius: 50%;
+      display: flex !important; align-items: center !important; justify-content: center !important;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      font-size: 1rem; color: var(--muted); cursor: pointer !important;
+      transition: color 0.2s, transform 0.3s, background 0.2s; flex-shrink: 0;
     }
-    .sidebar-nav li a:hover { background: rgba(26,111,212,0.12); color: var(--accent); }
-    .sidebar-nav li a .si { font-size: 1.1rem; width: 22px; text-align: center; }
-    .sb-divider { height: 1px; background: var(--border); margin: 1rem 0; }
+    .sb-close:hover { color: var(--text); transform: rotate(90deg); background: rgba(255,255,255,0.12); }
+
+    /* ─ Sidebar scroll area ─ */
+    .sidebar-body {
+      display: block !important; padding: 1.25rem 1rem;
+      overflow-x: hidden;
+    }
+
+    /* ─ Section title inside sidebar ─ */
+    .sb-nav-title {
+      display: block !important; font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted);
+      padding: 0 0.5rem; margin-bottom: 0.5rem; margin-top: 0.25rem;
+    }
+
+    /* ─ Nav list ─ */
+    .sb-list {
+      list-style: none; display: block !important; margin-bottom: 0.5rem;
+    }
+    .sb-list li { display: block !important; }
+    .sb-list li a {
+      display: flex !important; flex-direction: row !important;
+      align-items: center !important; gap: 0.85rem;
+      padding: 0.75rem 0.85rem; border-radius: 10px;
+      color: var(--muted); text-decoration: none; font-size: 0.92rem; font-weight: 500;
+      transition: background 0.2s, color 0.2s;
+      /* Prevent nav selector from bleeding in */
+      position: static !important; width: 100% !important;
+    }
+    .sb-list li a:hover { background: rgba(26,111,212,0.14); color: var(--accent); }
+    .sb-list li a::after { display: none !important; } /* kill nav underline animation */
+    .sb-list li a .si { font-size: 1rem; width: 20px; text-align: center; flex-shrink: 0; }
+
+    .sb-divider { height: 1px; background: rgba(255,255,255,0.07); margin: 0.75rem 0.5rem; }
+
+    /* ─ Sidebar footer (contact) ─ */
     .sidebar-foot {
-      padding: 1.25rem 1.5rem; border-top: 1px solid var(--border);
+      display: block !important; padding: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.07); margin-top: 0.5rem;
     }
-    .sb-foot-title { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.75rem; }
-    .sb-contact-row { display: flex; gap: 0.6rem; align-items: center; margin-bottom: 0.6rem; font-size: 0.82rem; color: var(--muted); }
+    .sb-contact-row {
+      display: flex !important; flex-direction: row !important;
+      gap: 0.5rem; align-items: flex-start; margin-bottom: 0.55rem;
+      font-size: 0.8rem; color: var(--muted); line-height: 1.5;
+    }
     .sb-contact-row a { color: inherit; text-decoration: none; transition: color 0.2s; }
     .sb-contact-row a:hover { color: var(--accent); }
-    .sb-socials { display: flex; gap: 0.5rem; margin-top: 1rem; }
-    .sb-social { padding: 0.4rem 0.9rem; background: var(--card-bg); border: 1px solid var(--border); border-radius: 50px; font-size: 0.75rem; color: var(--muted); text-decoration: none; transition: all 0.2s; }
+    .sb-socials {
+      display: flex !important; flex-direction: row !important;
+      flex-wrap: wrap; gap: 0.5rem; margin-top: 0.85rem;
+    }
+    .sb-social {
+      padding: 0.35rem 0.8rem; background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 50px; font-size: 0.73rem; color: var(--muted); text-decoration: none;
+      transition: all 0.2s; white-space: nowrap;
+    }
     .sb-social:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
-    .sidebar-trigger { width: 40px; height: 40px; border-radius: 10px; background: var(--card-bg); border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1rem; color: var(--text); transition: all 0.2s; flex-shrink: 0; }
+
+    /* ─ Sidebar trigger button ─ */
+    .sidebar-trigger {
+      width: 40px; height: 40px; border-radius: 10px; background: var(--card-bg);
+      border: 1px solid var(--border); cursor: pointer !important;
+      display: flex !important; align-items: center !important; justify-content: center !important;
+      font-size: 1.1rem; color: var(--text); transition: all 0.2s; flex-shrink: 0;
+    }
     .sidebar-trigger:hover { background: var(--accent); color: #fff; }
 
     /* ════════════════════════════════════
@@ -1198,43 +1264,55 @@
   <!-- SIDEBAR OVERLAY -->
   <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar" id="sidebar">
+  <!-- SIDEBAR (left drawer — uses div not nav to avoid flex inheritance) -->
+  <div class="sidebar" id="sidebar">
+
+    <!-- Header -->
     <div class="sidebar-head">
       <img src="logo.png" alt="CP Matrix">
-      <span class="sb-close" onclick="closeSidebar()">✕</span>
+      <button class="sb-close" onclick="closeSidebar()">✕</button>
     </div>
-    <nav class="sidebar-nav">
+
+    <!-- Scrollable body -->
+    <div class="sidebar-body">
+
       <div class="sb-nav-title">Navigation</div>
-      <ul>
-        <li><a href="#about" onclick="closeSidebar()"><span class="si">🏠</span>About Us</a></li>
-        <li><a href="#categories" onclick="closeSidebar()"><span class="si">🗂️</span>Categories</a></li>
-        <li><a href="#catalog" onclick="closeSidebar()"><span class="si">🎨</span>Product Catalog</a></li>
-        <li><a href="#visualizer" onclick="closeSidebar()"><span class="si">🖌️</span>Colour Visualizer</a></li>
-        <li><a href="#why" onclick="closeSidebar()"><span class="si">✅</span>Why CP Matrix</a></li>
-        <li><a href="#testimonials" onclick="closeSidebar()"><span class="si">⭐</span>Reviews</a></li>
-        <li><a href="#contact" onclick="closeSidebar()"><span class="si">📞</span>Contact Us</a></li>
+      <ul class="sb-list">
+        <li><a href="#about"       onclick="closeSidebar()"><span class="si">🏠</span> About Us</a></li>
+        <li><a href="#categories"  onclick="closeSidebar()"><span class="si">🗂️</span> Categories</a></li>
+        <li><a href="#catalog"     onclick="closeSidebar()"><span class="si">🎨</span> Product Catalog</a></li>
+        <li><a href="#visualizer"  onclick="closeSidebar()"><span class="si">🖌️</span> Colour Visualizer</a></li>
+        <li><a href="#why"         onclick="closeSidebar()"><span class="si">✅</span> Why CP Matrix</a></li>
+        <li><a href="#testimonials"onclick="closeSidebar()"><span class="si">⭐</span> Reviews</a></li>
+        <li><a href="#contact"     onclick="closeSidebar()"><span class="si">📞</span> Contact Us</a></li>
       </ul>
+
       <div class="sb-divider"></div>
+
       <div class="sb-nav-title">Quick Actions</div>
-      <ul>
-        <li><a href="#" onclick="closeSidebar();openCalc();return false;"><span class="si">🧮</span>Paint Calculator</a></li>
-        <li><a href="catalog.html" target="_blank"><span class="si">📄</span>View Full Catalog</a></li>
-        <li><a href="https://wa.me/918525001700" target="_blank"><span class="si">💬</span>WhatsApp Us</a></li>
+      <ul class="sb-list">
+        <li><a href="#" onclick="closeSidebar();openCalc();return false;"><span class="si">🧮</span> Paint Calculator</a></li>
+        <li><a href="catalog.html" target="_blank" onclick="closeSidebar()"><span class="si">📄</span> Full Catalog PDF</a></li>
+        <li><a href="https://wa.me/918525001700" target="_blank" onclick="closeSidebar()"><span class="si">💬</span> WhatsApp Us</a></li>
+        <li><a href="https://www.google.com/maps/place/cp+matrix/@11.9982177,78.4453782,17z" target="_blank"><span class="si">📍</span> Find Us on Maps</a></li>
+        <li><a href="https://www.instagram.com/cpmatrixpaints?igsh=MWkwMmEzMGxmajRzYQ==" target="_blank"><span class="si">📸</span> Instagram</a></li>
       </ul>
-    </nav>
+
+    </div><!-- /sidebar-body -->
+
+    <!-- Footer contact -->
     <div class="sidebar-foot">
-      <div class="sb-foot-title">Contact</div>
-      <div class="sb-contact-row">📍 <span>3/87/A, KRS Building, Gobinathampatti, Salem TN 636903</span></div>
+      <div class="sb-nav-title" style="margin-bottom:0.6rem">Contact</div>
+      <div class="sb-contact-row">📍 <span>XCXX+75P, Koot Road, Gobinathampatti, Salem TN 636903</span></div>
       <div class="sb-contact-row">📞 <a href="tel:+918525001700">+91 85250 01700</a></div>
       <div class="sb-contact-row">✉️ <a href="mailto:hdoriginltd@gmail.com">hdoriginltd@gmail.com</a></div>
       <div class="sb-socials">
         <a href="https://www.instagram.com/cpmatrixpaints?igsh=MWkwMmEzMGxmajRzYQ==" target="_blank" class="sb-social">📸 Instagram</a>
         <a href="https://wa.me/918525001700" target="_blank" class="sb-social">💬 WhatsApp</a>
-        <a href="https://www.google.com/maps/place/cp+matrix/@11.9982177,78.4453782,17z" target="_blank" class="sb-social">📍 Maps</a>
       </div>
     </div>
-  </aside>
+
+  </div><!-- /sidebar -->
 
   <!-- HERO -->
   <section class="hero">
