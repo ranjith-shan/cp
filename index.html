@@ -980,6 +980,193 @@
       .footer-inner { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
     }
+
+    /* ════════════════════════════════════
+       DARK / LIGHT MODE
+    ════════════════════════════════════ */
+    [data-theme="light"] {
+      --bg: #f0f4f8; --bg2: #e4edf7; --text: #0f172a; --muted: #475569;
+      --border: rgba(0,0,0,0.1); --card-bg: rgba(255,255,255,0.85); --surface: rgba(0,0,0,0.04);
+    }
+    [data-theme="light"] nav { background: rgba(240,244,248,0.92) !important; border-bottom-color: rgba(0,0,0,0.1); }
+    [data-theme="light"] section { background: var(--bg); }
+    [data-theme="light"] #categories, [data-theme="light"] #visualizer, [data-theme="light"] #why, [data-theme="light"] #testimonials, [data-theme="light"] .cta-section { background: var(--bg2) !important; }
+    [data-theme="light"] .paint-card, [data-theme="light"] .feature-card, [data-theme="light"] .stat-card, [data-theme="light"] .testimonial-card, [data-theme="light"] .contact-item, [data-theme="light"] .contact-form, [data-theme="light"] .color-picker-panel, [data-theme="light"] .room-preview { background: rgba(255,255,255,0.9) !important; border-color: rgba(0,0,0,0.1) !important; }
+    [data-theme="light"] .form-group input, [data-theme="light"] .form-group textarea, [data-theme="light"] .form-group select { background: #fff; border-color: rgba(0,0,0,0.15); color: #0f172a; }
+    [data-theme="light"] footer { background: #0f172a; }
+    [data-theme="light"] .paint-finish { background: rgba(0,0,0,0.5); }
+    [data-theme="light"] body::before { opacity: 0.1; }
+
+    .theme-toggle {
+      width: 40px; height: 40px; border-radius: 50%; background: var(--card-bg);
+      border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center;
+      justify-content: center; font-size: 1.1rem; transition: all 0.3s; color: var(--text);
+      flex-shrink: 0;
+    }
+    .theme-toggle:hover { background: var(--accent); transform: rotate(20deg); }
+
+    /* ════════════════════════════════════
+       SIDEBAR
+    ════════════════════════════════════ */
+    .sidebar-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 300;
+      opacity: 0; pointer-events: none; transition: opacity 0.3s; backdrop-filter: blur(4px);
+    }
+    .sidebar-overlay.open { opacity: 1; pointer-events: all; }
+    .sidebar {
+      position: fixed; top: 0; left: -320px; width: 300px; height: 100vh;
+      background: var(--bg2); border-right: 1px solid var(--border); z-index: 400;
+      transition: left 0.35s cubic-bezier(0.16,1,0.3,1); display: flex; flex-direction: column;
+      overflow-y: auto;
+    }
+    .sidebar.open { left: 0; box-shadow: 8px 0 40px rgba(0,0,0,0.3); }
+    .sidebar-head {
+      padding: 1.5rem; border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .sidebar-head img { height: 40px; object-fit: contain; filter: drop-shadow(0 0 6px rgba(26,111,212,0.4)); }
+    .sb-close { cursor: pointer; font-size: 1.4rem; color: var(--muted); transition: color 0.2s, transform 0.2s; }
+    .sb-close:hover { color: var(--text); transform: rotate(90deg); }
+    .sidebar-nav { padding: 1.5rem; flex: 1; }
+    .sb-nav-title { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.75rem; }
+    .sidebar-nav ul { list-style: none; display: flex; flex-direction: column; gap: 0.15rem; }
+    .sidebar-nav li a {
+      display: flex; align-items: center; gap: 0.9rem; padding: 0.8rem 1rem;
+      color: var(--muted); text-decoration: none; font-size: 0.95rem; font-weight: 500;
+      border-radius: 10px; transition: all 0.2s;
+    }
+    .sidebar-nav li a:hover { background: rgba(26,111,212,0.12); color: var(--accent); }
+    .sidebar-nav li a .si { font-size: 1.1rem; width: 22px; text-align: center; }
+    .sb-divider { height: 1px; background: var(--border); margin: 1rem 0; }
+    .sidebar-foot {
+      padding: 1.25rem 1.5rem; border-top: 1px solid var(--border);
+    }
+    .sb-foot-title { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.75rem; }
+    .sb-contact-row { display: flex; gap: 0.6rem; align-items: center; margin-bottom: 0.6rem; font-size: 0.82rem; color: var(--muted); }
+    .sb-contact-row a { color: inherit; text-decoration: none; transition: color 0.2s; }
+    .sb-contact-row a:hover { color: var(--accent); }
+    .sb-socials { display: flex; gap: 0.5rem; margin-top: 1rem; }
+    .sb-social { padding: 0.4rem 0.9rem; background: var(--card-bg); border: 1px solid var(--border); border-radius: 50px; font-size: 0.75rem; color: var(--muted); text-decoration: none; transition: all 0.2s; }
+    .sb-social:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .sidebar-trigger { width: 40px; height: 40px; border-radius: 10px; background: var(--card-bg); border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1rem; color: var(--text); transition: all 0.2s; flex-shrink: 0; }
+    .sidebar-trigger:hover { background: var(--accent); color: #fff; }
+
+    /* ════════════════════════════════════
+       PAINT CALCULATOR
+    ════════════════════════════════════ */
+    .calc-fab {
+      position: fixed; bottom: 6rem; right: 2rem; z-index: 600; width: 54px; height: 54px;
+      border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff; border: none; cursor: none !important; font-size: 1.4rem;
+      box-shadow: 0 8px 24px rgba(26,111,212,0.45); display: flex; align-items: center; justify-content: center;
+      transition: all 0.3s; animation: fabPulse 3s ease-in-out infinite;
+    }
+    .calc-fab:hover { transform: scale(1.12) rotate(12deg); animation: none; box-shadow: 0 12px 32px rgba(26,111,212,0.65); }
+    @keyframes fabPulse { 0%,100%{box-shadow:0 8px 24px rgba(26,111,212,0.45)} 50%{box-shadow:0 8px 40px rgba(26,111,212,0.7),0 0 0 8px rgba(26,111,212,0.08)} }
+    .calc-fab-tooltip {
+      position: fixed; bottom: 6.6rem; right: 5rem; background: var(--bg2); border: 1px solid var(--border);
+      padding: 0.4rem 0.9rem; border-radius: 8px; font-size: 0.78rem; font-weight: 600; color: var(--text);
+      white-space: nowrap; opacity: 0; transition: opacity 0.2s; pointer-events: none; z-index: 601;
+    }
+    .calc-fab:hover + .calc-fab-tooltip, .calc-fab-tooltip:hover { opacity: 1; }
+
+    .calc-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.65); z-index: 700;
+      opacity: 0; pointer-events: none; transition: opacity 0.3s;
+      display: flex; align-items: center; justify-content: center; padding: 1rem;
+      backdrop-filter: blur(8px);
+    }
+    .calc-overlay.open { opacity: 1; pointer-events: all; }
+    .calc-modal {
+      background: var(--bg2); border: 1px solid var(--border); border-radius: 24px;
+      width: 100%; max-width: 560px; max-height: 90vh; overflow-y: auto;
+      transform: scale(0.88) translateY(24px); transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+    }
+    .calc-overlay.open .calc-modal { transform: scale(1) translateY(0); }
+    .calc-head {
+      padding: 1.75rem 2rem 1.25rem; display: flex; align-items: center;
+      justify-content: space-between; border-bottom: 1px solid var(--border);
+    }
+    .calc-head h3 { font-family:'Syne',sans-serif; font-size: 1.35rem; font-weight: 800; display: flex; align-items: center; gap: 0.6rem; }
+    .calc-close { cursor: none !important; font-size: 1.3rem; color: var(--muted); transition: color 0.2s, transform 0.2s; }
+    .calc-close:hover { color: var(--text); transform: rotate(90deg); }
+    .calc-body { padding: 1.75rem 2rem 2rem; }
+    .calc-section-title { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.75rem; }
+    .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem; }
+    .calc-field { display: flex; flex-direction: column; gap: 0.4rem; }
+    .calc-field label { font-size: 0.78rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+    .calc-field input, .calc-field select {
+      background: rgba(255,255,255,0.06); border: 1px solid var(--border); border-radius: 10px;
+      padding: 0.75rem 1rem; color: var(--text); font-family: 'Inter',sans-serif; font-size: 0.93rem;
+      outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .calc-field input:focus, .calc-field select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(26,111,212,0.15); }
+    .calc-field select option { background: var(--bg2); }
+    .calc-btn {
+      width: 100%; padding: 0.9rem; background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff; border: none; border-radius: 12px; font-size: 1rem; font-weight: 700;
+      cursor: none !important; font-family: 'Inter',sans-serif; margin-top: 0.5rem; transition: all 0.2s;
+    }
+    .calc-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,111,212,0.4); }
+    .calc-result {
+      background: rgba(26,111,212,0.07); border: 1px solid rgba(26,111,212,0.2); border-radius: 16px;
+      padding: 1.5rem; margin-top: 1.5rem; display: none;
+    }
+    .calc-result.show { display: block; animation: fadeSlideIn 0.4s cubic-bezier(0.16,1,0.3,1); }
+    @keyframes fadeSlideIn { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+    .result-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.25rem; }
+    .result-item { text-align: center; }
+    .result-val { font-family:'Syne',sans-serif; font-size: 1.7rem; font-weight: 800; color: var(--accent); line-height: 1; }
+    .result-lbl { font-size: 0.72rem; color: var(--muted); margin-top: 0.3rem; }
+    .result-note { font-size: 0.82rem; color: var(--muted); margin-bottom: 1rem; padding: 0.75rem; background: rgba(255,255,255,0.04); border-radius: 8px; }
+    .wa-btn {
+      width: 100%; padding: 0.85rem; background: #25d366; color: #fff; border: none; border-radius: 12px;
+      font-size: 0.95rem; font-weight: 700; cursor: none !important; font-family: 'Inter',sans-serif;
+      display: flex; align-items: center; justify-content: center; gap: 0.5rem; transition: all 0.2s;
+    }
+    .wa-btn:hover { background: #1ebd58; transform: translateY(-1px); box-shadow: 0 8px 20px rgba(37,211,102,0.3); }
+
+    /* ════════════════════════════════════
+       CUSTOM PAINT CURSOR
+    ════════════════════════════════════ */
+    body, * { cursor: none !important; }
+    #cp-cursor {
+      position: fixed; pointer-events: none; z-index: 99999; top: 0; left: 0;
+      transform: translate(-50%, -50%);
+    }
+    #cp-cursor-ring {
+      position: fixed; pointer-events: none; z-index: 99998;
+      width: 36px; height: 36px; border-radius: 50%; border: 2px solid var(--accent);
+      transform: translate(-50%,-50%); transition: left 0.12s, top 0.12s, width 0.2s, height 0.2s, opacity 0.2s;
+      opacity: 0.5;
+    }
+    #cp-cursor.clicking #cp-cursor-ring { transform: scale(0.7); }
+    .cp-splat {
+      position: fixed; pointer-events: none; z-index: 9996; border-radius: 50%;
+      animation: splatPop 0.65s ease-out forwards; transform: translate(-50%,-50%);
+    }
+    @keyframes splatPop {
+      0%{transform:translate(-50%,-50%) scale(0);opacity:0.85}
+      40%{transform:translate(-50%,-50%) scale(1.4);opacity:0.5}
+      100%{transform:translate(-50%,-50%) scale(2.5);opacity:0}
+    }
+
+    /* ════════════════════════════════════
+       GOOGLE MAPS SECTION
+    ════════════════════════════════════ */
+    .map-container { border-radius: var(--radius-lg); overflow: hidden; margin-top: 1.5rem; border: 1px solid var(--border); }
+    .map-container iframe { display: block; width: 100%; height: 280px; border: 0; }
+
+    /* WhatsApp float button */
+    .wa-float {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 600; width: 54px; height: 54px;
+      border-radius: 50%; background: #25d366; color: #fff; text-decoration: none;
+      display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+      box-shadow: 0 8px 24px rgba(37,211,102,0.45); transition: all 0.3s;
+      animation: waPulse 2.5s ease-in-out infinite;
+    }
+    .wa-float:hover { transform: scale(1.12); animation: none; box-shadow: 0 12px 32px rgba(37,211,102,0.65); }
+    @keyframes waPulse { 0%,100%{box-shadow:0 8px 24px rgba(37,211,102,0.45)} 50%{box-shadow:0 8px 40px rgba(37,211,102,0.7),0 0 0 8px rgba(37,211,102,0.1)} }
   </style>
 </head>
 <body>
@@ -998,11 +1185,56 @@
       <li><a href="#why" onclick="toggleMenu()">Why Us</a></li>
       <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
     </ul>
-    <a href="#contact" class="nav-cta">Get Free Quote →</a>
+    <div style="display:flex;align-items:center;gap:0.75rem">
+      <a href="#contact" class="nav-cta">Get Free Quote →</a>
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle dark/light mode">🌙</button>
+      <button class="sidebar-trigger" onclick="openSidebar()" title="Open menu">☰</button>
+    </div>
     <div class="hamburger" onclick="toggleMenu()">
       <span></span><span></span><span></span>
     </div>
   </nav>
+
+  <!-- SIDEBAR OVERLAY -->
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <img src="logo.png" alt="CP Matrix">
+      <span class="sb-close" onclick="closeSidebar()">✕</span>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sb-nav-title">Navigation</div>
+      <ul>
+        <li><a href="#about" onclick="closeSidebar()"><span class="si">🏠</span>About Us</a></li>
+        <li><a href="#categories" onclick="closeSidebar()"><span class="si">🗂️</span>Categories</a></li>
+        <li><a href="#catalog" onclick="closeSidebar()"><span class="si">🎨</span>Product Catalog</a></li>
+        <li><a href="#visualizer" onclick="closeSidebar()"><span class="si">🖌️</span>Colour Visualizer</a></li>
+        <li><a href="#why" onclick="closeSidebar()"><span class="si">✅</span>Why CP Matrix</a></li>
+        <li><a href="#testimonials" onclick="closeSidebar()"><span class="si">⭐</span>Reviews</a></li>
+        <li><a href="#contact" onclick="closeSidebar()"><span class="si">📞</span>Contact Us</a></li>
+      </ul>
+      <div class="sb-divider"></div>
+      <div class="sb-nav-title">Quick Actions</div>
+      <ul>
+        <li><a href="#" onclick="closeSidebar();openCalc();return false;"><span class="si">🧮</span>Paint Calculator</a></li>
+        <li><a href="catalog.html" target="_blank"><span class="si">📄</span>View Full Catalog</a></li>
+        <li><a href="https://wa.me/918525001700" target="_blank"><span class="si">💬</span>WhatsApp Us</a></li>
+      </ul>
+    </nav>
+    <div class="sidebar-foot">
+      <div class="sb-foot-title">Contact</div>
+      <div class="sb-contact-row">📍 <span>3/87/A, KRS Building, Gobinathampatti, Salem TN 636903</span></div>
+      <div class="sb-contact-row">📞 <a href="tel:+918525001700">+91 85250 01700</a></div>
+      <div class="sb-contact-row">✉️ <a href="mailto:hdoriginltd@gmail.com">hdoriginltd@gmail.com</a></div>
+      <div class="sb-socials">
+        <a href="https://www.instagram.com/cpmatrixpaints?igsh=MWkwMmEzMGxmajRzYQ==" target="_blank" class="sb-social">📸 Instagram</a>
+        <a href="https://wa.me/918525001700" target="_blank" class="sb-social">💬 WhatsApp</a>
+        <a href="https://www.google.com/maps/place/cp+matrix/@11.9982177,78.4453782,17z" target="_blank" class="sb-social">📍 Maps</a>
+      </div>
+    </div>
+  </aside>
 
   <!-- HERO -->
   <section class="hero">
@@ -1532,28 +1764,28 @@
             <div class="contact-item-icon">📍</div>
             <div>
               <h4>Showroom Address</h4>
-              <p>3/87/A, KRS Building, Gopinathampatti koot road, Harur, Dharmapuri — 636 903</p>
+              <p>XCXX+75P, Koot Road, Main Road, Gobinathampatti, Salem, Tamil Nadu 636903</p>
             </div>
           </div>
           <div class="contact-item">
             <div class="contact-item-icon">📞</div>
             <div>
               <h4>Phone / WhatsApp</h4>
-              <p>+91 85250 01700</p>
+              <p><a href="https://wa.me/918525001700" style="color:inherit;text-decoration:none">+91 85250 01700</a></p>
             </div>
           </div>
           <div class="contact-item">
             <div class="contact-item-icon">📧</div>
             <div>
               <h4>Email</h4>
-              <p>hdoriginltd@gmail.com</p>
+              <p><a href="mailto:hdoriginltd@gmail.com" style="color:inherit;text-decoration:none">hdoriginltd@gmail.com</a></p>
             </div>
           </div>
           <div class="contact-item">
             <div class="contact-item-icon">📸</div>
             <div>
               <h4>Instagram</h4>
-              <p>@cpmatrixpaints</p>
+              <p><a href="https://www.instagram.com/cpmatrixpaints?igsh=MWkwMmEzMGxmajRzYQ==" target="_blank" style="color:var(--accent);text-decoration:none">@cpmatrixpaints ↗</a></p>
             </div>
           </div>
           <div class="contact-item">
@@ -1562,6 +1794,9 @@
               <h4>Business Hours</h4>
               <p>Mon–Sat: 9 AM – 8 PM · Sun: 10 AM – 5 PM</p>
             </div>
+          </div>
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d980.0!2d78.4479531!3d11.9982125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bac71001a89d1f5%3A0xb5910b96b2de8f54!2sCP%20Matrix!5e0!3m2!1sen!2sin!4v1748700000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="width:100%;height:240px;border:0;border-radius:12px;display:block"></iframe>
           </div>
         </div>
         <div class="contact-form reveal reveal-delay-2">
@@ -1653,6 +1888,95 @@
     </div>
   </footer>
 
+  <!-- Custom Paint Cursor -->
+  <svg id="cp-cursor" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:fixed;pointer-events:none;z-index:99999;top:0;left:0;transform:translate(-50%,-50%)">
+    <path d="M6 22L4 24L6 26L8 24L22 10L20 8L6 22Z" fill="#1a6fd4" stroke="#fff" stroke-width="1"/>
+    <rect x="18" y="2" width="8" height="8" rx="2" fill="#00c4cc" transform="rotate(45 18 2)"/>
+    <circle cx="6" cy="24" r="3" fill="#ffd700" opacity="0.8"/>
+  </svg>
+  <div id="cp-cursor-ring"></div>
+
+  <!-- WhatsApp Float Button -->
+  <a href="https://wa.me/918525001700?text=Hi%20CP%20Matrix%2C%20I%20would%20like%20to%20enquire%20about%20your%20paints." target="_blank" class="wa-float" title="Chat on WhatsApp">💬</a>
+
+  <!-- Paint Calculator FAB -->
+  <button class="calc-fab" onclick="openCalc()" title="Paint Calculator">🧮</button>
+  <div class="calc-fab-tooltip">Paint Calculator</div>
+
+  <!-- Paint Calculator Modal -->
+  <div class="calc-overlay" id="calcOverlay" onclick="if(event.target===this)closeCalc()">
+    <div class="calc-modal">
+      <div class="calc-head">
+        <h3>🧮 Paint Calculator</h3>
+        <span class="calc-close" onclick="closeCalc()">✕</span>
+      </div>
+      <div class="calc-body">
+        <div class="calc-section-title">Room Dimensions</div>
+        <div class="calc-grid">
+          <div class="calc-field">
+            <label>Length (feet)</label>
+            <input type="number" id="roomLen" placeholder="e.g. 20" min="1">
+          </div>
+          <div class="calc-field">
+            <label>Width (feet)</label>
+            <input type="number" id="roomWid" placeholder="e.g. 15" min="1">
+          </div>
+          <div class="calc-field">
+            <label>Height (feet)</label>
+            <input type="number" id="roomHt" placeholder="e.g. 10" min="1">
+          </div>
+          <div class="calc-field">
+            <label>Doors &amp; Windows (sq.ft)</label>
+            <input type="number" id="deduction" placeholder="e.g. 50" min="0" value="40">
+          </div>
+        </div>
+        <div class="calc-section-title">Product &amp; Application</div>
+        <div class="calc-grid">
+          <div class="calc-field">
+            <label>Select Product</label>
+            <select id="calcProduct">
+              <option value="alpha">Alpha — Interior Emulsion</option>
+              <option value="arsha">Arsha — Interior Emulsion</option>
+              <option value="sigma">Sigma — Premium Interior</option>
+              <option value="delta">Delta — Exterior Emulsion</option>
+              <option value="infinity">Infinity — Exterior Primer</option>
+              <option value="quantum">Quantum — Damp Proof Primer</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label>Number of Coats</label>
+            <select id="numCoats">
+              <option value="1">1 Coat</option>
+              <option value="2" selected>2 Coats (Recommended)</option>
+              <option value="3">3 Coats</option>
+            </select>
+          </div>
+        </div>
+        <button class="calc-btn" onclick="calcPaint()">Calculate Paint Required →</button>
+        <div class="calc-result" id="calcResult">
+          <div class="result-row">
+            <div class="result-item">
+              <div class="result-val" id="resArea">—</div>
+              <div class="result-lbl">Wall Area (sq.ft)</div>
+            </div>
+            <div class="result-item">
+              <div class="result-val" id="resLitres">—</div>
+              <div class="result-lbl">Litres Needed</div>
+            </div>
+            <div class="result-item">
+              <div class="result-val" id="resCans">—</div>
+              <div class="result-lbl">Cans Required</div>
+            </div>
+          </div>
+          <div class="result-note" id="resNote">Note: Actual consumption may vary based on surface porosity and application method.</div>
+          <button class="wa-btn" onclick="calcWhatsApp()">
+            💬 Send to WhatsApp &amp; Get Quote
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
     function toggleMenu() {
       document.getElementById('navLinks').classList.toggle('open');
@@ -1711,17 +2035,36 @@
       el.classList.add('selected');
     }
 
-    // Form submission
+    // Form submission — forwards to WhatsApp
     function handleSubmit(e) {
       e.preventDefault();
-      const btn = e.target.querySelector('.form-submit');
-      btn.textContent = '✓ Request Received! We\'ll call you soon.';
-      btn.style.background = 'linear-gradient(135deg,#10b981,#059669)';
+      const form = e.target;
+      const inputs = form.querySelectorAll('input, select, textarea');
+      const name    = form.querySelector('input[type="text"]')?.value || '';
+      const phone   = form.querySelector('input[type="tel"]')?.value || '';
+      const project = form.querySelector('select')?.value || '';
+      const area    = form.querySelectorAll('input')[2]?.value || '';
+      const message = form.querySelector('textarea')?.value || '';
+
+      const waText = encodeURIComponent(
+        `🎨 *New Enquiry — CP Matrix*\n\n` +
+        `👤 Name: ${name}\n📞 Phone: ${phone}\n🏗️ Project: ${project}\n📐 Area: ${area} sq.ft\n\n💬 Message: ${message}\n\n` +
+        `_Sent from CP Matrix website_`
+      );
+
+      const btn = form.querySelector('.form-submit');
+      btn.textContent = '✓ Opening WhatsApp...';
+      btn.style.background = '#25d366';
+
       setTimeout(() => {
-        btn.textContent = 'Request Free Quote →';
-        btn.style.background = '';
-        e.target.reset();
-      }, 4000);
+        window.open(`https://wa.me/918525001700?text=${waText}`, '_blank');
+        btn.textContent = '✓ Sent to WhatsApp!';
+        setTimeout(() => {
+          btn.textContent = 'Request Free Quote →';
+          btn.style.background = '';
+          form.reset();
+        }, 3500);
+      }, 400);
     }
 
     // Enquire scroll
@@ -1895,6 +2238,138 @@
       document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
       btn.classList.add('active');
     };
+
+    /* ══════════════════════════════════════
+       DARK / LIGHT THEME
+    ══════════════════════════════════════ */
+    function toggleTheme() {
+      const html = document.documentElement;
+      const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      html.setAttribute('data-theme', next);
+      document.getElementById('themeToggle').textContent = next === 'light' ? '🌙' : '☀️';
+      localStorage.setItem('cpTheme', next);
+    }
+    (function initTheme() {
+      const saved = localStorage.getItem('cpTheme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+      document.getElementById('themeToggle').textContent = saved === 'light' ? '🌙' : '☀️';
+    })();
+
+    /* ══════════════════════════════════════
+       SIDEBAR
+    ══════════════════════════════════════ */
+    function openSidebar() {
+      document.getElementById('sidebar').classList.add('open');
+      document.getElementById('sidebarOverlay').classList.add('open');
+    }
+    function closeSidebar() {
+      document.getElementById('sidebar').classList.remove('open');
+      document.getElementById('sidebarOverlay').classList.remove('open');
+    }
+
+    /* ══════════════════════════════════════
+       PAINT CALCULATOR
+    ══════════════════════════════════════ */
+    function openCalc()  { document.getElementById('calcOverlay').classList.add('open'); }
+    function closeCalc() { document.getElementById('calcOverlay').classList.remove('open'); }
+
+    const COVERAGE_RATES = {
+      alpha:    { rate: 90,  name: 'Alpha — Interior Emulsion',      can: 10 },
+      arsha:    { rate: 80,  name: 'Arsha — Interior Emulsion',      can: 10 },
+      sigma:    { rate: 95,  name: 'Sigma — Premium Interior',       can: 10 },
+      delta:    { rate: 65,  name: 'Delta — Exterior Emulsion',      can: 10 },
+      infinity: { rate: 100, name: 'Infinity — Exterior Primer',     can: 10 },
+      quantum:  { rate: 90,  name: 'Quantum — Damp Proof Primer',    can: 10 },
+    };
+
+    function calcPaint() {
+      const l  = parseFloat(document.getElementById('roomLen').value);
+      const w  = parseFloat(document.getElementById('roomWid').value);
+      const h  = parseFloat(document.getElementById('roomHt').value);
+      const d  = parseFloat(document.getElementById('deduction').value) || 0;
+      const c  = parseInt(document.getElementById('numCoats').value);
+      const pk = document.getElementById('calcProduct').value;
+
+      if (!l || !w || !h) { alert('Please enter all room dimensions.'); return; }
+
+      const prod   = COVERAGE_RATES[pk];
+      const area   = Math.max(0, (2 * (l + w) * h) - d);
+      const litres = parseFloat(((area / prod.rate) * c).toFixed(1));
+      const cans   = Math.ceil(litres / prod.can);
+
+      document.getElementById('resArea').textContent   = area.toFixed(1);
+      document.getElementById('resLitres').textContent = litres;
+      document.getElementById('resCans').textContent   = cans + ' × 10L';
+      document.getElementById('resNote').textContent   = `For ${prod.name}: ${area.toFixed(0)} sq.ft wall area × ${c} coat(s) at ${prod.rate} sq.ft/litre coverage.`;
+      document.getElementById('calcResult').classList.add('show');
+
+      window._calcSummary = { product: prod.name, area: area.toFixed(1), litres, cans };
+    }
+
+    function calcWhatsApp() {
+      const d = window._calcSummary || {};
+      const msg = encodeURIComponent(
+        `🎨 *CP Matrix — Paint Requirement*\n\n` +
+        `Product: ${d.product || '?'}\n` +
+        `Wall Area: ${d.area || '?'} sq.ft\n` +
+        `Litres Needed: ${d.litres || '?'} L\n` +
+        `Cans Required: ${d.cans || '?'} × 10L\n\n` +
+        `Please share availability and pricing. Thank you!`
+      );
+      window.open(`https://wa.me/918525001700?text=${msg}`, '_blank');
+    }
+
+    /* ══════════════════════════════════════
+       CUSTOM PAINT CURSOR
+    ══════════════════════════════════════ */
+    (function initCursor() {
+      const cur  = document.getElementById('cp-cursor');
+      const ring = document.getElementById('cp-cursor-ring');
+      if (!cur) return;
+
+      let mx = -200, my = -200, rx = -200, ry = -200;
+
+      document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+      document.addEventListener('mouseleave', () => { cur.style.opacity = '0'; ring.style.opacity = '0'; });
+      document.addEventListener('mouseenter', () => { cur.style.opacity = '1'; ring.style.opacity = '0.5'; });
+
+      // Paint splash on click
+      document.addEventListener('click', e => {
+        const colors = ['#1a6fd4','#00c4cc','#ffd700','#1e90ff','#00e5ff','#a855f7'];
+        for (let i = 0; i < 6; i++) {
+          const s = document.createElement('div');
+          s.className = 'cp-splat';
+          const sz = 14 + Math.random() * 28;
+          const ox = (Math.random() - 0.5) * 50;
+          const oy = (Math.random() - 0.5) * 50;
+          s.style.cssText = `
+            left:${e.clientX + ox}px; top:${e.clientY + oy}px;
+            width:${sz}px; height:${sz}px;
+            background:${colors[i % colors.length]};
+            animation-delay:${i * 0.04}s;
+          `;
+          document.body.appendChild(s);
+          setTimeout(() => s.remove(), 800);
+        }
+      });
+
+      // Smooth ring follow
+      (function loop() {
+        rx += (mx - rx) * 0.14;
+        ry += (my - ry) * 0.14;
+        cur.style.left  = mx + 'px';
+        cur.style.top   = my + 'px';
+        ring.style.left = rx + 'px';
+        ring.style.top  = ry + 'px';
+        requestAnimationFrame(loop);
+      })();
+
+      // Scale cursor on hoverable elements
+      document.querySelectorAll('a, button, .paint-card, .cat-card, .swatch, .palette-swatch').forEach(el => {
+        el.addEventListener('mouseenter', () => { ring.style.width='52px'; ring.style.height='52px'; ring.style.opacity='0.8'; });
+        el.addEventListener('mouseleave', () => { ring.style.width='36px'; ring.style.height='36px'; ring.style.opacity='0.5'; });
+      });
+    })();
 
     // 12. Number counting with animated highlight
     function animateCounter(el) {
