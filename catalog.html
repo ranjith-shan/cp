@@ -1,0 +1,2064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ranjith Paints — Product Catalog 2025</title>
+  <meta name="description" content="Ranjith Paints official product catalog 2025. Interior, Exterior, Wood & Metal, Texture, and Primer paints. 2000+ shades. Chennai, Tamil Nadu." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── RESET & BASE ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #e85d04;
+      --gold: #ffb703;
+      --dark: #1a1a1a;
+      --mid: #4a4a4a;
+      --muted: #777;
+      --light: #f5f5f5;
+      --white: #ffffff;
+      --border: #e0e0e0;
+      --radius: 12px;
+      --radius-lg: 20px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: var(--dark);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    /* ── SCREEN-ONLY TOP BAR ── */
+    .screen-topbar {
+      background: var(--dark);
+      color: #fff;
+      padding: 0.75rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .screen-topbar a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 0.875rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s;
+    }
+
+    .screen-topbar a:hover { color: var(--gold); }
+
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .topbar-title {
+      font-size: 0.875rem;
+      color: #aaa;
+    }
+
+    /* ── PAGE WRAPPER ── */
+    .catalog-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 2rem 6rem;
+    }
+
+    /* ── COVER PAGE ── */
+    .cover-page {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      position: relative;
+      border: 2px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 4rem;
+      background: #ffffff;
+    }
+
+    .cover-bg-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      background-image: repeating-linear-gradient(
+        45deg,
+        #e85d04 0px,
+        #e85d04 2px,
+        transparent 2px,
+        transparent 20px
+      );
+      pointer-events: none;
+    }
+
+    .cover-logo {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 900;
+      color: var(--dark);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+      position: relative;
+    }
+
+    .cover-logo span {
+      background: linear-gradient(135deg, var(--orange), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .cover-tagline {
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      font-weight: 600;
+      color: var(--mid);
+      margin-bottom: 0.75rem;
+      position: relative;
+    }
+
+    .cover-year {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--orange);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+
+    /* Paint stripe banner */
+    .color-stripe {
+      display: flex;
+      width: 100%;
+      height: 60px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 2rem 0;
+      position: relative;
+    }
+
+    .color-stripe-item {
+      flex: 1;
+      transition: flex 0.3s;
+      position: relative;
+    }
+
+    .color-stripe-item:hover { flex: 2; }
+
+    .cover-contact {
+      position: relative;
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 2;
+    }
+
+    .cover-contact strong {
+      color: var(--dark);
+    }
+
+    .cover-divider {
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--orange), var(--gold));
+      border-radius: 2px;
+      margin: 2rem auto;
+    }
+
+    /* ── SECTION HEADERS ── */
+    .catalog-section {
+      margin-bottom: 4rem;
+    }
+
+    .section-header {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 3px solid var(--light);
+      position: relative;
+    }
+
+    .section-header::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--orange), var(--gold));
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .section-title span {
+      background: linear-gradient(135deg, var(--orange), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+
+    /* ── ABOUT SECTION ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .about-text {
+      font-size: 0.95rem;
+      color: var(--mid);
+      line-height: 1.8;
+    }
+
+    .about-text p + p {
+      margin-top: 1rem;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .stat-box {
+      background: var(--light);
+      border-radius: var(--radius);
+      padding: 1.5rem 1rem;
+      text-align: center;
+      border-top: 4px solid var(--orange);
+    }
+
+    .stat-box .num {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--orange);
+      line-height: 1;
+    }
+
+    .stat-box .unit {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--orange);
+    }
+
+    .stat-box .lbl {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 0.3rem;
+      line-height: 1.4;
+    }
+
+    .mission-box {
+      background: linear-gradient(135deg, #fff8f3, #fff3e0);
+      border: 2px solid rgba(232, 93, 4, 0.15);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    .mission-box h4 {
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--orange);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .mission-box p {
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--mid);
+      line-height: 1.8;
+    }
+
+    /* ── PRODUCT GRID ── */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+    }
+
+    .product-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: #ffffff;
+      transition: box-shadow 0.25s, transform 0.25s;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .product-card:hover {
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+      transform: translateY(-3px);
+    }
+
+    .product-swatch {
+      height: 200px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 1rem;
+    }
+
+    .product-code-badge {
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--dark);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.7rem;
+      border-radius: 50px;
+    }
+
+    .product-finish-badge {
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.7rem;
+      border-radius: 50px;
+      backdrop-filter: blur(8px);
+    }
+
+    .product-body {
+      padding: 1.25rem;
+    }
+
+    .product-name {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 0.4rem;
+    }
+
+    .product-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+
+    .product-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .product-tag {
+      padding: 0.2rem 0.6rem;
+      background: #f0f0f0;
+      border-radius: 4px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--mid);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .product-tag.green {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+
+    .product-tag.blue {
+      background: #e3f2fd;
+      color: #1565c0;
+    }
+
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .product-price {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--orange);
+    }
+
+    .product-price span {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    .enquire-btn {
+      padding: 0.45rem 1rem;
+      background: var(--orange);
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+
+    .enquire-btn:hover { background: #c24d00; }
+
+    /* ── WHY SECTION ── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .why-card {
+      background: var(--light);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.25rem;
+      text-align: center;
+      border-top: 4px solid var(--gold);
+    }
+
+    .why-icon {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .why-title {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 0.4rem;
+    }
+
+    .why-desc {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── COLOR CHART ── */
+    .color-chart-section {
+      margin-bottom: 4rem;
+    }
+
+    .color-family {
+      margin-bottom: 2rem;
+    }
+
+    .color-family-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--mid);
+      margin-bottom: 0.75rem;
+      padding-left: 0.25rem;
+    }
+
+    .swatches-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.75rem;
+    }
+
+    .swatch-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .swatch-circle {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 10px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .swatch-name {
+      font-size: 0.65rem;
+      text-align: center;
+      color: var(--muted);
+      line-height: 1.3;
+      font-weight: 500;
+    }
+
+    /* ── BACK COVER ── */
+    .back-cover {
+      border: 2px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-top: 4rem;
+      background: #ffffff;
+    }
+
+    .back-cover-header {
+      background: linear-gradient(135deg, var(--orange), #c24d00);
+      padding: 3rem 2rem;
+      text-align: center;
+      color: #fff;
+    }
+
+    .back-cover-header h2 {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 900;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .back-cover-header p {
+      font-size: 1rem;
+      opacity: 0.85;
+    }
+
+    .back-cover-body {
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .contact-block h4 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--orange);
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-block p,
+    .contact-block a {
+      font-size: 0.875rem;
+      color: var(--mid);
+      line-height: 2;
+      text-decoration: none;
+    }
+
+    .contact-block a:hover { color: var(--orange); }
+
+    .qr-placeholder {
+      width: 120px;
+      height: 120px;
+      background: var(--light);
+      border: 2px dashed var(--border);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      gap: 0.5rem;
+    }
+
+    .qr-placeholder span {
+      font-size: 2rem;
+    }
+
+    .qr-placeholder p {
+      font-size: 0.65rem;
+      text-align: center;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .social-row {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .social-chip {
+      padding: 0.3rem 0.75rem;
+      background: var(--light);
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--mid);
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .social-chip:hover { background: var(--orange); color: #fff; }
+
+    .back-cover-footer {
+      background: var(--dark);
+      padding: 1.25rem 2rem;
+      text-align: center;
+      color: #888;
+      font-size: 0.8rem;
+    }
+
+    .back-cover-footer strong {
+      color: #fff;
+    }
+
+    /* ── FLOATING PRINT BUTTON (screen only) ── */
+    .print-fab {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .print-btn {
+      padding: 0.9rem 1.5rem;
+      background: var(--orange);
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(232, 93, 4, 0.5);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .print-btn:hover {
+      background: #c24d00;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(232, 93, 4, 0.6);
+    }
+
+    /* ── CATEGORY BANNER ── */
+    .cat-banner {
+      background: linear-gradient(135deg, #fff8f3, #fff3e0);
+      border-left: 5px solid var(--orange);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .cat-banner-icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+
+    .cat-banner-text h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--dark);
+    }
+
+    .cat-banner-text p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 0.15rem;
+    }
+
+    /* ── PRINT STYLES ── */
+    @media print {
+      @page {
+        size: A4;
+        margin: 15mm 12mm;
+      }
+
+      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+      .screen-topbar,
+      .print-fab { display: none !important; }
+
+      body {
+        font-size: 11pt;
+        background: #fff;
+        color: #1a1a1a;
+      }
+
+      .catalog-wrapper {
+        max-width: 100%;
+        padding: 0;
+      }
+
+      /* Cover page on its own page */
+      .cover-page {
+        page-break-after: always;
+        break-after: page;
+        min-height: auto;
+        padding: 3rem 2rem;
+        border: none;
+        border-radius: 0;
+        margin-bottom: 0;
+      }
+
+      /* Each main section on new page */
+      .catalog-section.page-break {
+        page-break-before: always;
+        break-before: page;
+      }
+
+      .back-cover {
+        page-break-before: always;
+        break-before: page;
+        margin-top: 0;
+      }
+
+      /* Products: 2-column grid for print */
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+      }
+
+      .product-card {
+        border: 1pt solid #ccc;
+        border-radius: 8pt;
+        box-shadow: none;
+        transform: none !important;
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+
+      .product-card:hover {
+        box-shadow: none;
+        transform: none;
+      }
+
+      .product-swatch {
+        height: 150px;
+      }
+
+      /* Keep swatch backgrounds when printing */
+      .product-swatch,
+      .color-stripe-item,
+      .swatch-circle,
+      .stat-box,
+      .cat-banner,
+      .back-cover-header,
+      .back-cover-footer,
+      .mission-box,
+      .why-card {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      /* Swatches in color chart */
+      .swatches-row {
+        grid-template-columns: repeat(5, 1fr);
+      }
+
+      /* No hover effects in print */
+      .product-card:hover,
+      .color-stripe-item:hover { flex: 1; }
+
+      /* Back cover layout */
+      .back-cover-body {
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 1.5rem;
+      }
+
+      /* No orphaned headings */
+      .section-header,
+      .cat-banner {
+        page-break-after: avoid;
+        break-after: avoid;
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .stats-row {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .enquire-btn { display: none; }
+    }
+
+    /* ══════════════════════════════════════════
+       ANIMATIONS (SCREEN ONLY)
+    ══════════════════════════════════════════ */
+    @media screen {
+      body { opacity: 0; transition: opacity 0.5s ease; }
+      body.loaded { opacity: 1; }
+
+      /* Scroll reveal */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+      }
+      .fade-in.visible { opacity: 1; transform: translateY(0); }
+      .fade-in-left {
+        opacity: 0; transform: translateX(-40px);
+        transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+      }
+      .fade-in-left.visible { opacity: 1; transform: translateX(0); }
+      .fade-in-right {
+        opacity: 0; transform: translateX(40px);
+        transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+      }
+      .fade-in-right.visible { opacity: 1; transform: translateX(0); }
+
+      /* Color stripe animated auto-scroll shimmer */
+      .color-stripe-item {
+        position: relative; overflow: hidden;
+      }
+      .color-stripe-item::after {
+        content: ''; position: absolute; inset: 0;
+        background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.25) 50%, transparent 100%);
+        transform: translateX(-100%);
+        animation: stripeShine 3s linear infinite;
+      }
+      .color-stripe-item:nth-child(odd)::after { animation-delay: -1.5s; }
+      @keyframes stripeShine { 0%{transform:translateX(-100%)} 100%{transform:translateX(200%)} }
+
+      /* Product card 3D hover */
+      .product-card {
+        transform-style: preserve-3d;
+        transition: transform 0.15s ease, box-shadow 0.3s !important;
+      }
+
+      /* Swatch pop on hover */
+      .swatch-circle {
+        transition: transform 0.25s cubic-bezier(0.175,0.885,0.32,1.275), box-shadow 0.25s;
+      }
+      .swatch-circle:hover {
+        transform: scale(1.18) translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      }
+
+      /* Print button pulse */
+      .print-btn { animation: printPulse 2.5s ease-in-out infinite; }
+      @keyframes printPulse {
+        0%,100%{box-shadow:0 8px 24px rgba(232,93,4,0.5)}
+        50%{box-shadow:0 8px 40px rgba(232,93,4,0.8), 0 0 0 8px rgba(232,93,4,0.1)}
+      }
+      .print-btn:hover { animation: none; }
+
+      /* Stat box number count animation */
+      .stat-box .num {
+        display: inline-block;
+        transition: transform 0.3s cubic-bezier(0.175,0.885,0.32,1.275);
+      }
+      .stat-box:hover .num { transform: scale(1.15); }
+
+      /* Why card hover lift */
+      .why-card {
+        transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s;
+      }
+      .why-card:hover {
+        transform: translateY(-6px) scale(1.02);
+        box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+      }
+
+      /* Cat banner animated left border */
+      .cat-banner {
+        border-left: 5px solid var(--orange);
+        position: relative; overflow: hidden;
+      }
+      .cat-banner::after {
+        content: ''; position: absolute; inset: 0;
+        background: linear-gradient(90deg, rgba(232,93,4,0.05), transparent);
+        transform: translateX(-100%);
+        animation: bannerSlide 2s ease forwards;
+      }
+      @keyframes bannerSlide { to{transform:translateX(0)} }
+
+      /* Section header gradient underline animation */
+      .section-header::after {
+        animation: underlineGrow 1s cubic-bezier(0.16,1,0.3,1) both;
+      }
+      @keyframes underlineGrow { from{width:0} to{width:80px} }
+
+      /* Cover logo entrance */
+      .cover-logo { animation: coverEntrance 1s cubic-bezier(0.16,1,0.3,1) 0.3s both; }
+      .cover-tagline { animation: coverEntrance 1s cubic-bezier(0.16,1,0.3,1) 0.5s both; }
+      .cover-year { animation: coverEntrance 1s cubic-bezier(0.16,1,0.3,1) 0.7s both; }
+      .color-stripe { animation: coverEntrance 1s cubic-bezier(0.16,1,0.3,1) 0.9s both; }
+      .cover-contact { animation: coverEntrance 1s cubic-bezier(0.16,1,0.3,1) 1.1s both; }
+      @keyframes coverEntrance {
+        from{opacity:0;transform:translateY(20px)}
+        to{opacity:1;transform:translateY(0)}
+      }
+
+      /* Ripple on enquire buttons */
+      .enquire-btn { position: relative; overflow: hidden; }
+      .enquire-ripple {
+        position: absolute; border-radius: 50%; width: 80px; height: 80px;
+        margin-left: -40px; margin-top: -40px;
+        background: rgba(255,255,255,0.3); transform: scale(0);
+        animation: enquireRipple 0.6s linear; pointer-events: none;
+      }
+      @keyframes enquireRipple { to{transform:scale(3);opacity:0} }
+
+      /* Scrollbar styling */
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: var(--light); }
+      ::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 3px; }
+
+      /* Tag hover */
+      .product-tag { transition: background 0.2s, color 0.2s, transform 0.2s; }
+      .product-tag:hover { background: var(--orange); color: #fff; transform: scale(1.05); }
+
+      /* Back cover header shimmer */
+      .back-cover-header { position: relative; overflow: hidden; }
+      .back-cover-header::after {
+        content: ''; position: absolute; top: 0; left: -100%; width: 60%; height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+        animation: backCoverShimmer 3s ease-in-out infinite;
+      }
+      @keyframes backCoverShimmer { 0%{left:-100%} 100%{left:200%} }
+    }
+
+    /* ── RESPONSIVE (SCREEN) ── */
+    @media (max-width: 640px) {
+      .products-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
+      .back-cover-body { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; }
+      .swatches-row { grid-template-columns: repeat(4, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SCREEN-ONLY TOP BAR -->
+  <div class="screen-topbar">
+    <a href="index.html">← Back to Website</a>
+    <div class="topbar-right">
+      <span class="topbar-title">Ranjith Paints — Product Catalog 2025</span>
+    </div>
+  </div>
+
+  <!-- FLOATING PRINT BUTTON -->
+  <div class="print-fab">
+    <button class="print-btn" onclick="window.print()">
+      🖨️ Print / Save as PDF
+    </button>
+  </div>
+
+  <div class="catalog-wrapper">
+
+    <!-- ═══════════════════════════════════════
+         COVER PAGE
+    ═══════════════════════════════════════ -->
+    <div class="cover-page">
+      <div class="cover-bg-pattern"></div>
+
+      <div class="cover-logo">
+        🎨 <span>Ranjith Paints</span>
+      </div>
+      <p class="cover-tagline">Premium Paints. Lasting Protection. 2000+ Shades.</p>
+      <p class="cover-year">Product Catalog · 2025</p>
+
+      <div class="cover-divider"></div>
+
+      <!-- Full-width color stripe banner -->
+      <div class="color-stripe">
+        <div class="color-stripe-item" style="background:#f1f1f1;"></div>
+        <div class="color-stripe-item" style="background:#e8d5c4;"></div>
+        <div class="color-stripe-item" style="background:#d4a96a;"></div>
+        <div class="color-stripe-item" style="background:#a5d6a7;"></div>
+        <div class="color-stripe-item" style="background:#81b29a;"></div>
+        <div class="color-stripe-item" style="background:#90caf9;"></div>
+        <div class="color-stripe-item" style="background:#42a5f5;"></div>
+        <div class="color-stripe-item" style="background:#1565c0;"></div>
+        <div class="color-stripe-item" style="background:#6a1b9a;"></div>
+        <div class="color-stripe-item" style="background:#b71c1c;"></div>
+        <div class="color-stripe-item" style="background:#e85d04;"></div>
+        <div class="color-stripe-item" style="background:#ffb703;"></div>
+        <div class="color-stripe-item" style="background:#ffd700;"></div>
+        <div class="color-stripe-item" style="background:#8d6e63;"></div>
+        <div class="color-stripe-item" style="background:#37474f;"></div>
+        <div class="color-stripe-item" style="background:#263238;"></div>
+        <div class="color-stripe-item" style="background:#4e342e;"></div>
+        <div class="color-stripe-item" style="background:#2e7d32;"></div>
+        <div class="color-stripe-item" style="background:#004d40;"></div>
+        <div class="color-stripe-item" style="background:#1a1a2e;"></div>
+      </div>
+
+      <div class="cover-contact">
+        <strong>Chennai, Tamil Nadu</strong> &nbsp;|&nbsp;
+        +91 99999 XXXXX &nbsp;|&nbsp;
+        sales@ranjithpaints.in<br />
+        Anna Nagar Showroom · Mon–Sat 9 AM–8 PM<br />
+        <strong>www.ranjithpaints.in</strong>
+      </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════
+         ABOUT US
+    ═══════════════════════════════════════ -->
+    <div class="catalog-section page-break">
+      <div class="section-header">
+        <div class="section-label">Our Story</div>
+        <h2 class="section-title">About <span>Ranjith Paints</span></h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>Founded in 2005, Ranjith Paints has been Chennai's most trusted paint specialist for over two decades. What began as a single showroom in Anna Nagar has grown into Tamil Nadu's premier destination for premium interior, exterior, and specialty paints.</p>
+          <p>We believe that colour transforms spaces and that every home, office, and building deserves paints of the highest quality — paints that protect, endure, and inspire. Our technical team constantly innovates, ensuring our formulations meet global standards while being perfectly suited for India's climate.</p>
+        </div>
+        <div class="about-text">
+          <p>With over 2,000 shades available across our ranges, our tinting technology ensures you get the precise colour you envision. Our certified colour consultants offer free in-home advice, and our network of trained applicators guarantees flawless results on every project.</p>
+          <p>From the smallest apartment repaint to large commercial developments, Ranjith Paints delivers the same commitment to quality, service, and lasting value that has made us the painter's first choice across South India.</p>
+        </div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-box">
+          <div class="num">2000<span class="unit">+</span></div>
+          <div class="lbl">Colour Shades Available</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">5000<span class="unit">+</span></div>
+          <div class="lbl">Happy Customers Served</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">50K<span class="unit">+</span></div>
+          <div class="lbl">Sq Ft Painted This Year</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">20<span class="unit">yr</span></div>
+          <div class="lbl">Weather Protection Guarantee</div>
+        </div>
+      </div>
+
+      <div class="mission-box">
+        <h4>Our Mission</h4>
+        <p>"To bring lasting colour and quality to every surface we touch — delivering paints that protect homes, inspire people, and honour the environment. We combine 20 years of expertise with relentless innovation to ensure Ranjith Paints remains the most trusted name in the industry."</p>
+      </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════
+         INTERIOR PAINTS
+    ═══════════════════════════════════════ -->
+    <div class="catalog-section page-break">
+      <div class="section-header">
+        <div class="section-label">Product Category 01</div>
+        <h2 class="section-title">Interior <span>Emulsion Paints</span></h2>
+        <p class="section-desc">Smooth, washable, low-VOC formulas for living rooms, bedrooms, and kitchens. Available in 2000+ shades with on-demand tinting.</p>
+      </div>
+
+      <div class="cat-banner">
+        <div class="cat-banner-icon">🏠</div>
+        <div class="cat-banner-text">
+          <h3>Interior Emulsion Range</h3>
+          <p>All interior paints are tested for scrub resistance, stain repellency, and indoor air quality. Low-VOC and zero-odour options available.</p>
+        </div>
+      </div>
+
+      <div class="products-grid">
+
+        <div class="product-card">
+          <div class="product-swatch" style="background: linear-gradient(160deg, #e8d5c4, #d4b896);">
+            <span class="product-code-badge">RP-INT-001</span>
+            <span class="product-finish-badge">Silk Finish</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">Sandstone Bliss</div>
+            <div class="product-desc">Warm sandy tones with superior coverage. Washable and stain-resistant for busy family spaces. Applies smoothly with a velvety sheen that catches light beautifully.</div>
+            <div class="product-tags">
+              <span class="product-tag green">Low VOC</span>
+              <span class="product-tag green">Washable</span>
+              <span class="product-tag blue">2-Coat Coverage</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">₹520 <span>/ litre</span></div>
+              <a href="index.html#contact" class="enquire-btn">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-swatch" style="background: linear-gradient(160deg, #c8e6c9, #a5d6a7);">
+            <span class="product-code-badge">RP-INT-002</span>
+            <span class="product-finish-badge">Matt Finish</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">Sage Garden</div>
+            <div class="product-desc">Calming sage green that brings nature indoors. Our zero-odour formula is specially developed and independently certified safe for children's rooms and nurseries.</div>
+            <div class="product-tags">
+              <span class="product-tag green">Zero Odour</span>
+              <span class="product-tag green">Kid Safe</span>
+              <span class="product-tag blue">Anti-Fungal</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">₹490 <span>/ litre</span></div>
+              <a href="index.html#contact" class="enquire-btn">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-swatch" style="background: linear-gradient(160deg, #bbdefb, #90caf9);">
+            <span class="product-code-badge">RP-INT-003</span>
+            <span class="product-finish-badge">Satin Finish</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">Sky Serenity</div>
+            <div class="product-desc">Soft sky blue that visually opens up any space, creating an airy and peaceful atmosphere. Breathable micro-pore technology prevents moisture build-up.</div>
+            <div class="product-tags">
+              <span class="product-tag green">Anti-Fungal</span>
+              <span class="product-tag green">Breathable</span>
+              <span class="product-tag blue">Moisture Resistant</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">₹540 <span>/ litre</span></div>
+              <a href="index.html#contact" class="enquire-btn">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-swatch" style="background: linear-gradient(160deg, #f5e6d3, #eedfc9);">
+            <span class="product-code-badge">RP-INT-013</span>
+            <span class="product-finish-badge">Matt Finish</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">Ivory Mist</div>
+            <div class="product-desc">Our bestselling warm off-white — a timeless neutral that flatters any room and pairs beautifully with any decor. Premium opacity in just 2 coats.</div>
+            <div class="product-tags">
+              <span class="product-tag green">Low VOC</span>
+              <span class="product-tag">Premium Coverage</span>
+              <span class="product-tag blue">2-Coat System</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">₹480 <span>/ litre</span></div>
+              <a href="index.html#contact" class="enquire-btn">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-swatch" style="background: linear-gradient(160deg, #9c27b0, #6a1b9a);">
+            <span class="product-code-badge">RP-INT-032</span>
+            <span class="product-finish-badge">Satin Finish</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">Royal Plum</div>
+            <div class="product-desc">Deep, jewel-toned purple for dramatic feature walls and accent spaces. Anti-mould formula keeps bold colours looking rich for years. Wipes clean easily.</div>
+            <div class="product-tags">
+              <span class="product-tag green">Anti-Mould</span>
+              <span class="product-tag green">Washable</span>
+              <span class="product-tag">Feature Wall</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">₹560 <span>/ litre</span></div>
+              <a href="index.html#contact" class="enquire-btn">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-swatch" style="background: linear-gradient(160deg, #1e88e5, #1565c0);">
+            <span class="product-code-badge">RP-INT-033</span>
+            <span class="product-finish-badge">Silk Finish</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">Deep Navy</div>
+            <div class="product-desc">Bold, sophisticated navy blue purpose-formulated for statement feature walls. Silk finish delivers a luxurious, reflective sheen and is fully washable.</div>
+            <div class="product-tags">
+              <span class="product-tag green">Washable</span>
+              <span class="product-tag blue">Feature Wall Specialist</span>
+              <span class="product-tag">Anti-Fungal</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">₹550 <span>/ litre</span></div>
+              <a href="index.html#contact" class="enquire-btn">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════
+         EXTERIOR PAINTS
+    ═══════════════════════════════════════ -->
+    <div class="catalog-section page-break">
+      <div class="section-header">
+        <div class="section-label">Product Category 02</div>
+        <h2 class="section-title">Exterior <span>Weather Coat Paints</span></h2>
+        <p class="section-desc">Alkali-resistant, UV-stable paints engineered to protect your walls against rain, heat, and humidity for 10–15 years.</p>
+      </div>
+
+      <div class="cat-banner">
+        <div class="cat-banner-icon">🏗️</div>
+        <div class="cat-banner-text">
+          <h3>Weather Shield Technology</h3>
+          <p>Elastomeric formula bridges hairline cracks, blocks water ingress, and resists Chennai's intense UV exposure and heavy monsoon rains.</p>
+        </div>
+      </div>
+
+      <div class="products-grid">
+
+        <div class="product-card">
+          <div class="product-swatch" style="background: linear-gradient(160deg, #f5f5f5, #e8e8e8);">
+            <span class="product-code-badge">RP-EXT-001</span>
+            <span class="product-finish-badge">Weather Shield</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">Arctic White Pro</div>
+            <div class="product-desc">Ultra-brilliant white exterior coat with built-in algae resistance. Our highest-opacity formula delivers lasting brightness through all weather conditions.</div>
+            <div class="product-tags">
+              <span class="product-tag green">UV Resistant</span>
+              <span class="product-tag green">Anti-Algae</span>
+              <span class="product-tag blue">15-Year Guarantee</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">₹680 <span>/ litre</span></div>
+              <a href="index.html#contact" class="enquire-btn">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-swatch" style="background: linear-gradient(160deg, #ff8a65, #e64a19);">
+            <span class="product-code-badge">RP-EXT-002</span>
+            <span class="product-finish-badge">Weather Shield</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">Terracotta Dusk</div>
+            <div class="product-desc">Rich terracotta tone with advanced elastomeric technology that bridges hairline cracks and forms a seamless waterproof membrane. Truly monsoon-proof.</div>
+            <div class="product-tags">
+              <span class="product-tag green">Elastomeric</span>
+              <span class="product-tag blue">Crack Bridge</span>
+              <span class="product-tag blue">Waterproof</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">₹720 <span>/ litre</span></div>
+              <a href="index.html#contact" class="enquire-btn">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-swatch" style="background: linear-gradient(160deg, #388e3c, #1b5e20);">
+            <span class="product-code-badge">RP-EXT-003</span>
+            <span class="product-finish-badge">Weather Shield</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">Forest Shadow</div>
+            <div class="product-desc">Deep forest green with heat-reflective pigments that reduce surface temperature by up to 5°C. Anti-fungal properties prevent greening in humid climates.</div>
+            <div class="product-tags">
+              <span class="product-tag green">Heat Reflective</span>
+              <span class="product-tag green">Anti-Fungal</span>
+              <span class="product-tag blue">UV Stable</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">₹700 <span>/ litre</span></div>
+              <a href="index.html#contact" class="enquire-btn">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-swatch" style="background: linear-gradient(160deg, #fdd835, #f9a825);">
+            <span class="product-code-badge">RP-EXT-004</span>
+            <span class="product-finish-badge">Weather Shield</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">Colonial Yellow</div>
+            <div class="product-desc">Warm, luminous yellow with high opacity that remains vibrant through years of sun and rain. Specially formulated for monsoon-proof performance on Indian exteriors.</div>
+            <div class="product-tags">
+              <span class="product-tag">High Opacity</span>
+              <span class="product-tag blue">Monsoon-Proof</span>
+              <span class="product-tag green">UV Resistant</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">₹690 <span>/ litre</span></div>
+              <a href="index.html#contact" class="enquire-btn">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════
+         WOOD & METAL FINISHES
+    ═══════════════════════════════════════ -->
+    <div class="catalog-section page-break">
+      <div class="section-header">
+        <div class="section-label">Product Category 03</div>
+        <h2 class="section-title">Wood &amp; <span>Metal Finishes</span></h2>
+        <p class="section-desc">Premium stains, lacquers, and enamels that enhance and protect wood, metal, and furniture surfaces inside and outside.</p>
+      </div>
+
+      <div class="cat-banner">
+        <div class="cat-banner-icon">🪵</div>
+        <div class="cat-banner-text">
+          <h3>Wood &amp; Metal Protection Range</h3>
+          <p>Formulated for the Indian climate — resists humidity warping, termite damage, rust, and heat. Suitable for doors, windows, grills, gates, and furniture.</p>
+        </div>
+      </div>
+
+      <div class="products-grid">
+
+        <div class="product-card">
+          <div class="product-swatch" style="background: linear-gradient(160deg, #d4a96a, #8b5e3c);">
+            <span class="product-code-badge">RP-WD-001</span>
+            <span class="product-finish-badge">Wood Stain</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">Teak Gold Stain</div>
+            <div class="product-desc">Penetrating oil-based stain that enhances the natural grain of teak and hardwoods. Water-resistant and UV-stable. Available in 3 tones: Light, Medium, and Dark.</div>
+            <div class="product-tags">
+              <span class="product-tag green">Water Resistant</span>
+              <span class="product-tag blue">Grain Enhancing</span>
+              <span class="product-tag">3 Shades</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">₹380 <span>/ litre</span></div>
+              <a href="index.html#contact" class="enquire-btn">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-swatch" style="background: linear-gradient(160deg, #4e342e, #1a0d09);">
+            <span class="product-code-badge">RP-WD-002</span>
+            <span class="product-finish-badge">Polyurethane</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">Ebony Dark Varnish</div>
+            <div class="product-desc">Two-component polyurethane varnish delivering a high-gloss mirror finish with exceptional scratch and abrasion resistance. Furniture-grade durability and clarity.</div>
+            <div class="product-tags">
+              <span class="product-tag">High Gloss</span>
+              <span class="product-tag blue">Scratch Resistant</span>
+              <span class="product-tag">Furniture Grade</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">₹420 <span>/ litre</span></div>
+              <a href="index.html#contact" class="enquire-btn">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-swatch" style="background: linear-gradient(160deg, #eeeeee, #bdbdbd);">
+            <span class="product-code-badge">RP-MT-001</span>
+            <span class="product-finish-badge">Enamel</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">Metal Enamel White</div>
+            <div class="product-desc">Rust-inhibitive enamel for grills, gates, railings, and structural steel. Forms a rock-hard film that resists chipping and corrosion in coastal and humid environments.</div>
+            <div class="product-tags">
+              <span class="product-tag green">Anti-Rust</span>
+              <span class="product-tag blue">Hard Film</span>
+              <span class="product-tag">Grills &amp; Gates</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">₹350 <span>/ litre</span></div>
+              <a href="index.html#contact" class="enquire-btn">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-swatch" style="background: linear-gradient(160deg, #e0e0e0, #9e9e9e, #757575);">
+            <span class="product-code-badge">RP-MT-002</span>
+            <span class="product-finish-badge">Lacquer</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">Silver Chrome Lacquer</div>
+            <div class="product-desc">Decorative chrome-effect lacquer that creates a mirror-like metallic finish on metal surfaces. Heat-resistant up to 150°C. Ideal for ornamental metalwork.</div>
+            <div class="product-tags">
+              <span class="product-tag">Mirror Finish</span>
+              <span class="product-tag blue">Heat Resistant</span>
+              <span class="product-tag">Decorative</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">₹460 <span>/ litre</span></div>
+              <a href="index.html#contact" class="enquire-btn">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════
+         TEXTURE & DESIGNER PAINTS
+    ═══════════════════════════════════════ -->
+    <div class="catalog-section page-break">
+      <div class="section-header">
+        <div class="section-label">Product Category 04</div>
+        <h2 class="section-title">Texture &amp; <span>Designer Paints</span></h2>
+        <p class="section-desc">Sand, stone, suede, and metallic textures that turn ordinary walls into stunning architectural features.</p>
+      </div>
+
+      <div class="cat-banner">
+        <div class="cat-banner-icon">✨</div>
+        <div class="cat-banner-text">
+          <h3>Texture &amp; Designer Finishes</h3>
+          <p>Our specialty range requires no primer and delivers maximum visual impact. Professional application available through our certified applicator network.</p>
+        </div>
+      </div>
+
+      <div class="products-grid">
+
+        <div class="product-card">
+          <div class="product-swatch" style="background: radial-gradient(ellipse at 30% 40%, #d7ccc8 0%, #bcaaa4 50%, #a1887f 100%);">
+            <span class="product-code-badge">RP-TEX-001</span>
+            <span class="product-finish-badge">Sand Texture</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">Desert Stone</div>
+            <div class="product-desc">Natural crushed-stone aggregate texture that authentically replicates sandstone. Conceals surface imperfections and cracks while adding a warm, earthy aesthetic.</div>
+            <div class="product-tags">
+              <span class="product-tag">Natural Stone Look</span>
+              <span class="product-tag blue">Crack Concealing</span>
+              <span class="product-tag green">Indoor &amp; Outdoor</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">₹850 <span>/ litre</span></div>
+              <a href="index.html#contact" class="enquire-btn">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-swatch" style="background: linear-gradient(135deg, #ffd700 0%, #b8860b 40%, #ffd700 60%, #daa520 80%, #b8860b 100%);">
+            <span class="product-code-badge">RP-TEX-002</span>
+            <span class="product-finish-badge">Metallic</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">Golden Shimmer</div>
+            <div class="product-desc">Luxury metallic gold finish loaded with high-reflectance mica platelets that shift luminously with changing light. The ultimate choice for prestigious feature walls.</div>
+            <div class="product-tags">
+              <span class="product-tag">Luxury Metallic</span>
+              <span class="product-tag blue">High Reflectance</span>
+              <span class="product-tag">Feature Walls</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">₹1,100 <span>/ litre</span></div>
+              <a href="index.html#contact" class="enquire-btn">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-swatch" style="background: radial-gradient(ellipse at 60% 30%, #e0c9b8 0%, #c9a98e 40%, #b89070 70%, #a07050 100%);">
+            <span class="product-code-badge">RP-TEX-003</span>
+            <span class="product-finish-badge">Suede Finish</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">Suede Velvet</div>
+            <div class="product-desc">Silky soft suede texture with a depth of colour and tactile quality that elevates any interior. Self-priming formula — no undercoat needed. Truly premium.</div>
+            <div class="product-tags">
+              <span class="product-tag">Soft Tactile</span>
+              <span class="product-tag blue">No Primer Needed</span>
+              <span class="product-tag green">Premium Interior</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">₹920 <span>/ litre</span></div>
+              <a href="index.html#contact" class="enquire-btn">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-swatch" style="background: repeating-linear-gradient(0deg, #8d6e63 0px, #8d6e63 14px, #6d4c41 14px, #6d4c41 18px, #a1887f 18px, #a1887f 32px, #6d4c41 32px, #6d4c41 36px);">
+            <span class="product-code-badge">RP-TEX-004</span>
+            <span class="product-finish-badge">3D Texture</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">Brick Rustic</div>
+            <div class="product-desc">Three-dimensional textured finish that precisely replicates the look of exposed brick without any masonry work. Perfect for industrial-style accent walls and restaurants.</div>
+            <div class="product-tags">
+              <span class="product-tag">Exposed Brick Effect</span>
+              <span class="product-tag blue">Accent Walls</span>
+              <span class="product-tag">Interior Only</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">₹780 <span>/ litre</span></div>
+              <a href="index.html#contact" class="enquire-btn">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════
+         PRIMERS & SEALERS
+    ═══════════════════════════════════════ -->
+    <div class="catalog-section page-break">
+      <div class="section-header">
+        <div class="section-label">Product Category 05</div>
+        <h2 class="section-title">Primers &amp; <span>Sealers</span></h2>
+        <p class="section-desc">High-build primers and sealers that form the perfect foundation for any topcoat — on new, repainted, or damp surfaces.</p>
+      </div>
+
+      <div class="cat-banner">
+        <div class="cat-banner-icon">🔬</div>
+        <div class="cat-banner-text">
+          <h3>Foundation Preparation Range</h3>
+          <p>A good primer doubles the life of your topcoat. Our primers are engineered for specific surface types and conditions to ensure maximum adhesion and coverage.</p>
+        </div>
+      </div>
+
+      <div class="products-grid">
+
+        <div class="product-card">
+          <div class="product-swatch" style="background: linear-gradient(160deg, #fafafa, #f0f0f0);">
+            <span class="product-code-badge">RP-PRM-001</span>
+            <span class="product-finish-badge">Alkali Resistant</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">White Primer Pro</div>
+            <div class="product-desc">Alkali-resistant primer for new plastered walls and ceilings. Creates an even, absorbency-controlled surface for optimum topcoat performance in just 2 coats.</div>
+            <div class="product-tags">
+              <span class="product-tag green">Alkali Resistant</span>
+              <span class="product-tag blue">New Walls</span>
+              <span class="product-tag">2-Coat System</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">₹280 <span>/ litre</span></div>
+              <a href="index.html#contact" class="enquire-btn">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-swatch" style="background: linear-gradient(160deg, #90a4ae, #546e7a);">
+            <span class="product-code-badge">RP-PRM-002</span>
+            <span class="product-finish-badge">Damp Proof</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">Damp Shield Sealer</div>
+            <div class="product-desc">Advanced penetrating damp-proof sealer that forms a crystalline moisture barrier within the wall substrate. Ideal for basements, bathrooms, and exterior walls prone to water seepage.</div>
+            <div class="product-tags">
+              <span class="product-tag green">Moisture Barrier</span>
+              <span class="product-tag blue">Basement Walls</span>
+              <span class="product-tag">Exterior Ready</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">₹340 <span>/ litre</span></div>
+              <a href="index.html#contact" class="enquire-btn">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-swatch" style="background: linear-gradient(160deg, #ffe0b2, #ffb74d);">
+            <span class="product-code-badge">RP-PRM-003</span>
+            <span class="product-finish-badge">Bonding Primer</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">Bonding Primer Plus</div>
+            <div class="product-desc">Specialist high-adhesion primer for challenging surfaces: ceramic tiles, glazed finishes, polished plaster, glass, and old paint. Eliminates the need for mechanical surface prep.</div>
+            <div class="product-tags">
+              <span class="product-tag blue">Tiles &amp; Smooth Surfaces</span>
+              <span class="product-tag green">High Adhesion</span>
+              <span class="product-tag">Old Paint Ready</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">₹310 <span>/ litre</span></div>
+              <a href="index.html#contact" class="enquire-btn">Enquire</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════
+         WHY RANJITH PAINTS
+    ═══════════════════════════════════════ -->
+    <div class="catalog-section page-break">
+      <div class="section-header">
+        <div class="section-label">Our Promise</div>
+        <h2 class="section-title">Why Choose <span>Ranjith Paints</span></h2>
+        <p class="section-desc">Six reasons thousands of homeowners and painters choose us every time.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">🛡️</div>
+          <div class="why-title">20-Year Warranty</div>
+          <div class="why-desc">Written guarantee against peeling, fading, and weather damage on all exterior products.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🌿</div>
+          <div class="why-title">Eco-Friendly Low-VOC</div>
+          <div class="why-desc">Low-VOC and zero-odour formulas across our entire interior range. Safe for children and pets.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🎨</div>
+          <div class="why-title">2000+ Shades</div>
+          <div class="why-desc">India's widest colour palette with on-demand tinting — the exact shade you visualise, every time.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🚀</div>
+          <div class="why-title">Same-Day Delivery</div>
+          <div class="why-desc">Order before 12 PM and receive your paint the same day across Chennai and surrounding areas.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">👨‍🎨</div>
+          <div class="why-title">Free Colour Consultation</div>
+          <div class="why-desc">Free in-home consultation with our trained colour experts. No obligation, pure inspiration.</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🔧</div>
+          <div class="why-title">Certified Painter Network</div>
+          <div class="why-desc">Connect with our vetted, certified applicators who know our products and deliver perfect results.</div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════
+         COLOR CHART PREVIEW
+    ═══════════════════════════════════════ -->
+    <div class="catalog-section color-chart-section page-break">
+      <div class="section-header">
+        <div class="section-label">Colour Range</div>
+        <h2 class="section-title">Colour Chart <span>Preview</span></h2>
+        <p class="section-desc">A curated selection from our 2000+ shade library. Visit our showroom or website for the complete tinting chart and custom matching.</p>
+      </div>
+
+      <!-- Whites & Creams -->
+      <div class="color-family">
+        <div class="color-family-title">Whites &amp; Creams</div>
+        <div class="swatches-row">
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#fafafa;"></div>
+            <div class="swatch-name">Pearl White</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#f5f5f0;"></div>
+            <div class="swatch-name">Ivory Mist</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#f5e6d3;"></div>
+            <div class="swatch-name">Cream Linen</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#e8d5c4;"></div>
+            <div class="swatch-name">Sandstone Bliss</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#e0d5c0;"></div>
+            <div class="swatch-name">Warm Beige</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blues & Greens -->
+      <div class="color-family">
+        <div class="color-family-title">Blues &amp; Greens</div>
+        <div class="swatches-row">
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#bbdefb;"></div>
+            <div class="swatch-name">Sky Serenity</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#90caf9;"></div>
+            <div class="swatch-name">Ocean Mist</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#42a5f5;"></div>
+            <div class="swatch-name">Aqua Splash</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#c8e6c9;"></div>
+            <div class="swatch-name">Sage Garden</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#81b29a;"></div>
+            <div class="swatch-name">Forest Shadow</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reds & Oranges -->
+      <div class="color-family">
+        <div class="color-family-title">Reds &amp; Oranges</div>
+        <div class="swatches-row">
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#ef9a9a;"></div>
+            <div class="swatch-name">Blush Rose</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#e53935;"></div>
+            <div class="swatch-name">Crimson Blaze</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#b71c1c;"></div>
+            <div class="swatch-name">Deep Crimson</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#ff8a65;"></div>
+            <div class="swatch-name">Terracotta Dusk</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#e85d04;"></div>
+            <div class="swatch-name">Ranjith Orange</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Yellows & Neutrals -->
+      <div class="color-family">
+        <div class="color-family-title">Yellows &amp; Neutrals</div>
+        <div class="swatches-row">
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#fff9c4;"></div>
+            <div class="swatch-name">Lemon Zest</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#fdd835;"></div>
+            <div class="swatch-name">Colonial Yellow</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#ffb703;"></div>
+            <div class="swatch-name">Gold Rush</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#d4a96a;"></div>
+            <div class="swatch-name">Sandy Dune</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#a0785a;"></div>
+            <div class="swatch-name">Warm Chestnut</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dark & Bold -->
+      <div class="color-family">
+        <div class="color-family-title">Dark &amp; Bold</div>
+        <div class="swatches-row">
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#6a1b9a;"></div>
+            <div class="swatch-name">Royal Plum</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#1565c0;"></div>
+            <div class="swatch-name">Deep Navy</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#37474f;"></div>
+            <div class="swatch-name">Slate Storm</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#5d4037;"></div>
+            <div class="swatch-name">Dark Mocha</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background:#212121;"></div>
+            <div class="swatch-name">Onyx Black</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Textures -->
+      <div class="color-family">
+        <div class="color-family-title">Texture &amp; Metallic Finishes</div>
+        <div class="swatches-row">
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background: radial-gradient(ellipse at 30% 30%, #d7ccc8, #a1887f);"></div>
+            <div class="swatch-name">Desert Stone</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background: linear-gradient(135deg, #ffd700, #b8860b, #ffd700);"></div>
+            <div class="swatch-name">Golden Shimmer</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background: radial-gradient(ellipse, #e0c9b8, #a07050);"></div>
+            <div class="swatch-name">Suede Velvet</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background: repeating-linear-gradient(0deg, #8d6e63 0px, #8d6e63 6px, #6d4c41 6px, #6d4c41 8px);"></div>
+            <div class="swatch-name">Brick Rustic</div>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background: linear-gradient(135deg, #e0e0e0, #9e9e9e, #bdbdbd);"></div>
+            <div class="swatch-name">Silver Chrome</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════
+         BACK COVER / CONTACT
+    ═══════════════════════════════════════ -->
+    <div class="back-cover">
+      <div class="back-cover-header">
+        <h2>🎨 Visit Our Showroom</h2>
+        <p>Free colour consultation · Expert advice · 2000+ shades on display</p>
+      </div>
+
+      <div class="back-cover-body">
+
+        <div class="contact-block">
+          <h4>Contact Us</h4>
+          <p>
+            <strong>Ranjith Paints</strong><br />
+            Anna Nagar, Chennai 600 040<br />
+            Tamil Nadu, India
+          </p>
+          <br />
+          <p>
+            📞 +91 99999 XXXXX<br />
+            📱 WhatsApp: +91 99999 XXXXX<br />
+            ✉️ <a href="mailto:sales@ranjithpaints.in">sales@ranjithpaints.in</a><br />
+            🌐 <a href="http://www.ranjithpaints.in">www.ranjithpaints.in</a>
+          </p>
+          <br />
+          <p>
+            <strong>Business Hours</strong><br />
+            Mon–Sat: 9 AM – 8 PM<br />
+            Sunday: 10 AM – 5 PM
+          </p>
+          <div class="social-row">
+            <a href="#" class="social-chip">Instagram</a>
+            <a href="#" class="social-chip">Facebook</a>
+            <a href="#" class="social-chip">YouTube</a>
+          </div>
+        </div>
+
+        <div class="contact-block" style="text-align:center;">
+          <h4>WhatsApp Us</h4>
+          <div class="qr-placeholder">
+            <span>📱</span>
+            <p>Scan for<br />WhatsApp<br />Chat</p>
+          </div>
+          <p style="font-size:0.75rem; color:var(--muted); margin-top:0.75rem;">Scan with your camera<br />to start a WhatsApp chat</p>
+          <br />
+          <h4>Quick Order</h4>
+          <div class="qr-placeholder">
+            <span>🌐</span>
+            <p>Scan for<br />Online<br />Catalog</p>
+          </div>
+          <p style="font-size:0.75rem; color:var(--muted); margin-top:0.75rem;">ranjithpaints.in/catalog</p>
+        </div>
+
+        <div class="contact-block">
+          <h4>Delivery Areas</h4>
+          <p>
+            Chennai (All Zones)<br />
+            Kanchipuram<br />
+            Chengalpet<br />
+            Tiruvallur<br />
+            Tambaram<br />
+            Avadi<br />
+            Poonamallee
+          </p>
+          <br />
+          <h4>Our Services</h4>
+          <p>
+            ✓ Free Colour Consultation<br />
+            ✓ Same-Day Delivery<br />
+            ✓ Certified Painter Network<br />
+            ✓ Custom Colour Tinting<br />
+            ✓ Bulk &amp; Contractor Orders<br />
+            ✓ 20-Year Written Warranty
+          </p>
+        </div>
+
+      </div>
+
+      <div class="back-cover-footer">
+        <strong>© 2025 Ranjith Paints</strong> · Anna Nagar, Chennai 600 040 · All rights reserved ·
+        Prices inclusive of GST · Subject to change without notice · E&amp;OE
+      </div>
+    </div>
+
+  </div><!-- /.catalog-wrapper -->
+
+  <script>
+    /* ══════════════════════════════════════════
+       CATALOG ANIMATION ENGINE
+    ══════════════════════════════════════════ */
+
+    // 1. Page load
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+    });
+
+    // 2. Scroll reveal observer
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          revealObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    // Add reveal classes to sections
+    document.querySelectorAll('.catalog-section').forEach((el, i) => {
+      el.classList.add('fade-in');
+      el.style.transitionDelay = '0s';
+      revealObs.observe(el);
+    });
+
+    document.querySelectorAll('.product-card').forEach((el, i) => {
+      el.classList.add(i % 2 === 0 ? 'fade-in-left' : 'fade-in-right');
+      el.style.transitionDelay = (i % 2 * 0.12) + 's';
+      revealObs.observe(el);
+    });
+
+    document.querySelectorAll('.why-card, .stat-box, .swatch-item').forEach((el, i) => {
+      el.classList.add('fade-in');
+      el.style.transitionDelay = (i * 0.08) + 's';
+      revealObs.observe(el);
+    });
+
+    document.querySelectorAll('.about-text').forEach((el, i) => {
+      el.classList.add(i === 0 ? 'fade-in-left' : 'fade-in-right');
+      revealObs.observe(el);
+    });
+
+    // 3. 3D tilt on product cards
+    document.querySelectorAll('.product-card').forEach(card => {
+      card.addEventListener('mousemove', function(e) {
+        const r = this.getBoundingClientRect();
+        const dx = (e.clientX - r.left - r.width / 2) / (r.width / 2);
+        const dy = (e.clientY - r.top - r.height / 2) / (r.height / 2);
+        this.style.transform = `translateY(-6px) rotateY(${dx * 6}deg) rotateX(${-dy * 6}deg)`;
+        this.style.boxShadow = `${-dx*8}px ${dy*8 + 16}px 36px rgba(0,0,0,0.12)`;
+      });
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = '';
+        this.style.boxShadow = '';
+      });
+    });
+
+    // 4. Animated stat numbers
+    const statObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.num').forEach(el => {
+            const text = el.textContent.replace(/[^0-9]/g,'');
+            const target = parseInt(text);
+            if (!target) return;
+            const suffix = el.querySelector('.unit') ? el.querySelector('.unit').textContent : '';
+            let start = 0;
+            const duration = 1800;
+            const t0 = performance.now();
+            const easeOut = t => 1 - Math.pow(1 - t, 3);
+            (function tick(now) {
+              const p = Math.min((now - t0) / duration, 1);
+              const val = Math.floor(easeOut(p) * target);
+              const unitEl = el.querySelector('.unit');
+              if (unitEl) {
+                el.firstChild.textContent = val.toLocaleString('en-IN');
+              } else {
+                el.textContent = val.toLocaleString('en-IN');
+              }
+              if (p < 1) requestAnimationFrame(tick);
+              else {
+                if (unitEl) el.firstChild.textContent = target.toLocaleString('en-IN');
+                else el.textContent = target.toLocaleString('en-IN');
+              }
+            })(performance.now());
+          });
+          statObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    document.querySelectorAll('.stats-row').forEach(el => statObs.observe(el));
+
+    // 5. Ripple on enquire buttons
+    document.querySelectorAll('.enquire-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        const r = document.createElement('div');
+        r.className = 'enquire-ripple';
+        const rect = this.getBoundingClientRect();
+        r.style.left = (e.clientX - rect.left) + 'px';
+        r.style.top  = (e.clientY - rect.top) + 'px';
+        this.appendChild(r);
+        setTimeout(() => r.remove(), 700);
+      });
+    });
+
+    // 6. Color stripe — auto-expand random item every 1.5s
+    const stripeItems = document.querySelectorAll('.color-stripe-item');
+    let activeStripe = -1;
+    setInterval(() => {
+      if (activeStripe >= 0) stripeItems[activeStripe].style.flex = '1';
+      activeStripe = Math.floor(Math.random() * stripeItems.length);
+      stripeItems[activeStripe].style.flex = '3';
+      stripeItems[activeStripe].style.transition = 'flex 0.6s ease';
+    }, 1500);
+
+    // 7. Scrollbar-triggered section header underlines
+    const headerObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const line = e.target.querySelector('.section-header::after');
+          e.target.classList.add('header-visible');
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.section-header').forEach(h => headerObs.observe(h));
+  </script>
+
+</body>
+</html>

@@ -784,6 +784,177 @@
     .reveal-delay-3 { transition-delay: 0.3s; }
     .reveal-delay-4 { transition-delay: 0.4s; }
 
+    /* ══════════════════════════════════════════
+       ANIMATION SYSTEM
+    ══════════════════════════════════════════ */
+
+    /* Scroll progress bar */
+    #scroll-progress {
+      position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+      background: linear-gradient(90deg, var(--accent), var(--accent2), #a855f7, var(--accent));
+      background-size: 200% 100%;
+      z-index: 9999; border-radius: 0 2px 2px 0;
+      animation: progressShimmer 2s linear infinite;
+    }
+    @keyframes progressShimmer { 0%{background-position:0% 50%} 100%{background-position:200% 50%} }
+
+    /* Gradient text shimmer */
+    .gradient-text {
+      background: linear-gradient(135deg, #fff 0%, #fbbf24 25%, var(--accent) 50%, #fbbf24 75%, #fff 100%);
+      background-size: 300% 100%;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      animation: textShimmer 6s linear infinite;
+    }
+    @keyframes textShimmer { 0%{background-position:0% 50%} 100%{background-position:300% 50%} }
+
+    /* Hero badge float */
+    .hero-badge { animation: badgeFloat 3s ease-in-out infinite; }
+    @keyframes badgeFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+
+    /* Swatch entrance stagger + hover */
+    .swatch { opacity:0; transform:scale(0) rotate(-180deg); animation:swatchPop 0.5s cubic-bezier(0.175,0.885,0.32,1.275) forwards; }
+    @keyframes swatchPop { to{opacity:1;transform:scale(1) rotate(0)} }
+
+    /* Stat card shimmer sweep */
+    .stat-card { position:relative; overflow:hidden; }
+    .stat-card::after {
+      content:''; position:absolute; top:0; left:-100%; width:60%; height:100%;
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,0.07),transparent);
+      animation:shimmerSweep 2.8s ease-in-out infinite; pointer-events:none;
+    }
+    @keyframes shimmerSweep { 0%{left:-100%} 100%{left:200%} }
+
+    /* Feature icon on hover */
+    .feature-icon { display:inline-block; transition:transform 0.35s cubic-bezier(0.175,0.885,0.32,1.275); }
+    .feature-card:hover .feature-icon { transform:scale(1.35) rotate(-12deg); }
+    .feature-card::before { width:0; transition:opacity 0.3s, width 0.5s; }
+    .feature-card:hover::before { opacity:1; width:100%; }
+
+    /* Nav link animated underline */
+    .nav-links a::after {
+      content:''; position:absolute; bottom:-2px; left:50%; width:0; height:2px;
+      background:var(--accent2); transition:all 0.3s; border-radius:1px;
+    }
+    .nav-links a { position:relative; }
+    .nav-links a:hover::after { width:100%; left:0; }
+
+    /* Ripple effect */
+    .ripple-btn { position:relative; overflow:hidden; }
+    .ripple-dot {
+      position:absolute; border-radius:50%;
+      width:120px; height:120px; margin-left:-60px; margin-top:-60px;
+      background:rgba(255,255,255,0.25); transform:scale(0);
+      animation:rippleGo 0.7s linear; pointer-events:none;
+    }
+    @keyframes rippleGo { to{transform:scale(4);opacity:0} }
+
+    /* CTA glowing border pulse */
+    .cta-box { animation:ctaGlow 4s ease-in-out infinite; }
+    @keyframes ctaGlow {
+      0%,100%{box-shadow:0 0 30px rgba(232,93,4,0.1),0 0 60px rgba(255,183,3,0.05)}
+      50%{box-shadow:0 0 60px rgba(232,93,4,0.3),0 0 120px rgba(255,183,3,0.12); border-color:rgba(255,183,3,0.5)}
+    }
+
+    /* Paint drip decoration */
+    .drip-row { display:flex; justify-content:space-evenly; height:50px; overflow:hidden; pointer-events:none; }
+    .drip {
+      width:7px; border-radius:0 0 7px 7px; opacity:0;
+      animation:dripFall ease-in infinite;
+    }
+    @keyframes dripFall {
+      0%{height:0;opacity:0} 20%{opacity:0.7} 60%{opacity:0.5;height:40px} 100%{height:50px;opacity:0}
+    }
+
+    /* Cat-card paint splash */
+    .cat-card::after {
+      content:''; position:absolute; bottom:-30px; right:-30px;
+      width:120px; height:120px; border-radius:50%;
+      background:radial-gradient(circle,rgba(255,183,3,0.2),transparent 70%);
+      transform:scale(0); transition:transform 0.5s cubic-bezier(0.175,0.885,0.32,1.275); pointer-events:none;
+    }
+    .cat-card:hover::after { transform:scale(3); }
+
+    /* Paint swatch expand on hover */
+    .paint-swatch { transition:height 0.35s cubic-bezier(0.16,1,0.3,1); }
+    .paint-card:hover .paint-swatch { height:210px; }
+
+    /* Primary button pulse */
+    .btn-primary { animation:btnGlow 3s ease-in-out infinite; }
+    @keyframes btnGlow {
+      0%,100%{box-shadow:0 0 0 0 rgba(232,93,4,0.35)}
+      50%{box-shadow:0 0 0 12px rgba(232,93,4,0)}
+    }
+    .btn-primary:hover { animation:none; }
+
+    /* Testimonial decorative quote */
+    .testimonial-card { position:relative; overflow:hidden; }
+    .testimonial-card::before {
+      content:'"'; font-size:6rem; color:var(--accent); opacity:0.07;
+      position:absolute; top:-15px; left:10px; line-height:1;
+      font-family:'Syne',sans-serif; font-weight:800; pointer-events:none;
+      transition:transform 0.4s, opacity 0.4s;
+    }
+    .testimonial-card:hover::before { transform:translateY(-10px) scale(1.1); opacity:0.14; }
+
+    /* Stars twinkle */
+    .stars { display:inline-block; animation:starsTwinkle 2.5s ease-in-out infinite; }
+    @keyframes starsTwinkle { 0%,100%{opacity:1} 50%{opacity:0.6;text-shadow:0 0 8px var(--accent2)} }
+
+    /* Floating particles */
+    .particle {
+      position:absolute; border-radius:50%; pointer-events:none;
+      animation:particleFly linear infinite;
+    }
+    @keyframes particleFly {
+      0%{transform:translateY(0) scale(0);opacity:0}
+      10%{opacity:0.7} 80%{opacity:0.3}
+      100%{transform:translateY(-600px) scale(1.5) rotate(180deg);opacity:0}
+    }
+
+    /* Room wall smooth transition */
+    #backWall { transition:fill 0.6s cubic-bezier(0.16,1,0.3,1); }
+
+    /* Palette swatch selected ring pulse */
+    .palette-swatch.selected { animation:selectedPulse 1.5s ease-in-out infinite; }
+    @keyframes selectedPulse { 0%,100%{box-shadow:0 0 0 0 rgba(255,255,255,0.4)} 50%{box-shadow:0 0 0 5px rgba(255,255,255,0)} }
+
+    /* Section reveal variants */
+    .reveal-left { opacity:0; transform:translateX(-50px); transition:all 0.8s cubic-bezier(0.16,1,0.3,1); }
+    .reveal-right { opacity:0; transform:translateX(50px); transition:all 0.8s cubic-bezier(0.16,1,0.3,1); }
+    .reveal-up { opacity:0; transform:translateY(50px) scale(0.95); transition:all 0.8s cubic-bezier(0.16,1,0.3,1); }
+    .reveal-left.visible, .reveal-right.visible, .reveal-up.visible { opacity:1; transform:none; }
+
+    /* Nav logo shimmer */
+    .nav-logo { position:relative; }
+
+    /* Page load fade */
+    body { opacity:0; transition:opacity 0.5s ease; }
+    body.loaded { opacity:1; }
+
+    /* Cursor trail dots */
+    .cursor-trail {
+      position:fixed; pointer-events:none; z-index:9997; border-radius:50%;
+      mix-blend-mode:screen; transform:translate(-50%,-50%); opacity:0;
+    }
+
+    /* Form focus animation */
+    .form-group input, .form-group textarea, .form-group select {
+      transition:border-color 0.3s, box-shadow 0.3s, transform 0.2s;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      transform:scale(1.01);
+      box-shadow:0 0 0 4px rgba(232,93,4,0.12);
+    }
+
+    /* Section label animated underline */
+    .section-label { position:relative; display:inline-block; }
+    .section-label::after {
+      content:''; position:absolute; bottom:-4px; left:0; width:0; height:2px;
+      background:var(--accent2); border-radius:1px;
+      animation:labelUnderline 1s cubic-bezier(0.16,1,0.3,1) forwards;
+    }
+    @keyframes labelUnderline { to{width:100%} }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       .nav-links, .nav-cta { display: none; }
@@ -815,6 +986,9 @@
   </style>
 </head>
 <body>
+
+  <!-- Scroll progress bar -->
+  <div id="scroll-progress"></div>
 
   <!-- NAV -->
   <nav id="navbar">
@@ -851,6 +1025,7 @@
       <div class="hero-actions">
         <a href="#catalog" class="btn-primary">Browse Catalog ↓</a>
         <a href="#visualizer" class="btn-outline">🎨 Try Colour Picker</a>
+        <a href="catalog.html" class="btn-outline">📄 Download Catalog</a>
       </div>
       <div class="color-band">
         <div class="swatch" style="background:#e63946" title="Crimson Blaze"></div>
@@ -865,6 +1040,17 @@
         <div class="swatch" style="background:#264653" title="Deep Ocean"></div>
       </div>
     </div>
+    <!-- Paint drip row decoration -->
+    <div class="drip-row" style="position:absolute;bottom:0;left:0;right:0;z-index:2">
+      <div class="drip" style="background:#e85d04;animation-duration:2.2s;animation-delay:0s"></div>
+      <div class="drip" style="background:#ffb703;animation-duration:3.1s;animation-delay:-1.2s"></div>
+      <div class="drip" style="background:#06b6d4;animation-duration:2.7s;animation-delay:-0.5s"></div>
+      <div class="drip" style="background:#e63946;animation-duration:3.4s;animation-delay:-2s"></div>
+      <div class="drip" style="background:#52b788;animation-duration:2.5s;animation-delay:-0.8s"></div>
+      <div class="drip" style="background:#a855f7;animation-duration:3.8s;animation-delay:-1.6s"></div>
+      <div class="drip" style="background:#ffb703;animation-duration:2.9s;animation-delay:-2.4s"></div>
+    </div>
+
     <div class="scroll-hint">
       <span>Scroll</span>
       <div class="scroll-line"></div>
@@ -921,12 +1107,6 @@
           <p>Alkali-resistant, UV-stable paints engineered to protect your walls from rain, heat, and humidity for 10+ years.</p>
           <a href="#catalog" class="cat-link">Explore → </a>
         </div>
-        <div class="cat-card reveal reveal-delay-3" style="background:linear-gradient(135deg,#2d1515,#7b1d1d)">
-          <span class="cat-emoji">🏭</span>
-          <h3>Industrial Coatings</h3>
-          <p>Heavy-duty anti-corrosion, epoxy, and fireproof coatings for factories, warehouses, and steel structures.</p>
-          <a href="#catalog" class="cat-link">Explore → </a>
-        </div>
         <div class="cat-card reveal reveal-delay-1" style="background:linear-gradient(135deg,#1a2540,#1e3a5f)">
           <span class="cat-emoji">🪵</span>
           <h3>Wood & Metal Finish</h3>
@@ -961,7 +1141,6 @@
         <button class="tab active" onclick="filterCatalog('all', this)">All Products</button>
         <button class="tab" onclick="filterCatalog('interior', this)">Interior</button>
         <button class="tab" onclick="filterCatalog('exterior', this)">Exterior</button>
-        <button class="tab" onclick="filterCatalog('industrial', this)">Industrial</button>
         <button class="tab" onclick="filterCatalog('texture', this)">Texture</button>
       </div>
       <div class="catalog-grid" id="catalogGrid">
@@ -1058,26 +1237,6 @@
             </div>
             <div class="paint-footer">
               <div class="paint-price">₹720 <span>/ litre</span></div>
-              <button class="btn-sm" onclick="enquire()">Enquire</button>
-            </div>
-          </div>
-        </div>
-        <!-- Industrial -->
-        <div class="paint-card reveal reveal-delay-1" data-cat="industrial">
-          <div class="paint-swatch" style="background:linear-gradient(160deg,#455a64,#263238)">
-            <span class="paint-finish">Epoxy Coat</span>
-          </div>
-          <div class="paint-body">
-            <div class="paint-code">RP-IND-001</div>
-            <h3>Steel Guard Epoxy</h3>
-            <p>2-pack epoxy coating providing superior corrosion resistance for steel and concrete surfaces.</p>
-            <div class="paint-meta">
-              <span class="paint-tag">Anti-Corrosion</span>
-              <span class="paint-tag">Chemical Resistant</span>
-              <span class="paint-tag">Industrial</span>
-            </div>
-            <div class="paint-footer">
-              <div class="paint-price">₹1,200 <span>/ litre</span></div>
               <button class="btn-sm" onclick="enquire()">Enquire</button>
             </div>
           </div>
@@ -1519,6 +1678,192 @@
     // Enquire scroll
     function enquire() {
       document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    /* ══════════════════════════════════════════
+       ANIMATION ENGINE
+    ══════════════════════════════════════════ */
+
+    // 1. Page load
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+      animateHeroWords();
+      staggerSwatches();
+    });
+
+    // 2. Scroll progress bar
+    const scrollBar = document.getElementById('scroll-progress');
+    window.addEventListener('scroll', () => {
+      const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+      scrollBar.style.width = pct + '%';
+    }, { passive: true });
+
+    // 3. Hero h1 word-by-word reveal
+    function animateHeroWords() {
+      const spans = document.querySelectorAll('.hero h1 .gradient-text');
+      spans.forEach((el, i) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(28px)';
+        el.style.transition = `opacity 0.7s cubic-bezier(0.16,1,0.3,1) ${0.3 + i * 0.35}s, transform 0.7s cubic-bezier(0.16,1,0.3,1) ${0.3 + i * 0.35}s`;
+        setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }, 50);
+      });
+      // Animate "World with" plain text
+      const h1 = document.querySelector('.hero h1');
+      h1.style.opacity = '0';
+      h1.style.transform = 'translateY(20px)';
+      h1.style.transition = 'opacity 0.5s ease 0.1s, transform 0.5s ease 0.1s';
+      setTimeout(() => { h1.style.opacity = '1'; h1.style.transform = 'translateY(0)'; }, 50);
+    }
+
+    // 4. Swatch staggered entrance
+    function staggerSwatches() {
+      document.querySelectorAll('.swatch').forEach((s, i) => {
+        s.style.animationDelay = `${0.9 + i * 0.07}s`;
+      });
+    }
+
+    // 5. Floating paint particles in hero
+    (function createParticles() {
+      const container = document.querySelector('.hero-orbs');
+      const colors = ['#e85d04','#ffb703','#06b6d4','#e63946','#a5d6a7','#90caf9','#ffd700','#a855f7'];
+      for (let i = 0; i < 22; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        const size = 4 + Math.random() * 10;
+        p.style.cssText = `
+          left:${Math.random() * 100}%;
+          bottom:0;
+          width:${size}px; height:${size}px;
+          background:${colors[i % colors.length]};
+          animation-duration:${7 + Math.random() * 9}s;
+          animation-delay:-${Math.random() * 10}s;
+          filter:blur(${Math.random() > 0.5 ? 1 : 0}px);
+        `;
+        container.appendChild(p);
+      }
+    })();
+
+    // 6. Ripple effect on all buttons
+    document.querySelectorAll('.btn-primary, .btn-outline, .nav-cta, .btn-sm, .form-submit').forEach(btn => {
+      btn.classList.add('ripple-btn');
+      btn.addEventListener('click', function(e) {
+        const r = document.createElement('div');
+        r.className = 'ripple-dot';
+        const rect = this.getBoundingClientRect();
+        r.style.left = (e.clientX - rect.left) + 'px';
+        r.style.top  = (e.clientY - rect.top) + 'px';
+        this.appendChild(r);
+        setTimeout(() => r.remove(), 750);
+      });
+    });
+
+    // 7. 3D tilt on cards
+    function addTilt(sel) {
+      document.querySelectorAll(sel).forEach(card => {
+        card.style.transition = 'transform 0.15s ease, box-shadow 0.3s';
+        card.addEventListener('mousemove', function(e) {
+          const r = this.getBoundingClientRect();
+          const dx = (e.clientX - r.left - r.width / 2) / (r.width / 2);
+          const dy = (e.clientY - r.top - r.height / 2) / (r.height / 2);
+          this.style.transform = `translateY(-8px) rotateY(${dx * 7}deg) rotateX(${-dy * 7}deg)`;
+          this.style.boxShadow = `${-dx * 10}px ${dy * 10 + 20}px 40px rgba(0,0,0,0.4)`;
+        });
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = '';
+          this.style.boxShadow = '';
+        });
+      });
+    }
+    addTilt('.paint-card, .feature-card, .stat-card, .testimonial-card');
+
+    // 8. Cursor paint-drop trail
+    (function cursorTrail() {
+      const colors = ['#e85d04','#ffb703','#06b6d4','#a855f7','#52b788'];
+      const dots = [];
+      let mx = -200, my = -200;
+      for (let i = 0; i < 7; i++) {
+        const d = document.createElement('div');
+        d.className = 'cursor-trail';
+        const s = 10 - i * 1.2;
+        d.style.cssText = `width:${s}px;height:${s}px;background:${colors[i % colors.length]};`;
+        document.body.appendChild(d);
+        dots.push({ el: d, x: -200, y: -200 });
+      }
+      document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; dots.forEach(d => d.el.style.opacity = '0.7'); });
+      document.addEventListener('mouseleave', () => dots.forEach(d => d.el.style.opacity = '0'));
+      (function loop() {
+        dots.forEach((d, i) => {
+          const prev = i === 0 ? { x: mx, y: my } : dots[i - 1];
+          d.x += (prev.x - d.x) * 0.38;
+          d.y += (prev.y - d.y) * 0.38;
+          d.el.style.left = d.x + 'px';
+          d.el.style.top = d.y + 'px';
+        });
+        requestAnimationFrame(loop);
+      })();
+    })();
+
+    // 9. Staggered section reveals (left/right/up variants)
+    document.querySelectorAll('.cat-card').forEach((el, i) => {
+      el.classList.add(i % 2 === 0 ? 'reveal-left' : 'reveal-right');
+    });
+    document.querySelectorAll('.why-item').forEach((el, i) => {
+      el.classList.add('reveal-up');
+      el.style.transitionDelay = (i * 0.1) + 's';
+    });
+    const variantObs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal-left, .reveal-right, .reveal-up').forEach(el => variantObs.observe(el));
+
+    // 10. Auto-cycle color preview in hero (visual delight)
+    let swatchIdx = 0;
+    const heroSwatches = document.querySelectorAll('.swatch');
+    setInterval(() => {
+      if (heroSwatches.length) {
+        heroSwatches[swatchIdx].style.transform = 'scale(1)';
+        heroSwatches[swatchIdx].style.borderColor = 'rgba(255,255,255,0.12)';
+        swatchIdx = (swatchIdx + 1) % heroSwatches.length;
+        heroSwatches[swatchIdx].style.transform = 'scale(1.35)';
+        heroSwatches[swatchIdx].style.borderColor = 'rgba(255,255,255,0.7)';
+        heroSwatches[swatchIdx].style.boxShadow = `0 0 12px ${heroSwatches[swatchIdx].style.background}`;
+      }
+    }, 800);
+
+    // 11. Animated tab filter with smooth card transition
+    const origFilter = filterCatalog;
+    filterCatalog = function(cat, btn) {
+      document.querySelectorAll('.paint-card').forEach(card => {
+        const show = cat === 'all' || card.dataset.cat === cat;
+        if (!show) {
+          card.style.opacity = '0'; card.style.transform = 'scale(0.9)';
+          setTimeout(() => card.style.display = 'none', 300);
+        } else {
+          card.style.display = 'block';
+          setTimeout(() => { card.style.opacity = '1'; card.style.transform = ''; }, 30);
+        }
+      });
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+    };
+
+    // 12. Number counting with animated highlight
+    function animateCounter(el) {
+      const target = +el.dataset.target;
+      const duration = 2000;
+      const start = performance.now();
+      const easeOut = t => 1 - Math.pow(1 - t, 4);
+      (function tick(now) {
+        const p = Math.min((now - start) / duration, 1);
+        const val = Math.floor(easeOut(p) * target);
+        el.textContent = val.toLocaleString('en-IN');
+        if (p < 1) requestAnimationFrame(tick);
+        else {
+          el.textContent = target.toLocaleString('en-IN');
+          el.style.transform = 'scale(1.08)';
+          setTimeout(() => el.style.transform = '', 200);
+        }
+      })(performance.now());
     }
   </script>
 </body>
